@@ -1,10 +1,29 @@
-# CST238GUI
+<img src="/Images/Logo.png" width="350" height="275">
 
 <b>Description:</b><br />
-Matthew Del Fante and Molli Drivdahl will be collaborating together to make an animated music video by the end of the term. The music video will be made from scratch to go along with the song "My House" by Flo Rida.
+Matthew Del Fante and Molli Drivdahl (Team (MD)^2) will be collaborating together to make an animated music video by the end of the term. The music video will be made from scratch to go along with the song "My House" by Flo Rida.
 
 <b>Technologies:</b><br />
 C++, Qt, QML, Javascript <br />
+
+<b>Screenshots:</b>
+
+<img src= "/Images/MediaPlayer.png" width="400" height="200">
+<br />
+Here is what the play/pause interface may look like (ignore the side bar).<br />
+
+<img src= "/Images/EpensiveLivingRoom.jpg" width="300" height="250">
+<br />
+As of right now, the music video will be an animated tour of<br />both 
+Matt's and Molli's imaginary houses.<br />
+
+<img src= "/Images/MolliBeachHouse.jpg" width="300" height="250">
+<br />
+Molli's house will of course need a beach (she loves beaches).<br />
+
+<img src= "/Images/Seattle.jpg" width="400" height="200">
+<br />
+The video will have strong Seattle themes in it since Seattle is the best!<br />
 
 <b>Installation Instructions:</b><br />
 1.  Install Qt 5.6 <br \>
@@ -12,7 +31,7 @@ C++, Qt, QML, Javascript <br />
 3.  Clean all, run qmake, build all, run. <br \>
 
 <b>Contribution Guidelines:</b><br />
-Throughout the term Molli Drivdahl and Matt Del Fante will work on the music video equally until the end of the term. For any future contributors to the project after the end of the term, development changes can be made by branching code (we think, we are still novices to git), editing code for different parts of the project, and merging the code back to git after reviewing the changes made (again, we think).
+Throughout the term, Molli Drivdahl and Matt Del Fante will work on the music video equally until the end of the term. For any future contributors to the project after the end of the term, development changes can be made by branching code (we think, we are still novices to git), editing code for different parts of the project, and merging the code back to git after reviewing the changes made (again, we think).
 
 <i>Note on naming convention:</i><br />
 We will develop a naming convention in the near future.
@@ -26,7 +45,7 @@ Eventually the project should be a fully functioning animated music video matche
 [MolliDrivdahl](https://github.com/mollidrivdahl)<br />
 
 <b>Inspiration:</b><br />
-For Matt, the idea to make an animated music video came from the animated start menu of the example project "Bishop's Fianchetto" shown on the first day of the GUI course. For Molli, the idea came from a previous Adobe Flash project from high school involving creating animations to go along with a song.<br />
+For Matt, the idea to make an animated music video came from the animated start menu of the example project "Bishop's Fianchetto" shown on the first day of the GUI course. For Molli, the idea came from a previous Adobe Flash project from high school involving creating animations to go along with a song. We picked My House by Flo Rida since it is catchy and we thought we could express our selves easily and in a fun manner via house tours.<br />
 
 <b>License:</b><br />
 The MIT License (MIT)<br />
