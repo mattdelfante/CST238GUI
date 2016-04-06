@@ -1,7 +1,7 @@
 <img src="/Images/Logo.png" width="350" height="275">
 
 <b>Description:</b><br />
-Matthew Del Fante and Molli Drivdahl (Team (MD)^2) will be collaborating together to make an animated music video by the end of the term. The music video will be made from scratch to go along with the song "My House" by Flo Rida.
+Matthew Del Fante and Molli Drivdahl (Team (MD)^2) will be collaborating together to make an animated music video by the end of the term. The music video will be made from scratch to go along with the song "My House" by Flo Rida. As of right now, the idea is that the music video will be of Matt and Molli giving house tours of their dream houses to the music video.
 
 <b>Technologies:</b><br />
 C++, Qt, QML, Javascript <br />
