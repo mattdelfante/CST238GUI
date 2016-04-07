@@ -1,5 +1,5 @@
 /*
-  Name: Matthew Del Fante and Molli Drivdahl
+  Name: Matthew Del Fante & Molli Drivdahl
   Lab: Lab2 Splash Screen
   Project Name: mdMusicVideo
 */
@@ -35,4 +35,13 @@ Window {
         }
     }
 
+    TextRect{
+        id: textRect
+        color: "purple"
+        x: parent.width/2 - width/2
+        y: parent.height/4
+        textBox.font.bold: true
+        textBox.color: "white"
+        textBox.text: "Welcome to our music video."
+    }
 }
