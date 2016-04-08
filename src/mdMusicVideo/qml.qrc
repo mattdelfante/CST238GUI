@@ -3,5 +3,7 @@
         <file>main.qml</file>
         <file>MyButton.qml</file>
         <file>TextRect.qml</file>
+        <file>DialogBox.qml</file>
+        <file>SplashScreen.qml</file>
     </qresource>
 </RCC>

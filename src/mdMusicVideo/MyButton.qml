@@ -1,8 +1,8 @@
 import QtQuick 2.0
 
 Rectangle {
-    //left is how to referencce the MouseArea outside of this qml file,
-    //right is the id of that
+    //left is how to reference the MouseArea outside of this qml file,
+    //right is the id of that mouse area
     property alias buttonMouseArea: mouseArea
 
     property bool switchColor: false
@@ -11,6 +11,7 @@ Rectangle {
     id: startMusicVideo
     height: parent.height / 6
     width: parent.width / 4
+    radius: height/2
     color: myColor
 
     MouseArea
@@ -19,18 +20,18 @@ Rectangle {
         anchors.fill: parent
         onClicked:
         {
-            myColor = "blue"
+            //myColor = "blue"
         }
 
         hoverEnabled: true
         onEntered:
         {
-            myColor = "green"
+            //myColor = "green"
         }
 
         onExited:
         {
-            myColor = "red"
+            //myColor = "red"
         }
     }
 }
