@@ -5,5 +5,6 @@
         <file>TextRect.qml</file>
         <file>DialogBox.qml</file>
         <file>SplashScreen.qml</file>
+        <file>myHouseBg.png</file>
     </qresource>
 </RCC>

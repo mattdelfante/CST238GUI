@@ -11,7 +11,7 @@ Window {
     visible: true
 
     SplashScreen{
-        color: "grey"
+
     }
 
 }

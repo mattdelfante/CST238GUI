@@ -7,6 +7,11 @@ Rectangle {
     property string secondString: "The music video will be an animated video of both \nmyself (Matt) and Molli giving house tours of our\ndream houses."
     anchors.fill: parent
 
+    Image{
+        anchors.fill: parent
+        source: "myHouseBg.png"
+    }
+
     DialogBox{
         id: bigBox
         color: "purple"
