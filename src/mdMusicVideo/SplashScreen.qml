@@ -4,19 +4,17 @@ Rectangle {
     id: splashScreen
     property int count: 0
     property string intialString: "Our project will be a music video to the song\nMy House by Flo Rida. As of right now, we both like\nthis song a lot, hopefully by the end of the\nterm we will not hate it too much."
-    property string secondString: "The music video will be an animated video of both \nmyself (Matt) and Molli giving house tours of our\ndream houses."
+    property string secondString: "The music video will be an animated video of both \nmyself (Molli) and Matt giving house tours of our\ndream houses."
     anchors.fill: parent
 
     Image{
         anchors.fill: parent
-        source: "myHouseBg.png"
+        source: "splashScreenBg.png"
     }
 
     DialogBox{
         id: bigBox
         color: "purple"
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
         x: parent.width/2 - width/2
         y: parent.height/4
 
@@ -24,10 +22,11 @@ Rectangle {
         textRect.width: width - width/20
         textRect.height: height/2
         textRect.anchors.topMargin: height/30
+        textRect.color: "light grey"
         textRect.words: intialString
         textRectBox.text: textRect.words
-        textRectBox.color: "red"
-        textRectBox.font.pointSize: textRect.height / 10
+        textRectBox.color: "black"
+        textRectBox.font.pointSize: textRect.height/12
         textRectBox.font.bold: true
 
         //MyButton properties
@@ -48,7 +47,7 @@ Rectangle {
             }
             else if (count === 3)
             {
-                splashScreen.parent.visible = false
+                mainWindow.visible = false
             }
         }
     }

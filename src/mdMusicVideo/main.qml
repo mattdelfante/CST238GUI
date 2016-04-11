@@ -8,6 +8,8 @@ import QtQuick.Window 2.2
 
 Window {
     id: mainWindow
+    width: 800
+    height: 500
     visible: true
 
     SplashScreen{
