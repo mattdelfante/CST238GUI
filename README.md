@@ -34,7 +34,8 @@ The video will have strong Seattle themes in it since Seattle is the best!<br />
 Throughout the term, Molli Drivdahl and Matt Del Fante will work on the music video equally until the end of the term. For any future contributors to the project after the end of the term, development changes can be made by branching code (we think, we are still novices to git), editing code for different parts of the project, and merging the code back to git after reviewing the changes made (again, we think).
 
 <i>Note on naming convention:</i><br />
-We will develop a naming convention in the near future.
+We preface all aliases with 2 letter identifiers that distinguish its type followed by an underscore.
+We will develop a more extensive naming convention in the near future.
 
 <b>Bugs and ToDo List:</b><br />
 Currently there are no bugs since the project has not been started yet.<br />
