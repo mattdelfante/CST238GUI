@@ -1,4 +1,4 @@
-<img src="/Images/Logo.png" width="350" height="275">
+<img src="/img/readMeImages/Logo.png" width="350" height="275">
 
 <b>Description:</b><br />
 Matthew Del Fante and Molli Drivdahl (Team (MD)^2) will be collaborating together to make an animated music video by the end of the term. The music video will be made from scratch to go along with the song "My House" by Flo Rida. As of right now, the idea is that the music video will be of Matt and Molli giving house tours of their dream houses to the music video.
@@ -8,20 +8,20 @@ C++, Qt, QML, Javascript <br />
 
 <b>Screenshots:</b>
 
-<img src= "/Images/MediaPlayer.png" width="400" height="200">
+<img src= "/img/readMeImages/MediaPlayer.png" width="400" height="200">
 <br />
 Here is what the play/pause interface may look like (ignore the side bar).<br />
 
-<img src= "/Images/EpensiveLivingRoom.jpg" width="300" height="250">
+<img src= "/img/readMeImages/EpensiveLivingRoom.jpg" width="300" height="250">
 <br />
 As of right now, the music video will be an animated tour of<br />both 
 Matt's and Molli's imaginary houses.<br />
 
-<img src= "/Images/MolliBeachHouse.jpg" width="300" height="250">
+<img src= "/img/readMeImages/MolliBeachHouse.jpg" width="300" height="250">
 <br />
 Molli's house will of course need a beach (she loves beaches).<br />
 
-<img src= "/Images/Seattle.jpg" width="400" height="200">
+<img src= "/img/readMeImages/Seattle.jpg" width="400" height="200">
 <br />
 The video will have strong Seattle themes in it since Seattle is the best!<br />
 
