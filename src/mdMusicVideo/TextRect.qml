@@ -1,7 +1,12 @@
+/*
+  Name: Matthew Del Fante & Molli Drivdahl
+  Lab: Lab2 Splash Screen
+  Project Name: mdMusicVideo
+*/
 import QtQuick 2.0
 
 Rectangle {
-    property alias textBox:text
+    property alias tx_textBox:text
     property string words: words
     id: rect
     width: parent.width/3
@@ -13,6 +18,5 @@ Rectangle {
         id: text
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        //text: words
     }
 }

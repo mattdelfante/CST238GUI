@@ -1,13 +1,17 @@
+/*
+  Name: Matthew Del Fante & Molli Drivdahl
+  Lab: Lab2 Splash Screen
+  Project Name: mdMusicVideo
+*/
 import QtQuick 2.0
 
 Rectangle {
-    property alias textRect:textRect
-    property alias textRectBox:textRect.textBox
-    property alias button:myButton
-    property alias buttonText:buttonText
-    property alias buttonMouseActions:myButton.buttonMouseArea
-    property alias dialogMouseArea:dialogMouseArea
-    property alias drag:dialogMouseArea.drag
+    property alias tr_textRect:textRect
+    property alias tx_textRectBox:textRect.tx_textBox
+    property alias mb_button:myButton
+    property alias tx_buttonText:buttonText
+    property alias ma_buttonMouseActions:myButton.ma_buttonMouseArea
+    property alias ma_dialogMouseArea:dialogMouseArea
 
     height: parent.height/2
     width: parent.width/2
@@ -20,8 +24,6 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    //***Mouse area must be here (before the button) so that the button will still be clickable. Otherwise, mouse area will be
-    //layered over that portion of the button and it will no longer be clickable in that spot, only draggable.***
     MouseArea{
         id: dialogMouseArea
         anchors.fill: parent
@@ -36,10 +38,8 @@ Rectangle {
 
         Text{
             id: buttonText
-            //let the user write stuff
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
-
         }
     }
 }

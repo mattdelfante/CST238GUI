@@ -1,17 +1,20 @@
+/*
+  Name: Matthew Del Fante & Molli Drivdahl
+  Lab: Lab2 Splash Screen
+  Project Name: mdMusicVideo
+*/
 import QtQuick 2.0
 
 Rectangle {
-    //left is how to reference the MouseArea outside of this qml file,
-    //right is the id of that mouse area
-    property alias buttonMouseArea: mouseArea
+    property alias ma_buttonMouseArea: mouseArea
     property bool switchColor: false
-    property string myColor: myColor
+    property string buttonColor: buttonColor
 
     id: startMusicVideo
     height: parent.height / 6
     width: parent.width / 4
     radius: height/2
-    color: myColor
+    color: buttonColor
     border.width: 2
 
     MouseArea
@@ -21,18 +24,18 @@ Rectangle {
 
         onClicked:
         {
-            //myColor = "blue"
+            //behavior defined in SplashScreen.qml
         }
 
         hoverEnabled: true
         onEntered:
         {
-            //myColor = "green"
+            buttonColor = "red"
         }
 
         onExited:
         {
-            //myColor = "red"
+            buttonColor = "light grey"
         }
     }
 }
