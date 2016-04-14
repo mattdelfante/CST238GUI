@@ -18,13 +18,13 @@ Window {
 
     //after a propery, you can call c code/java code
     //look for : or {} or :{}
-    Component.onCompleted:{
-        Matt.setDancing(true)
+//    Component.onCompleted:{
+//        Matt.setDancing(true)
 
-        if(Matt.getDancing() === true)
-            console.log("He's dancing")
-        else
-            console.log("Not dancing")
-    }
+//        if(Matt.getDancing() === true)
+//            console.log("He's dancing")
+//        else
+//            console.log("Not dancing")
+//    }
 }
 

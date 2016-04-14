@@ -1,8 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include "Matt.h"
-#include "Molli.h"
+#include "../c++HeaderFiles/Matt.h"
+#include "../c++HeaderFiles/molli.h"
 
 int main(int argc, char *argv[])
 {

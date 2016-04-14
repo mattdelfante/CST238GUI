@@ -3,12 +3,13 @@ TEMPLATE = app
 QT += qml quick
 CONFIG += c++11
 
-SOURCES += main.cpp \
-    Person.cpp \
-    Matt.cpp \
-    Molli.cpp
+SOURCES += ../c++SourceFiles/main.cpp \
+    ../c++SourceFiles/matt.cpp \
+    ../c++SourceFiles/molli.cpp \
+    ../c++SourceFiles/person.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+    images.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -18,7 +19,6 @@ include(deployment.pri)
 
 DISTFILES +=
 
-HEADERS += \
-    Person.h \
-    Matt.h \
-    Molli.h
+HEADERS += ../c++HeaderFiles/Matt.h \
+    ../c++HeaderFiles/molli.h \
+    ../c++HeaderFiles/person.h

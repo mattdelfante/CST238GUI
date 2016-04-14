@@ -1,10 +1,9 @@
 <RCC>
     <qresource prefix="/">
+        <file>DialogBox.qml</file>
         <file>main.qml</file>
         <file>MyButton.qml</file>
-        <file>TextRect.qml</file>
-        <file>DialogBox.qml</file>
         <file>SplashScreen.qml</file>
-        <file>splashScreenBg.png</file>
+        <file>TextRect.qml</file>
     </qresource>
 </RCC>

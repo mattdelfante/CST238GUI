@@ -1,4 +1,4 @@
-#include"Person.h"
+#include"../c++HeaderFiles/person.h"
 
 Person::Person() : m_isDancing(false), m_isWalking(false)
 {}

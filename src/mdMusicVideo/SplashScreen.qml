@@ -17,7 +17,7 @@ Rectangle {
 
     Image{
         anchors.fill: parent
-        source: "splashScreenBg.png"
+        source: "../../img/projectImages/splashScreenBg.png"
     }
 
     DialogBox{
