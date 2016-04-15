@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>../../img/projectImages/splashScreenBg.png</file>
+        <file>images/splashScreenBg.png</file>
+        <file>images/splashScreenWindow.png</file>
     </qresource>
 </RCC>

@@ -13,7 +13,7 @@ Window {
     visible: true
 
     SplashScreen{
-
+        id: splashScreen
     }
 
     //after a propery, you can call c code/java code

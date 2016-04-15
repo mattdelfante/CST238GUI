@@ -1,9 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file>DialogBox.qml</file>
-        <file>main.qml</file>
-        <file>MyButton.qml</file>
-        <file>SplashScreen.qml</file>
-        <file>TextRect.qml</file>
+        <file>qmlSourceFiles/DialogBox.qml</file>
+        <file>qmlSourceFiles/main.qml</file>
+        <file>qmlSourceFiles/MyButton.qml</file>
+        <file>qmlSourceFiles/SplashScreen.qml</file>
+        <file>qmlSourceFiles/TextRect.qml</file>
     </qresource>
 </RCC>

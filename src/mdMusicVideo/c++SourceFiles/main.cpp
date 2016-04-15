@@ -1,8 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include "../c++HeaderFiles/Matt.h"
-#include "../c++HeaderFiles/molli.h"
+#include "c++HeaderFiles/Matt.h"
+#include "c++HeaderFiles/molli.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("Matt", &mattObj);
     engine.rootContext()->setContextProperty("Molli", &molliObj);
 
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/qmlSourceFiles/main.qml")));
 
     return app.exec();
 }

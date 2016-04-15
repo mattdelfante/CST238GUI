@@ -13,7 +13,6 @@ Rectangle {
     id: startMusicVideo
     height: parent.height / 6
     width: parent.width / 4
-    radius: height/2
     color: buttonColor
     border.width: 2
 
@@ -30,7 +29,7 @@ Rectangle {
         hoverEnabled: true
         onEntered:
         {
-            buttonColor = "red"
+            buttonColor = "grey"
         }
 
         onExited:
