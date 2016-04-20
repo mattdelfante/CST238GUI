@@ -48,6 +48,12 @@ Rectangle {
                 buttonColor = "transparent"
             }
 
+            ma_buttonMouseArea.onClicked:
+            {
+                splashScreen.visible = false
+                //myHouseSong.play()
+            }
+
             Text{
                 id: playButtonText
                 anchors.horizontalCenter: playButton.horizontalCenter
@@ -77,6 +83,11 @@ Rectangle {
             ma_buttonMouseArea.onExited:
             {
                 buttonColor = "transparent"
+            }
+
+            ma_buttonMouseArea.onClicked:
+            {
+                mainWindow.close()
             }
 
             Text{
