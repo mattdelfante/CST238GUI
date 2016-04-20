@@ -1,7 +1,7 @@
 #ifndef MOLLI_H
 #define MOLLI_H
 
-#include "Person.h"
+#include "person.h"
 
 class Molli: public Person
 {

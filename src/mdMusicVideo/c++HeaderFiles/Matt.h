@@ -1,7 +1,7 @@
 #ifndef MATT_H
 #define MATT_H
 
-#include "Person.h"
+#include "person.h"
 
 class Matt : public Person
 {
