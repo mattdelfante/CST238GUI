@@ -15,13 +15,18 @@ Window {
 
     SplashScreen{
         id: splashScreen
+        onMakeInvisible: {
+            myHouseSong.play()
+            splashScreen.visible = false
+        }
     }
 
     //I don't think .mp3 works. Needs to be .wav
-//    Audio{
-//        id: myHouseSong
-//        source: "sounds/MyHouse_FloRida.mp3"
-//    }
+    Audio{
+        id: myHouseSong
+        source: "sounds/MyHouse_FloRida.mp3"
+        volume: 1.0
+    }
 
     //after a propery, you can call c code/java code
     //look for : or {} or :{}

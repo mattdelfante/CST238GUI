@@ -9,6 +9,9 @@ Rectangle {
     id: splashScreenRect
     anchors.fill: parent
 
+    //signal for making the SplashScreen invisible, Jacob said to use these
+    signal makeInvisible
+
     Image{
         anchors.fill: parent
         source: "../images/splashScreenBg.png"
@@ -50,8 +53,7 @@ Rectangle {
 
             ma_buttonMouseArea.onClicked:
             {
-                splashScreen.visible = false
-                //myHouseSong.play()
+                makeInvisible()
             }
 
             Text{
@@ -60,7 +62,9 @@ Rectangle {
                 anchors.verticalCenter: playButton.verticalCenter
                 text: "PLAY"
                 font.bold: true
-                font.pointSize: playButton.height/3
+
+                //use pixel size
+                font.pixelSize: playButton.height/3
                 font.family: "Monotype Corsiva"
             }
         }
@@ -96,7 +100,7 @@ Rectangle {
                 anchors.verticalCenter: exitButton.verticalCenter
                 text: "EXIT"
                 font.bold: true
-                font.pointSize: playButton.height/3
+                font.pixelSize: playButton.height/3
                 font.family: "Monotype Corsiva"
             }
         }
@@ -132,7 +136,7 @@ Rectangle {
                 anchors.verticalCenter: settingsButton.verticalCenter
                 text: "SETTINGS"
                 font.bold: true
-                font.pointSize: playButton.height/5
+                font.pixelSize: playButton.height/5
                 font.family: "Monotype Corsiva"
             }
         }
@@ -168,7 +172,7 @@ Rectangle {
                 anchors.verticalCenter: smileButton.verticalCenter
                 text: ":)"
                 font.bold: true
-                font.pointSize: playButton.height/5
+                font.pixelSize: playButton.height/5
                 font.family: "Monotype Corsiva"
             }
         }
