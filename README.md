@@ -34,6 +34,7 @@ Throughout the term, Molli Drivdahl and Matt Del Fante will work on the music vi
 
 <i>Note on naming convention:</i><br />
 We preface all aliases with 2 letter identifiers that distinguish its type followed by an underscore.
+We preface c++ data members with an "m_" followed by the data member name.
 We will develop a more extensive naming convention in the near future.
 
 <b>Bugs and ToDo List:</b><br />
