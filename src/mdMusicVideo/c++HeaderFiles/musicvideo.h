@@ -8,6 +8,7 @@
 enum Status
 {
     SPLASH_SCREEN = 0,
+    CHAMPAGNE,
     MUSIC_VIDEO,
     CREDITS
 };
