@@ -6,5 +6,6 @@
         <file>qmlSourceFiles/SplashScreen.qml</file>
         <file>qmlSourceFiles/TextRect.qml</file>
         <file>qmlSourceFiles/MusicVideo.qml</file>
+        <file>qmlSourceFiles/MySettings.qml</file>
     </qresource>
 </RCC>
