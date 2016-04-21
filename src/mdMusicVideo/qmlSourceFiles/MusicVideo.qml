@@ -14,9 +14,11 @@ Rectangle {
         x: parent.width/2 - width/2
         y: parent.height/2 - height/2
         source: "../images/champagneGif.gif"
-        playing: {
-            !xBehavior.enabled || spg_animation_y.running ? false : true
+        playing:(xBehavior.enabled && champagneBottle.x === musicVideoRect.width/2 - champagneBottle.width/2
+                 && champagneBottle.y === musicVideoRect.height/2 - champagneBottle.height/2) ? true : false
 
+        onCurrentFrameChanged:
+        {
             if (currentFrame === 4)
             {
                 champagneBottle.visible = false
