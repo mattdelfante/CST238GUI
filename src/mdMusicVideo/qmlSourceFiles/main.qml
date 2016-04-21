@@ -22,7 +22,6 @@ Window {
         {
             id: splashScreen
             onMakeInvisible: {
-                //myHouseSong.play()
                 splashScreen.visible = false
                 musicVideoScenes.visible = true
             }
@@ -34,28 +33,13 @@ Window {
             visible: false
         }
 
-        Audio
-        {
-            id: myHouseSong
-            source: "../sounds/myHouse.mp3"
-            volume: 1.0
-        }
+//bug occured where audio could not be played
+//        Audio
+//        {
+//            id: myHouseSong
+//            source: "../sounds/myHouse.mp3"
+//            volume: 1.0
+//        }
     }
-
-
-
-
-
-
-    //after a propery, you can call c code/java code
-    //look for : or {} or :{}
-//    Component.onCompleted:{
-//        Matt.setDancing(true)
-
-//        if(Matt.getDancing() === true)
-//            console.log("He's dancing")
-//        else
-//            console.log("Not dancing")
-//    }
 }
 
