@@ -8,18 +8,17 @@ C++, Qt, QML, Javascript <br />
 
 <b>Screenshots:</b>
 
+<img src= "/img/readMeImages/splashScreen.jpg" width="500" height="300">
+<br />
+This is the opening splash screen/menu for the music video.
+
+<img src= "/img/readMeImages/champagnePopping.jpg" width="250" height="400">
+<br />
+An animation of a champagne bottle popping will happen when the song sings "Open up the champagne...Pop!" at the start of the song to kick off the beginning of the music video.
+
 <img src= "/img/readMeImages/MediaPlayer.png" width="400" height="200">
 <br />
 Here is what the play/pause interface may look like (ignore the side bar).<br />
-
-<img src= "/img/readMeImages/EpensiveLivingRoom.jpg" width="300" height="250">
-<br />
-As of right now, the music video will be an animated tour of<br />both 
-Matt's and Molli's imaginary houses.<br />
-
-<img src= "/img/readMeImages/MolliBeachHouse.jpg" width="300" height="250">
-<br />
-Molli's house will of course need a beach (she loves beaches).<br />
 
 <img src= "/img/readMeImages/Seattle.jpg" width="400" height="200">
 <br />
@@ -38,7 +37,9 @@ We preface all aliases with 2 letter identifiers that distinguish its type follo
 We will develop a more extensive naming convention in the near future.
 
 <b>Bugs and ToDo List:</b><br />
-Currently there are no bugs since the project has not been started yet.<br />
+Audio for the song "My House" will not play in the program, even though other audio files will play.<br />
+Dragging of the champagne bottle is a little shaky with occasional weird behavior.<br />
+The champange bottle gif begins the first frame prematurely upon releasing the object.<br />
 Eventually the project should be a fully functioning animated music video matched to the song "My House" by Flo Rida that incorporates many GUI components.<br />
 
 <b>Contributors:</b><br />
