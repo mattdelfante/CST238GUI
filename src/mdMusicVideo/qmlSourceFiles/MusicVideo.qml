@@ -6,6 +6,13 @@ Rectangle {
     id: musicVideoRect
     anchors.fill: parent
 
+    Image
+    {
+        id: champagneBottleBg
+        anchors.fill: parent
+        source: "../images/champagneSceneBg.png"
+    }
+
     AnimatedImage
     {
         id: champagneBottle

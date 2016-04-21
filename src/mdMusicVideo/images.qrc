@@ -3,5 +3,6 @@
         <file>images/splashScreenBg.png</file>
         <file>images/splashScreenWindow.png</file>
         <file>images/champagneGif.gif</file>
+        <file>images/champagneSceneBg.png</file>
     </qresource>
 </RCC>
