@@ -13,20 +13,39 @@ Window {
     height: 500
     visible: true
 
-    SplashScreen{
-        id: splashScreen
-        onMakeInvisible: {
-            myHouseSong.play()
-            splashScreen.visible = false
+    Rectangle
+    {
+        id: mainWindowContainer
+        anchors.fill: parent
+
+        SplashScreen
+        {
+            id: splashScreen
+            onMakeInvisible: {
+                //myHouseSong.play()
+                splashScreen.visible = false
+                musicVideoScenes.visible = true
+            }
+        }
+
+        MusicVideo
+        {
+            id: musicVideoScenes
+            visible: false
+        }
+
+        Audio
+        {
+            id: myHouseSong
+            source: "../sounds/myHouse.mp3"
+            volume: 1.0
         }
     }
 
-    //I don't think .mp3 works. Needs to be .wav
-    Audio{
-        id: myHouseSong
-        source: "sounds/MyHouse_FloRida.mp3"
-        volume: 1.0
-    }
+
+
+
+
 
     //after a propery, you can call c code/java code
     //look for : or {} or :{}

@@ -5,5 +5,6 @@
         <file>qmlSourceFiles/MyButton.qml</file>
         <file>qmlSourceFiles/SplashScreen.qml</file>
         <file>qmlSourceFiles/TextRect.qml</file>
+        <file>qmlSourceFiles/MusicVideo.qml</file>
     </qresource>
 </RCC>

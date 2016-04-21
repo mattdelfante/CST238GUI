@@ -9,7 +9,6 @@ Rectangle {
     id: splashScreenRect
     anchors.fill: parent
 
-    //signal for making the SplashScreen invisible, Jacob said to use these
     signal makeInvisible
 
     Image{
@@ -62,8 +61,6 @@ Rectangle {
                 anchors.verticalCenter: playButton.verticalCenter
                 text: "PLAY"
                 font.bold: true
-
-                //use pixel size
                 font.pixelSize: playButton.height/3
                 font.family: "Monotype Corsiva"
             }
