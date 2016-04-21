@@ -21,15 +21,35 @@ Window {
         SplashScreen
         {
             id: splashScreen
-            onMakeInvisible: {
+
+            onClickedPlay:
+            {
                 splashScreen.visible = false
                 musicVideoScenes.visible = true
+                musicVideoSettings.visible = false
+            }
+
+            onClickedSettings:
+            {
+                splashScreen.visible = false
+                musicVideoScenes.visible = false
+                musicVideoSettings.visible = true
+            }
+
+            onCloseProgram:
+            {
+                mainWindow.visible = false
             }
         }
 
         MusicVideo
         {
             id: musicVideoScenes
+            visible: false
+        }
+
+        MySettings{
+            id: musicVideoSettings
             visible: false
         }
 

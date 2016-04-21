@@ -1,8 +1,6 @@
 import QtQuick 2.0
 
 Rectangle {
-    property alias champagneBottle: champagneBottle
-
     id: musicVideoRect
     anchors.fill: parent
 

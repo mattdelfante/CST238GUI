@@ -9,7 +9,9 @@ Rectangle {
     id: splashScreenRect
     anchors.fill: parent
 
-    signal makeInvisible
+    signal clickedPlay
+    signal clickedSettings
+    signal closeProgram
 
     Image{
         anchors.fill: parent
@@ -52,7 +54,7 @@ Rectangle {
 
             ma_buttonMouseArea.onClicked:
             {
-                makeInvisible()
+                clickedPlay()
             }
 
             Text{
@@ -88,7 +90,7 @@ Rectangle {
 
             ma_buttonMouseArea.onClicked:
             {
-                mainWindow.close()
+                closeProgram()
             }
 
             Text{
@@ -124,7 +126,7 @@ Rectangle {
 
             ma_buttonMouseArea.onClicked:
             {
-                //implement later
+                clickedSettings()
             }
 
             Text{
