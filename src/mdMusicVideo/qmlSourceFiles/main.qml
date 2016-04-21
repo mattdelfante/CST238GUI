@@ -22,7 +22,7 @@ Window {
         {
             id: splashScreen
             onMakeInvisible: {
-                //myHouseSong.play()
+                myHouseSong.play()
                 splashScreen.visible = false
                 musicVideoScenes.visible = true
             }

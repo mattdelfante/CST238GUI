@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty("Matt", &mattObj);
     engine.rootContext()->setContextProperty("Molli", &molliObj);
-    engine.rootContext()->setContextProperty("MusicVideo", &mvObj);
+    engine.rootContext()->setContextProperty("MusicVideoObj", &mvObj);
 
     engine.load(QUrl(QStringLiteral("qrc:/qmlSourceFiles/main.qml")));
 
