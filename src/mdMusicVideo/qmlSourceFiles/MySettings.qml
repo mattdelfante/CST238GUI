@@ -222,5 +222,4 @@ Rectangle {
 ////                loopButtonText.text = "On"
 //        }
     }
-}
 

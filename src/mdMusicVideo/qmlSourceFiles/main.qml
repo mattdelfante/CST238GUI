@@ -5,7 +5,6 @@
 */
 import QtQuick 2.6
 import QtQuick.Window 2.2
-import QtMultimedia 5.6
 
 Window {
     id: mainWindow
@@ -46,20 +45,20 @@ Window {
         {
             id: musicVideoScenes
             visible: false
+
+            onOpenedBottle: {
+                while (a_myHouseSong.position <= 9000)
+                {
+                    if (a_myHouseSong.position === 9000)
+                        ai_champagneBottle.visible = false
+                }
+            }
         }
 
         MySettings{
             id: musicVideoSettings
             visible: false
         }
-
-//bug occured where audio could not be played
-//        Audio
-//        {
-//            id: myHouseSong
-//            source: "../sounds/myHouse.mp3"
-//            volume: 1.0
-//        }
     }
 }
 
