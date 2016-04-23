@@ -3,17 +3,13 @@ import QtQuick 2.5
 import QtMultimedia 5.6
 
 Rectangle {
-    property alias a_myHouseSong: myHouseSong
-    property alias ai_champagneBottle: champagneBottle
     id: musicVideoRect
     anchors.fill: parent
-
-    signal openedBottle
 
     Audio
     {
         id: myHouseSong
-        source: "../sounds/Voice_001.mp3"
+        source: "../sounds/myHouseFloRida.mp3"
         volume: 1.0
 
         onPlaying:{
@@ -30,8 +26,8 @@ Rectangle {
         AnimatedImage
         {
             id: champagneBottle
-            width: 600
-            height: 450
+            width: 800
+            height: 600
             x: parent.width/2 - width/2
             y: parent.height/2 - height/2
             source: "../images/champagneGif.gif"
@@ -40,10 +36,20 @@ Rectangle {
 
             onCurrentFrameChanged:
             {
-                if (currentFrame === 4)
+                if (champagneBottle.currentFrame === 20)
+                    timerBottleOpened.start()
+            }
+
+            Timer
+            {
+                id: timerBottleOpened
+                interval: 2200  //interval just right for scene to change on "Uh!" lyrics (for now)
+                running: false
+
+                onTriggered:
                 {
-                    paused = true
-                    openedBottle()
+                    champagneBottle.visible = false
+                    //eventually set a signal to change scene
                 }
             }
 
@@ -84,18 +90,32 @@ Rectangle {
                 onClicked:
                 {
                     drag.active = champagneBottle.drag.active
-
                 }
                 onReleased:
                 {
-                    myHouseSong.seek(1000)
+                    myHouseSong.seek(1100)      //since song doesn't have sound until 1.1 seconds into the song
                     myHouseSong.play()
                     xBehavior.enabled = true
                     yBehavior.enabled = true
                     champagneBottle.x = musicVideoRect.width/2 - champagneBottle.width/2
                     champagneBottle.y = musicVideoRect.height/2 - champagneBottle.height/2
+                    champagneBottleMouse.enabled = false    //prevents clicking & dragging more than once
+                    textDragAndDrogMe.visible = false
                 }
             }
+
+
+        }
+
+        Text
+        {
+            id: textDragAndDrogMe
+            anchors.bottom: champagneBottleBg.bottom
+            anchors.horizontalCenter: champagneBottleBg.horizontalCenter
+            text: "<Drag and Drop Bottle to Begin>"
+            font.family: "Monotype Corsiva"
+            font.pixelSize: champagneBottleBg.height/15
+            color: "purple"
         }
     }
 }

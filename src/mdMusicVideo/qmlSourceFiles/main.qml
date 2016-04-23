@@ -45,14 +45,7 @@ Window {
         {
             id: musicVideoScenes
             visible: false
-
-            onOpenedBottle: {
-                while (a_myHouseSong.position <= 9000)
-                {
-                    if (a_myHouseSong.position === 9000)
-                        ai_champagneBottle.visible = false
-                }
-            }
+            //enabled: false            //Enabled could be useful elsewhere in the future
         }
 
         MySettings{
