@@ -18,6 +18,10 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("Molli", &molliObj);
     engine.rootContext()->setContextProperty("MusicVideoObj", &mvObj);
 
+    QCoreApplication::setApplicationName("MyHouseMusicVideo");
+    QCoreApplication::setOrganizationName("(MD^2)");
+    QCoreApplication::setOrganizationDomain(".com");
+
     engine.load(QUrl(QStringLiteral("qrc:/qmlSourceFiles/main.qml")));
 
     return app.exec();
