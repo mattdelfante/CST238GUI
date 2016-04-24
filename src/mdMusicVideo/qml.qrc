@@ -7,5 +7,6 @@
         <file>qmlSourceFiles/TextRect.qml</file>
         <file>qmlSourceFiles/MusicVideo.qml</file>
         <file>qmlSourceFiles/MySettings.qml</file>
+        <file>qmlSourceFiles/ChampagneScene.qml</file>
     </qresource>
 </RCC>

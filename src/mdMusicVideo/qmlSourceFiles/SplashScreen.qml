@@ -80,7 +80,7 @@ Rectangle {
 
             ma_buttonMouseArea.onEntered:
             {
-                buttonColor = "blue"
+                buttonColor = "#35cc0c"
             }
 
             ma_buttonMouseArea.onExited:
@@ -152,7 +152,7 @@ Rectangle {
 
             ma_buttonMouseArea.onEntered:
             {
-                buttonColor = "#35cc0c"
+                buttonColor = "blue"
             }
 
             ma_buttonMouseArea.onExited:
@@ -177,5 +177,16 @@ Rectangle {
         }
     }
 
+    AnimatedImage{
+        id: dancingMolli
+        source: "../images/molliPerson/dancingGifMolli.gif"
+        visible: false
+    }
+
+    AnimatedImage{
+        id: dancingMatt
+        source: "../images/mattPerson/dancingGifMatt.gif"
+        visible: false
+    }
 
 }
