@@ -48,9 +48,20 @@ Window {
             //enabled: false            //Enabled could be useful elsewhere in the future
         }
 
-        MySettings{
+        MySettings
+        {
             id: musicVideoSettings
             visible: false
+            onClickMainMenu:
+            {
+                musicVideoSettings.visible = false
+                splashScreen.visible = true
+            }
+            onClickMusicVideo:
+            {
+                musicVideoSettings.visible = false
+                musicVideoScenes.visible = true
+            }
         }
     }
 }

@@ -1,19 +1,28 @@
-//import QtQuick 2.0
-//import QtQuick.Controls 1.5
-//import Qt.labs.settings 1.0
 import QtQuick 2.6
 import QtQuick.Controls 1.5
 import Qt.labs.settings 1.0
-//import QtMultimedia 5.6
 
 Rectangle {
     id: settingsWrapper
+
+    property bool isVolumeOn: true
+    property bool isSubtitlesOn: false
+    property bool isLoopPlayOn: false
+    signal clickMainMenu
+    signal clickMusicVideo
+
     anchors.fill: parent
     color: "orange"
 
     Settings
     {
         id: musicVideoSettings
+        property alias volText: volumeButtonText.text
+        property alias subText: subTitleButtonText.text
+        property alias loopText: loopButtonText.text
+        property alias volBool: settingsWrapper.isVolumeOn
+        property alias subBool: settingsWrapper.isSubtitlesOn
+        property alias loopBool: settingsWrapper.isLoopPlayOn
     }
 
     Text
@@ -103,9 +112,15 @@ Rectangle {
         ma_buttonMouseArea.onClicked:
         {
             if (volumeButtonText.text === "On")
+            {
                 volumeButtonText.text = "Off"
+                isVolumeOn = false
+            }
             else
+            {
                 volumeButtonText.text = "On"
+                isVolumeOn = true
+            }
         }
     }
 
@@ -121,7 +136,7 @@ Rectangle {
 
         Text
         {
-            id: subTitleText
+            id: subTitleButtonText
             anchors.horizontalCenter: subTitleButton.horizontalCenter
             anchors.verticalCenter: subTitleButton.verticalCenter
             text: "Off"
@@ -140,10 +155,16 @@ Rectangle {
         }
         ma_buttonMouseArea.onClicked:
         {
-            if (subTitleText.text === "On")
-                subTitleText.text = "Off"
+            if (subTitleButtonText.text === "On")
+            {
+                subTitleButtonText.text = "Off"
+                isSubtitlesOn = false
+            }
             else
-                subTitleText.text = "On"
+            {
+                subTitleButtonText.text = "On"
+                isSubtitlesOn = true
+            }
         }
     }
 
@@ -179,47 +200,84 @@ Rectangle {
         ma_buttonMouseArea.onClicked:
         {
             if (loopButtonText.text === "On")
+            {
                 loopButtonText.text = "Off"
+                isLoopPlayOn = false
+            }
             else
+            {
                 loopButtonText.text = "On"
+                isLoopPlayOn = true
+            }
         }
     }
 
-//    MyButton
-//    {
-//        id: mainMenuButton
-//        width: parent.width/5
-//        height: parent.height/6
-//        radius: width/2
-//        anchors.right: parent.width
-//        anchors.bottom: parent.height
-//        buttonColor: "light grey"
+    MyButton
+    {
+        id: mainMenuButton
+        width: parent.width/5
+        height: parent.height/6
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        buttonColor: "#7a34c4"
 
-//        Text
-//        {
-//            id: mainMenuButtonText
-//            anchors.horizontalCenter: mainMenuButton.horizontalCenter
-//            anchors.verticalCenter: mainMenuButton.verticalCenter
-//            text: "Back to main menu!"
-//            font.bold: true
-//            font.pixelSize: mainMenuButton.height/3
-//            font.family: "Monotype Corsiva"
-//       }
+        Text
+        {
+            id: mainMenuButtonText
+            anchors.horizontalCenter: mainMenuButton.horizontalCenter
+            anchors.verticalCenter: mainMenuButton.verticalCenter
+            text: "   Back to\nmain menu!"
+            font.bold: true
+            font.pixelSize: mainMenuButton.height/3
+            font.family: "Monotype Corsiva"
+        }
 
-//        ma_buttonMouseArea.onEntered:
-//        {
-//            buttonColor = "#00fffb"
-//        }
-//        ma_buttonMouseArea.onExited:
-//        {
-//            buttonColor = "light grey"
-//        }
-//        ma_buttonMouseArea.onClicked:
-//        {
-////            if (loopButtonText.text === "On")
-////                loopButtonText.text = "Off"
-////            else
-////                loopButtonText.text = "On"
-//        }
+        ma_buttonMouseArea.onEntered:
+        {
+            buttonColor = "red"
+        }
+        ma_buttonMouseArea.onExited:
+        {
+            buttonColor = "#7a34c4"
+        }
+        ma_buttonMouseArea.onClicked:
+        {
+            clickMainMenu()
+        }
     }
+
+    MyButton
+    {
+        id: songButton
+        width: parent.width/5
+        height: parent.height/6
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        buttonColor: "#7a34c4"
+
+        Text
+        {
+            id: songButtonText
+            anchors.horizontalCenter: songButton.horizontalCenter
+            anchors.verticalCenter: songButton.verticalCenter
+            text: "Back to the\nmusic video!"
+            font.bold: true
+            font.pixelSize: songButton.height/3
+            font.family: "Monotype Corsiva"
+        }
+
+        ma_buttonMouseArea.onEntered:
+        {
+            buttonColor = "red"
+        }
+        ma_buttonMouseArea.onExited:
+        {
+            buttonColor = "#7a34c4"
+        }
+        ma_buttonMouseArea.onClicked:
+        {
+            clickMusicVideo()
+        }
+    }
+}
 
