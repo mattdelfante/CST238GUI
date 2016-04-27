@@ -180,13 +180,42 @@ Rectangle {
     AnimatedImage{
         id: dancingMolli
         source: "../images/molliPerson/dancingGifMolli.gif"
-        visible: false
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: -parent.height/25
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.horizontalCenterOffset: -parent.width/6
+
+//            NumberAnimation on x{
+//                id: molliDanceOnWindow
+//                target: dancingMolli
+//                properties: "x"
+//                from: 0
+//                to: 300
+//                duration: 2000
+
+//                onRunningChanged: {
+//                    if (dancingMolli.x === 300)
+//                    {
+//                        molliDanceOnWindow.from = 300
+//                        molliDanceOnWindow.to = 100
+//                        molliDanceOnWindow.start()
+//                    }
+//                    else if (dancingMolli.x === 100)
+//                    {
+//                        molliDanceOnWindow.from = 100
+//                        molliDanceOnWindow.to = 300
+//                        molliDanceOnWindow.start()
+//                    }
+//                }
+//            }
     }
 
     AnimatedImage{
         id: dancingMatt
         source: "../images/mattPerson/dancingGifMatt.gif"
-        visible: false
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: -parent.height/25
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.horizontalCenterOffset: parent.width/2.65
     }
-
 }

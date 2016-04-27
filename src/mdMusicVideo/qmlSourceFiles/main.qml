@@ -25,14 +25,14 @@ Window {
             {
                 splashScreen.visible = false
                 musicVideoScenes.visible = true
-                musicVideoSettings.visible = false
+                settingsDisplaySettings.visible = false
             }
 
             onClickedSettings:
             {
                 splashScreen.visible = false
                 musicVideoScenes.visible = false
-                musicVideoSettings.visible = true
+                settingsDisplaySettings.visible = true
             }
 
             onCloseProgram:
@@ -50,17 +50,24 @@ Window {
 
         MySettings
         {
-            id: musicVideoSettings
+            id: settingsDisplaySettings
             visible: false
             onClickMainMenu:
             {
-                musicVideoSettings.visible = false
+                settingsDisplaySettings.visible = false
                 splashScreen.visible = true
             }
             onClickMusicVideo:
             {
-                musicVideoSettings.visible = false
+                settingsDisplaySettings.visible = false
                 musicVideoScenes.visible = true
+            }
+            onVolumeChange:
+            {
+                if (isVolumeOn === false)
+                    musicVideoScenes.myHouseSong.volume = 0.0
+                else
+                    musicVideoScenes.myHouseSong.volume = 1.0
             }
         }
     }

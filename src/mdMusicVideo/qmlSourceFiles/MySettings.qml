@@ -4,19 +4,19 @@ import Qt.labs.settings 1.0
 
 Rectangle {
     id: settingsWrapper
-
     property bool isVolumeOn: true
     property bool isSubtitlesOn: false
     property bool isLoopPlayOn: false
     signal clickMainMenu
     signal clickMusicVideo
+    signal volumeChange
 
     anchors.fill: parent
     color: "orange"
 
     Settings
     {
-        id: musicVideoSettings
+        id: settingsDisplaySettings
         property alias volText: volumeButtonText.text
         property alias subText: subTitleButtonText.text
         property alias loopText: loopButtonText.text
@@ -115,11 +115,13 @@ Rectangle {
             {
                 volumeButtonText.text = "Off"
                 isVolumeOn = false
+                volumeChange()
             }
             else
             {
                 volumeButtonText.text = "On"
                 isVolumeOn = true
+                volumeChange()
             }
         }
     }
