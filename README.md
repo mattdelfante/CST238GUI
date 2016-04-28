@@ -38,10 +38,15 @@ We preface c++ data members with an "m_" followed by the data member name.
 We will develop a more extensive naming convention in the near future.
 
 <b>Bugs and ToDo List:</b><br />
-Audio for the song "My House" will not play in the program, even though other audio files will play.<br />
-Dragging of the champagne bottle is a little shaky with occasional weird behavior.<br />
-The champange bottle gif begins the first frame prematurely upon releasing the object.<br />
-Eventually the project should be a fully functioning animated music video matched to the song "My House" by Flo Rida that incorporates many GUI components.<br />
+Bugs:</b><br />
+1. Clicking the champagne bottle immediately makes it "pop" which is unintended behavior.<br />
+2. The sun to night animation has an unpredictable starting location of the sun.<br />
+3. Changing the size of the window while the sun to night annimation is running causes frame drops and some computer freezing.<br />
+To do:</b><br />
+1. Add a settings button to the actual music video. <br />
+2. Add play and pause buttons to the music video. <br />
+3. Finish the music video. <br />
+4. Implement subtitle and loop play setting functionality. <br />
 
 <b>Contributors:</b><br />
 [MatthewDelFante](https://github.com/mattdelfante)<br />
