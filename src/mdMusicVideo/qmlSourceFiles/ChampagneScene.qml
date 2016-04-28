@@ -10,8 +10,8 @@ Image
     AnimatedImage
     {
         id: champagneBottle
-        width: 800
-        height: 600
+        width: parent.width
+        height: parent.height + parent.height/5
         x: parent.width/2 - width/2
         y: parent.height/2 - height/2
         source: "../images/champagneGif.gif"
