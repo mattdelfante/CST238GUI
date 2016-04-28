@@ -28,5 +28,21 @@ Rectangle {
     {
         id: champagneIntroScene
         visible: true
+        //signal set enabled to false
+        onEndScene:
+        {
+            nightBegins.enabled = true
+            nightBegins.visible = true
+            champagneIntroScene.visible = false
+            champagneIntroScene.enabled = false
+        }
     }
+
+    TempNightBg
+    {
+        id: nightBegins
+        enabled: false
+        visible: false
+    }
+
 }

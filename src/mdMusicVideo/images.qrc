@@ -9,5 +9,9 @@
         <file>images/openedFrontDoor.jpg</file>
         <file>images/molliPerson/molliWalkingStance.png</file>
         <file>images/mattPerson/mattWaitingStance.png</file>
+        <file>images/sun.png</file>
+        <file>images/star.png</file>
+        <file>images/moon.png</file>
+        <file>images/mansion.png</file>
     </qresource>
 </RCC>
