@@ -3,6 +3,7 @@ import QtQuick 2.5
 
 Image
 {
+    signal endScene
     id: champagneBottleBg
     anchors.fill: parent
     source: "../images/champagneSceneBg.png"
@@ -34,8 +35,7 @@ Image
 
             onTriggered:
             {
-                champagneBottle.visible = false
-                //eventually set a signal to change scene
+                endScene()
             }
         }
 

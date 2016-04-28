@@ -6,5 +6,9 @@
         <file>images/splashScreenWindow.png</file>
         <file>images/molliPerson/dancingGifMolli.gif</file>
         <file>images/mattPerson/dancingGifMatt.gif</file>
+        <file>images/sun.png</file>
+        <file>images/star.png</file>
+        <file>images/moon.png</file>
+        <file>images/mansion.png</file>
     </qresource>
 </RCC>
