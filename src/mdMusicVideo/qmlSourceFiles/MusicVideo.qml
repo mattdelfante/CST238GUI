@@ -33,16 +33,16 @@ Rectangle {
         {
             nightBegins.enabled = true
             nightBegins.visible = true
+            nightBegins.timerNightBegins.start()
             champagneIntroScene.visible = false
             champagneIntroScene.enabled = false
         }
     }
 
-    TempNightBg
+    VerseOne
     {
         id: nightBegins
         enabled: false
         visible: false
     }
-
 }

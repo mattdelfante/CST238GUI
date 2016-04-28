@@ -8,7 +8,6 @@
         <file>qmlSourceFiles/MusicVideo.qml</file>
         <file>qmlSourceFiles/MySettings.qml</file>
         <file>qmlSourceFiles/ChampagneScene.qml</file>
-        <file>qmlSourceFiles/ComeOnIn.qml</file>
-        <file>qmlSourceFiles/TempNightBg.qml</file>
+        <file>qmlSourceFiles/VerseOne.qml</file>
     </qresource>
 </RCC>
