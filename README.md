@@ -12,17 +12,17 @@ C++, Qt, QML, Javascript <br />
 <br />
 This is the opening splash screen/menu for the music video.
 
-<img src= "/img/readMeImages/champagnePopping.jpg" width="250" height="400">
+<img src= "/img/readMeImages/settingsScreen.jpg" width="500" height="300">
+<br />
+This is the settings screen/menu for the music video.
+
+<img src= "/img/readMeImages/champagnePopping.jpg" width="500" height="300">
 <br />
 An animation of a champagne bottle popping will happen when the song sings "Open up the champagne...Pop!" at the start of the song to kick off the beginning of the music video.
 
-<img src= "/img/readMeImages/MediaPlayer.png" width="400" height="200">
+<img src= "/img/readMeImages/frontDoorScene.jpg" width="500" height="300">
 <br />
-Here is what the play/pause interface may look like (ignore the side bar).<br />
-
-<img src= "/img/readMeImages/Seattle.jpg" width="400" height="200">
-<br />
-The video will have strong Seattle themes in it since Seattle is the best!<br />
+This is how the beginning of the house tour aspect of the music video begins.
 
 <b>Installation Instructions:</b><br />
 1.  Install Qt 5.6 <br \>
