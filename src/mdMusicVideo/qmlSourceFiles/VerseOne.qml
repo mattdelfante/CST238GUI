@@ -179,10 +179,9 @@ Rectangle {
         onTriggered:{
             dayToNightScene.visible = false
             fancyFrontDoorOpen.visible = true
-            molliWalkingToDoor.visible = true
             molliWalkingToDoorX.running = true
             molliWalkingToDoorY.running = true
-            mattWaitingAtDoor.visible = true
+            timerComeOnIn.start()
         }
     }
 
@@ -199,25 +198,26 @@ Rectangle {
             id: molliWalkingToDoor
             source: "../images/molliPerson/molliWalkingStance.png"
             y: parent.height/2
-            visible: false
+            width: 100
+            visible: true
 
-            NumberAnimation on x{
+            NumberAnimation{
                 id: molliWalkingToDoorX
                 target: molliWalkingToDoor
                 properties: "x"
-                from: 100
-                to: 300
-                duration: 5000
+                from: fancyFrontDoorOpen.width/8
+                to: fancyFrontDoorOpen.width/2.7
+                duration: 4500
                 running: false
             }
 
-            NumberAnimation on x{
+            NumberAnimation{
                 id: molliWalkingToDoorY
                 target: molliWalkingToDoor
                 properties: "y"
-                from: 500
-                to: 350
-                duration: 5000
+                from: fancyFrontDoorOpen.height/1.6
+                to: fancyFrontDoorOpen.height/2.25
+                duration: 4500
                 running: false
             }
         }
@@ -228,7 +228,82 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset: parent.height/20
-            visible: false
+            visible: true
+        }
+    }
+
+    Timer{
+        id: timerComeOnIn
+        interval: 5000
+        running: false
+
+        onTriggered:{
+            fancyFrontDoorOpen.visible = false
+            livingRoomCouch.visible = true
+            mattStandingCouchX.running = true
+            mattStandingCouchY.running = true
+            molliStandingCouchX.running = true
+            molliStandingCouchY.running = true
+        }
+    }
+
+    Image{
+        id: livingRoomCouch
+        source: "../images/livingRoomCouch.jpg"
+        width: parent.width
+        height: parent.height
+        visible: false
+
+        Image{
+            id: mattStanding
+            source: "../images/mattPerson/mattStanding.png"
+            visible: true
+
+            NumberAnimation{
+                id: mattStandingCouchX
+                target: mattStanding
+                properties: "x"
+                from: 600
+                to: 450
+                duration: 2500
+                running: false
+            }
+
+            NumberAnimation{
+                id: mattStandingCouchY
+                target: mattStanding
+                properties: "y"
+                from: 500
+                to: 150
+                duration: 2500
+                running: false
+            }
+        }
+
+        Image{
+            id: molliStanding
+            source: "../images/molliPerson/molliStanding.png"
+            visible: true
+
+            NumberAnimation{
+                id: molliStandingCouchX
+                target: molliStanding
+                properties: "x"
+                from: 200
+                to: 350
+                duration: 2500
+                running: false
+            }
+
+            NumberAnimation{
+                id: molliStandingCouchY
+                target: molliStanding
+                properties: "y"
+                from: 500
+                to: 150
+                duration: 2500
+                running: false
+            }
         }
     }
 }

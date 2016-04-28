@@ -13,5 +13,8 @@
         <file>images/star.png</file>
         <file>images/moon.png</file>
         <file>images/mansion.png</file>
+        <file>images/livingRoomCouch.jpg</file>
+        <file>images/mattPerson/mattStanding.png</file>
+        <file>images/molliPerson/molliStanding.png</file>
     </qresource>
 </RCC>
