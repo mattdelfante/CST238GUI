@@ -16,5 +16,6 @@
         <file>images/livingRoomCouch.jpg</file>
         <file>images/mattPerson/mattStanding.png</file>
         <file>images/molliPerson/molliStanding.png</file>
+        <file>images/washingtonMap.png</file>
     </qresource>
 </RCC>
