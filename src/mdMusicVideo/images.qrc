@@ -13,5 +13,6 @@
         <file>images/star.png</file>
         <file>images/moon.png</file>
         <file>images/mansion.png</file>
+        <file>images/washingtonMap.png</file>
     </qresource>
 </RCC>

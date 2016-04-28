@@ -27,6 +27,7 @@ Rectangle {
     ChampagneScene
     {
         id: champagneIntroScene
+
         visible: true
         //signal set enabled to false
         onEndScene:
