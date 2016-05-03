@@ -43,6 +43,11 @@ import QtQuick.Particles 2.0
 
 Rectangle {
     property alias timerNightBegins: timerNightBegins
+    property alias groundAnimation: groundAnimation
+    property alias starsAnimation: starsAnimation
+    property alias sunMoonStarsRotationAnimation: sunMoonStarsRotationAnimation
+    property alias skyGradientAnimation1: skyGradientAnimation1
+    property alias skyGradientAnimation2: skyGradientAnimation2
     id: window
     width: parent.width
     height: parent.height
@@ -59,6 +64,8 @@ Rectangle {
                 GradientStop {
                     position: 0.0
                     SequentialAnimation on color {
+                        id: skyGradientAnimation1
+                        running: false
                         loops: Animation.Infinite
                         ColorAnimation { from: "#14148c"; to: "#0E1533"; duration: 5000 }
                         ColorAnimation { from: "#0E1533"; to: "#14148c"; duration: 5000 }
@@ -67,6 +74,8 @@ Rectangle {
                 GradientStop {
                     position: 1.0
                     SequentialAnimation on color {
+                        id: skyGradientAnimation2
+                        running: false
                         loops: Animation.Infinite
                         ColorAnimation { from: "#14aaff"; to: "#437284"; duration: 5000 }
                         ColorAnimation { from: "#437284"; to: "#14aaff"; duration: 5000 }
@@ -79,7 +88,11 @@ Rectangle {
         // the sun, moon, and stars
         Item {
             width: parent.width; height: 2 * parent.height
-            NumberAnimation on rotation { from: 0; to: 360; duration: 10000; loops: Animation.Infinite }
+            NumberAnimation on rotation {
+                id: sunMoonStarsRotationAnimation
+                running: false
+                from: 50; to: 410; duration: 10000; loops: Animation.Infinite
+            }
             Image {
                 width: 50
                 height: 50
@@ -103,6 +116,8 @@ Rectangle {
                     groups: ["star"]
                     color: "#00333333"
                     SequentialAnimation on opacity {
+                        id: starsAnimation
+                        running: false
                         loops: Animation.Infinite
                         NumberAnimation { from: 0; to: 1; duration: 5000 }
                         NumberAnimation { from: 1; to: 0; duration: 5000 }
@@ -124,6 +139,8 @@ Rectangle {
                 GradientStop {
                     position: 0.0
                     SequentialAnimation on color {
+                        id: groundAnimation
+                        running: false
                         loops: Animation.Infinite
                         ColorAnimation { from: "#80c342"; to: "#001600"; duration: 5000 }
                         ColorAnimation { from: "#001600"; to: "#80c342"; duration: 5000 }
@@ -175,6 +192,14 @@ Rectangle {
         id: timerNightBegins
         interval: 5000
         running: false
+
+        onRunningChanged:{
+            groundAnimation.running = true
+            starsAnimation.running = true
+            sunMoonStarsRotationAnimation.running = true
+            skyGradientAnimation1.running = true
+            skyGradientAnimation2.running = true
+        }
 
         onTriggered:{
             dayToNightScene.visible = false
@@ -244,6 +269,7 @@ Rectangle {
             mattStandingCouchY.running = true
             molliStandingCouchX.running = true
             molliStandingCouchY.running = true
+            timerWhereYouBeen.running = true
         }
     }
 
@@ -254,55 +280,116 @@ Rectangle {
         height: parent.height
         visible: false
 
-        Image{
-            id: mattStanding
-            source: "../images/mattPerson/mattStanding.png"
-            visible: true
+        Rectangle
+        {
+            id: standingByCouchScene
+            anchors.fill: parent
+            color: "transparent"
 
-            NumberAnimation{
-                id: mattStandingCouchX
-                target: mattStanding
-                properties: "x"
-                from: 600
-                to: 450
-                duration: 2500
-                running: false
+            Image{
+                id: mattStanding
+                source: "../images/mattPerson/mattStanding.png"
+                visible: true
+
+                NumberAnimation{
+                    id: mattStandingCouchX
+                    target: mattStanding
+                    properties: "x"
+                    from: 50
+                    to: 525
+                    duration: 2500
+                    running: false
+                }
+
+                NumberAnimation{
+                    id: mattStandingCouchY
+                    target: mattStanding
+                    properties: "y"
+                    from: 375
+                    to: 150
+                    duration: 2500
+                    running: false
+
+                    onStopped:{
+                        mattSpeechBubble.visible = true
+                    }
+                }
             }
 
-            NumberAnimation{
-                id: mattStandingCouchY
-                target: mattStanding
-                properties: "y"
-                from: 500
-                to: 150
-                duration: 2500
-                running: false
+            Image{
+                id: molliStanding
+                source: "../images/molliPerson/molliStanding.png"
+                visible: true
+
+                NumberAnimation{
+                    id: molliStandingCouchX
+                    target: molliStanding
+                    properties: "x"
+                    from: 0
+                    to: 425
+                    duration: 2500
+                    running: false
+                }
+
+                NumberAnimation{
+                    id: molliStandingCouchY
+                    target: molliStanding
+                    properties: "y"
+                    from: 375
+                    to: 150
+                    duration: 2500
+                    running: false
+
+                    onStopped:{
+                        molliSpeechBubble.visible = true
+                    }
+                }
+            }
+
+            Image{
+                id: mattSpeechBubble
+                source: "../images/speechBubble.png"
+                visible: false
+                width: parent.width/6
+                height: parent.height/6
+                x: mattStanding.x + mattStanding.width
+                y: mattStanding.y
+
+                Text{
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    text: "Where you been?"
+                    font.pixelSize: parent.height/6
+                }
+            }
+
+            Image{
+                id: molliSpeechBubble
+                source: "../images/speechBubble.png"
+                mirror: true
+                visible: false
+                width: parent.width/6
+                height: parent.height/6
+                x: molliStanding.x - molliSpeechBubble.width
+                y: molliStanding.y
+
+                Text{
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    text: "Purvine."
+                    font.pixelSize: parent.height/6
+                }
             }
         }
 
-        Image{
-            id: molliStanding
-            source: "../images/molliPerson/molliStanding.png"
-            visible: true
+        Timer{
+            id: timerWhereYouBeen
+            interval: 5000
+            running: false
 
-            NumberAnimation{
-                id: molliStandingCouchX
-                target: molliStanding
-                properties: "x"
-                from: 200
-                to: 350
-                duration: 2500
-                running: false
-            }
+            onTriggered:{
+                standingByCouchScene.visible = false
 
-            NumberAnimation{
-                id: molliStandingCouchY
-                target: molliStanding
-                properties: "y"
-                from: 500
-                to: 150
-                duration: 2500
-                running: false
             }
         }
     }

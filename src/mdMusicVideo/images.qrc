@@ -17,5 +17,6 @@
         <file>images/mattPerson/mattStanding.png</file>
         <file>images/molliPerson/molliStanding.png</file>
         <file>images/washingtonMap.png</file>
+        <file>images/speechBubble.png</file>
     </qresource>
 </RCC>
