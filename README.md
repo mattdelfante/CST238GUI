@@ -40,8 +40,8 @@ We will develop a more extensive naming convention in the near future.
 <b>Bugs and ToDo List:</b><br />
 Bugs:</b><br />
 1. Clicking the champagne bottle immediately makes it "pop" which is unintended behavior.<br />
-2. The sun to night animation has an unpredictable starting location of the sun.<br />
-3. Changing the size of the window while the sun to night annimation is running causes frame drops and some computer freezing.<br />
+2. Changing the size of the window while the sun to night annimation is running causes frame drops and some computer freezing.<br />
+3. After building the project once, the song loads for too long, causing the song to be out of sync with the video. <br />Once built a second time, this problem goes away. <br />
 To do:</b><br />
 1. Add a settings button to the actual music video. <br />
 2. Add play and pause buttons to the music video. <br />
