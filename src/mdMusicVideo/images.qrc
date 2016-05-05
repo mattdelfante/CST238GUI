@@ -21,5 +21,9 @@
         <file>images/raindrop.png</file>
         <file>images/faceHouse.png</file>
         <file>images/faceHouseClouds.png</file>
+        <file>images/molliPerson/sittingCheersGifMolli.gif</file>
+        <file>images/molliPerson/sittingDrinkingGifMolli.gif</file>
+        <file>images/mattPerson/sittingCheersGifMatt.gif</file>
+        <file>images/mattPerson/sittingDrinkingGifMatt.gif</file>
     </qresource>
 </RCC>

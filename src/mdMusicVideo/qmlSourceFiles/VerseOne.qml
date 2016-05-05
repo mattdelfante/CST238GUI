@@ -43,11 +43,7 @@ import QtQuick.Particles 2.0
 
 Rectangle {
     property alias timerNightBegins: timerNightBegins
-    property alias groundAnimation: groundAnimation
-    property alias starsAnimation: starsAnimation
-    property alias sunMoonStarsRotationAnimation: sunMoonStarsRotationAnimation
-    property alias skyGradientAnimation1: skyGradientAnimation1
-    property alias skyGradientAnimation2: skyGradientAnimation2
+    signal endScene
     id: window
     width: parent.width
     height: parent.height
@@ -56,10 +52,9 @@ Rectangle {
         id: dayToNightScene
         anchors.fill: parent
 
-        // Let's draw the sky...
+        //Sky gradient
         Rectangle {
             anchors { left: parent.left; top: parent.top; right: parent.right; bottom: parent.verticalCenter }
-            //! [0]
             gradient: Gradient {
                 GradientStop {
                     position: 0.0
@@ -82,10 +77,9 @@ Rectangle {
                     }
                 }
             }
-            //! [0]
         }
 
-        // the sun, moon, and stars
+        //Sun, moon, stars
         Item {
             width: parent.width; height: 2 * parent.height
             NumberAnimation on rotation {
@@ -132,7 +126,7 @@ Rectangle {
             }
         }
 
-        // ...and the ground.
+        //Ground gradient
         Rectangle {
             anchors { left: parent.left; top: parent.verticalCenter; right: parent.right; bottom: parent.bottom }
             gradient: Gradient {
@@ -210,6 +204,7 @@ Rectangle {
         }
     }
 
+    //Walking to front door
     Image {
         id: fancyFrontDoorOpen
         source: "../images/openedFrontDoor.jpg"
@@ -273,6 +268,7 @@ Rectangle {
         }
     }
 
+    //In living room
     Image{
         id: livingRoomCouch
         source: "../images/livingRoomCouch.jpg"
@@ -280,6 +276,7 @@ Rectangle {
         height: parent.height
         visible: false
 
+        //Walking
         Rectangle
         {
             id: standingByCouchScene
@@ -382,6 +379,7 @@ Rectangle {
             }
         }
 
+        //Duration of walking
         Timer{
             id: timerWhereYouBeen
             interval: 5000
@@ -389,8 +387,71 @@ Rectangle {
 
             onTriggered:{
                 standingByCouchScene.visible = false
-
+                sittingOnCouchScene.visible = true
+                timerCheers.start()
+                timerBeforeCheers.start()
             }
+        }
+
+        //Sitting
+        Rectangle{
+            id: sittingOnCouchScene
+            anchors.fill: parent
+            color: "transparent"
+            visible: false
+
+            Timer{
+                id: timerBeforeCheers
+                interval: 1500
+                running: false
+
+                onTriggered: {
+                    mattSittingCheers.playing = true
+                    molliSittingCheers.playing = true
+                    timerBeforeDrink.start()
+                }
+            }
+
+            AnimatedImage{
+                id: mattSittingCheers
+                source: "../images/mattPerson/sittingCheersGifMatt.gif"
+                x: parent.width/6 * 4
+                y: parent.height/2 - height/1.5
+                playing: false
+            }
+
+            AnimatedImage{
+                id: molliSittingCheers
+                source: "../images/molliPerson/sittingCheersGifMolli.gif"
+                x: parent.width/2
+                y: parent.height/2 - height/1.5
+                playing: false
+            }
+
+            Timer{
+                id: timerBeforeDrink
+                interval: 1500
+                running: false
+
+                onTriggered: {
+                    mattSittingCheers.source = "../images/mattPerson/sittingDrinkingGifMatt.gif"
+                    molliSittingCheers.source = "../images/molliPerson/sittingDrinkingGifMolli.gif"
+                    mattSittingCheers.playing = true
+                    molliSittingCheers.playing = true
+                }
+            }
+        }
+    }
+
+    //End verse one
+    Timer{
+        id: timerCheers
+        interval: 4500
+        running: false
+
+        onTriggered: {
+            livingRoomCouch.visible = false
+            endScene()
         }
     }
 }

@@ -27,14 +27,13 @@ Rectangle {
     ChampagneScene
     {
         id: champagneIntroScene
-
         visible: true
-        //signal set enabled to false
+
         onEndScene:
         {
-            nightBegins.enabled = true
-            nightBegins.visible = true
-            nightBegins.timerNightBegins.start()
+            verseOneScene.enabled = true
+            verseOneScene.visible = true
+            verseOneScene.timerNightBegins.start()
             champagneIntroScene.visible = false
             champagneIntroScene.enabled = false
         }
@@ -42,8 +41,14 @@ Rectangle {
 
     VerseOne
     {
-        id: nightBegins
+        id: verseOneScene
         enabled: false
         visible: false
+
+        onEndScene:
+        {
+            verseOneScene.visible = false
+            verseOneScene.enabled = false
+        }
     }
 }
