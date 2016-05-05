@@ -48,6 +48,14 @@ Rectangle {
     width: parent.width
     height: parent.height
 
+    function testFunc()
+    {
+        while(myHouseSong.position < 11500)
+        {
+            console.log("HI")
+        }
+    }
+
     Rectangle{
         id: dayToNightScene
         anchors.fill: parent
@@ -181,6 +189,15 @@ Rectangle {
             rotation: 25
         }
     }
+
+//    Connections{
+//        id: connection1
+//        target: MyTimer
+//        onTimerTimeout:{
+//            if (totalTimeElapsed)
+//                //function with onTriggered stuff
+//        }
+//    }
 
     Timer{
         id: timerNightBegins

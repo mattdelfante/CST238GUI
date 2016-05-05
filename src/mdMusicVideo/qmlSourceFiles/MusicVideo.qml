@@ -21,6 +21,8 @@ Rectangle {
 
         onPlaying:{
             seekable: true
+
+
         }
     }
 
@@ -36,6 +38,8 @@ Rectangle {
             verseOneScene.visible = true
             verseOneScene.enabled = true
             verseOneScene.timerNightBegins.start()
+            //Testing Functions
+            verseOneScene.testFunc()
         }
     }
 
