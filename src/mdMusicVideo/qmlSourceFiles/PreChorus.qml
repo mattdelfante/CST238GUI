@@ -191,7 +191,7 @@ Rectangle
         Timer
         {
             id: timerSmallIn
-            interval: 1500
+            interval: 1250
             running: false
 
             onTriggered:

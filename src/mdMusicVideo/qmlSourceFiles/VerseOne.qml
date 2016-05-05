@@ -446,7 +446,7 @@ Rectangle {
     //End verse one
     Timer{
         id: timerCheers
-        interval: 4250
+        interval: 4500
         running: false
 
         onTriggered: {
