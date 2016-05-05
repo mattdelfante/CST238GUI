@@ -31,11 +31,11 @@ Rectangle {
 
         onEndScene:
         {
-            verseOneScene.enabled = true
-            verseOneScene.visible = true
-            verseOneScene.timerNightBegins.start()
             champagneIntroScene.visible = false
             champagneIntroScene.enabled = false
+            verseOneScene.visible = true
+            verseOneScene.enabled = true
+            verseOneScene.timerNightBegins.start()
         }
     }
 
@@ -49,6 +49,20 @@ Rectangle {
         {
             verseOneScene.visible = false
             verseOneScene.enabled = false
+            preChorusScene.visible = true
+            preChorusScene.enabled = true
+            preChorusScene.timerGottaStayIn.start()
+        }
+    }
+
+    PreChorus
+    {
+        id: preChorusScene
+        enabled: false
+        visible: false
+
+        onEndScene:{
+
         }
     }
 }
