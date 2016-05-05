@@ -18,5 +18,8 @@
         <file>images/molliPerson/molliStanding.png</file>
         <file>images/washingtonMap.png</file>
         <file>images/speechBubble.png</file>
+        <file>images/raindrop.png</file>
+        <file>images/faceHouse.png</file>
+        <file>images/faceHouseClouds.png</file>
     </qresource>
 </RCC>
