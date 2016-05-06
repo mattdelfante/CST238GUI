@@ -45,7 +45,6 @@ Window {
         {
             id: musicVideoScenes
             visible: false
-            //enabled: false            //Enabled could be useful elsewhere in the future
         }
 
         MySettings

@@ -42,17 +42,74 @@ import QtQuick 2.0
 import QtQuick.Particles 2.0
 
 Rectangle {
-    property alias timerNightBegins: timerNightBegins
     signal endScene
     id: window
     width: parent.width
     height: parent.height
 
-    function testFunc()
-    {
-        while(myHouseSong.position < 11500)
-        {
-            console.log("HI")
+    Connections{
+        id: connectionTimer
+        target: MyTimer
+        onTimerTimeout:{
+            //Begin day to night
+            if (totalTimeElapsed === 10300)
+            {
+                groundAnimation.running = true
+                starsAnimation.running = true
+                sunMoonStarsRotationAnimation.running = true
+                skyGradientAnimation1.running = true
+                skyGradientAnimation2.running = true
+            }
+
+            //End day to night, Begin come on in
+            else if (totalTimeElapsed === 15500)
+            {
+                dayToNightScene.visible = false
+                fancyFrontDoorOpen.visible = true
+                molliWalkingToDoorX.running = true
+                molliWalkingToDoorY.running = true
+            }
+
+            //End come on in, Begin where you been
+            else if (totalTimeElapsed === 20500)
+            {
+                fancyFrontDoorOpen.visible = false
+                livingRoomCouch.visible = true
+                mattStandingCouchX.running = true
+                mattStandingCouchY.running = true
+                molliStandingCouchX.running = true
+                molliStandingCouchY.running = true
+            }
+
+            //End where you been, Begin sitting still on couch
+            else if (totalTimeElapsed === 25500)
+            {
+                standingByCouchScene.visible = false
+                sittingOnCouchScene.visible = true
+            }
+
+            //End sitting still on couch, Begin cheers on couch
+            else if (totalTimeElapsed === 27000)
+            {
+                mattSittingCheers.playing = true
+                molliSittingCheers.playing = true
+            }
+
+            //End cheers on couch, Begin drinking on couch
+            else if (totalTimeElapsed === 28500)
+            {
+                mattSittingCheers.source = "../images/mattPerson/sittingDrinkingGifMatt.gif"
+                molliSittingCheers.source = "../images/molliPerson/sittingDrinkingGifMolli.gif"
+                mattSittingCheers.playing = true
+                molliSittingCheers.playing = true
+            }
+
+            //End drinking on couch, transition scenes
+            else if (totalTimeElapsed === 30000)
+            {
+                livingRoomCouch.visible = false
+                endScene()
+            }
         }
     }
 
@@ -93,7 +150,7 @@ Rectangle {
             NumberAnimation on rotation {
                 id: sunMoonStarsRotationAnimation
                 running: false
-                from: 50; to: 410; duration: 10000; loops: Animation.Infinite
+                from: 40; to: 400; duration: 10000; loops: Animation.Infinite
             }
             Image {
                 width: 50
@@ -190,37 +247,6 @@ Rectangle {
         }
     }
 
-//    Connections{
-//        id: connection1
-//        target: MyTimer
-//        onTimerTimeout:{
-//            if (totalTimeElapsed)
-//                //function with onTriggered stuff
-//        }
-//    }
-
-    Timer{
-        id: timerNightBegins
-        interval: 5000
-        running: false
-
-        onRunningChanged:{
-            groundAnimation.running = true
-            starsAnimation.running = true
-            sunMoonStarsRotationAnimation.running = true
-            skyGradientAnimation1.running = true
-            skyGradientAnimation2.running = true
-        }
-
-        onTriggered:{
-            dayToNightScene.visible = false
-            fancyFrontDoorOpen.visible = true
-            molliWalkingToDoorX.running = true
-            molliWalkingToDoorY.running = true
-            timerComeOnIn.start()
-        }
-    }
-
     //Walking to front door
     Image {
         id: fancyFrontDoorOpen
@@ -266,22 +292,6 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset: parent.height/20
             visible: true
-        }
-    }
-
-    Timer{
-        id: timerComeOnIn
-        interval: 5000
-        running: false
-
-        onTriggered:{
-            fancyFrontDoorOpen.visible = false
-            livingRoomCouch.visible = true
-            mattStandingCouchX.running = true
-            mattStandingCouchY.running = true
-            molliStandingCouchX.running = true
-            molliStandingCouchY.running = true
-            timerWhereYouBeen.running = true
         }
     }
 
@@ -396,38 +406,12 @@ Rectangle {
             }
         }
 
-        //Duration of walking
-        Timer{
-            id: timerWhereYouBeen
-            interval: 5000
-            running: false
-
-            onTriggered:{
-                standingByCouchScene.visible = false
-                sittingOnCouchScene.visible = true
-                timerCheers.start()
-                timerBeforeCheers.start()
-            }
-        }
-
         //Sitting
         Rectangle{
             id: sittingOnCouchScene
             anchors.fill: parent
             color: "transparent"
             visible: false
-
-            Timer{
-                id: timerBeforeCheers
-                interval: 1500
-                running: false
-
-                onTriggered: {
-                    mattSittingCheers.playing = true
-                    molliSittingCheers.playing = true
-                    timerBeforeDrink.start()
-                }
-            }
 
             AnimatedImage{
                 id: mattSittingCheers
@@ -444,31 +428,6 @@ Rectangle {
                 y: parent.height/2 - height/1.5
                 playing: false
             }
-
-            Timer{
-                id: timerBeforeDrink
-                interval: 1500
-                running: false
-
-                onTriggered: {
-                    mattSittingCheers.source = "../images/mattPerson/sittingDrinkingGifMatt.gif"
-                    molliSittingCheers.source = "../images/molliPerson/sittingDrinkingGifMolli.gif"
-                    mattSittingCheers.playing = true
-                    molliSittingCheers.playing = true
-                }
-            }
-        }
-    }
-
-    //End verse one
-    Timer{
-        id: timerCheers
-        interval: 4500
-        running: false
-
-        onTriggered: {
-            livingRoomCouch.visible = false
-            endScene()
         }
     }
 }

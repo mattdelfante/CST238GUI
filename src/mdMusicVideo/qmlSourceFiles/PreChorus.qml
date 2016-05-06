@@ -5,10 +5,61 @@ import QtQuick.Particles 2.0
 
 Rectangle
 {
-    property alias timerGottaStayIn: timerGottaStayIn
     signal endScene
     id: window
     anchors.fill: parent
+
+    Connections{
+        id: connectionTimer
+        target: MyTimer
+        onTimerTimeout:{
+            //End gotta stay in, Begin map zoom
+            if (totalTimeElapsed === 32500)
+            {
+                gottaStayIn.visible = false
+                mapZoomAndDancing.visible = true
+            }
+
+            //Begin dancing on map zoom
+            else if (totalTimeElapsed === 35000)
+            {
+                dancingMatt.visible = true
+                dancingMolli.visible = true
+            }
+
+            //End dancing and map zoom, Begin gotta stay in in
+            else if (totalTimeElapsed === 37500)
+            {
+                mapZoomAndDancing.visible = false
+                mapAnimationHeight.running = false
+                mapAnimationWidth.running = false
+                gottaStayIn.visible = true
+                gottaStayInIn.visible = true
+            }
+
+            //Small IN text visible
+            else if (totalTimeElapsed === 38800)
+            {
+                smallerIN.visible = true
+            }
+
+            //Smaller IN text invisible, bigger IN text visible
+            else if (totalTimeElapsed === 39300)
+            {
+                smallerIN.visible = false
+                biggerIN.visible = true
+            }
+
+            //End gotta stay in in, bigger IN text invisible, transition scenes
+            else if (totalTimeElapsed === 40000)
+            {
+                gottaStayIn.visible = false
+                raining.enabled = false
+                gottaStayInIn.visible = false
+                endScene()
+            }
+        }
+    }
 
     Rectangle
     {
@@ -53,22 +104,11 @@ Rectangle
         }
     }
 
-    Timer{
-        id: timerGottaStayIn
-        interval: 2500
-        running: false
-
-        onTriggered:{
-            gottaStayIn.visible = false
-            mapZoomAndDancing.visible = true
-            timerMapZoom.start()
-        }
-    }
-
     Rectangle{
         id: mapZoomAndDancing
         anchors.fill: parent
         visible: false
+        color: "#a6a6a6"
 
         Image
         {
@@ -78,18 +118,6 @@ Rectangle
             y: parent.height / 2 - (height / 2)
             height: parent.height /2
             width: parent.width / 2
-
-            Timer{
-                id: timerMapZoom
-                interval: 2500
-                running: false
-
-                onTriggered: {
-                    dancingMatt.visible = true
-                    dancingMolli.visible = true
-                    timerDancingOnMap.start()
-                }
-            }
 
             PropertyAnimation
             {
@@ -149,35 +177,23 @@ Rectangle
         AnimatedImage
         {
             id: dancingMatt
+            width: parent.width/5
+            height: parent.height/1.5
             visible: false
             source: "../images/mattPerson/dancingGifMatt.gif"
-            y: Screen.height / 6
-            x: Screen.width / 6
+            y: Screen.height / 8
+            x: Screen.width / 8
         }
 
         AnimatedImage
         {
             id: dancingMolli
+            width: parent.width/5
+            height: parent.height/1.5
             visible: false
             source: "../images/molliPerson/dancingGifMolli.gif"
-            y: Screen.height / 6
+            y: Screen.height / 8
             x: Screen.width / 2.25
-        }
-    }
-
-    Timer{
-        id: timerDancingOnMap
-        interval: 2500
-        running: false
-
-        onTriggered:{
-            mapZoomAndDancing.visible = false
-            mapAnimationHeight.running = false
-            mapAnimationWidth.running = false
-            gottaStayIn.visible = true
-            gottaStayInIn.visible = true
-            timerSmallIn.start()
-            timerStayInIn.start()
         }
     }
 
@@ -187,32 +203,6 @@ Rectangle
         visible: false
         anchors.fill: parent
         color: "transparent"
-
-        Timer
-        {
-            id: timerSmallIn
-            interval: 1250
-            running: false
-
-            onTriggered:
-            {
-                smallerIN.visible = true
-                timerBiggerIn.start()
-            }
-        }
-
-        Timer
-        {
-            id: timerBiggerIn
-            interval: 500
-            running: false
-
-            onTriggered:
-            {
-                smallerIN.visible = false
-                biggerIN.visible = true
-            }
-        }
 
         Text
         {
@@ -236,19 +226,6 @@ Rectangle
             font.pixelSize: parent.height /2
             x: rainyHouse.width / 2 - width / 2
             y: rainyHouse.height / 2 - height/ 3
-        }
-    }
-
-    Timer{
-        id: timerStayInIn
-        interval: 2500
-        running: false
-
-        onTriggered:{
-            gottaStayIn.visible = false
-            raining.enabled = false
-            gottaStayInIn.visible = false
-            endScene()
         }
     }
 }

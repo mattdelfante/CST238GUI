@@ -1,0 +1,19 @@
+Music Video Ongoing Time Intervals:
+
+Start Time	Duration	End Time	Activity
+
+    0		7000		 7000		Champagne bottle animation
+ 7000		1000		 8000		Champagne bottle gif
+ 8000		2400		10400		Paused on champagne bottle, before VerseOne
+10300		5200		15500		Day to night
+15500		5000		20500		Come on in
+20500		5000		25500		Where you been
+25500		1500		27000		Sitting still on couch
+27000		1500		28500		Raising arms to cheers
+28500		1500		30000		Drinking on couch, before PreChorus
+30000		2500		32500		Gotta stay in
+32500		2500		35000		Map zoom in and out (no dancing)
+35000		2500		37500		Dancing on map zoom in and out
+37500		1300		38800		Gotta stay in in
+38800		 500		39300		Smaller IN visible
+39300		 700		40000		Bigger IN visible, before Chorus

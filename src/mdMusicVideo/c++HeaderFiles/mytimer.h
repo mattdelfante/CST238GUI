@@ -11,12 +11,14 @@ class MyTimer : public QObject
     public:
         MyTimer();
         ~MyTimer();
+        void AddToTotalTime();
 
     signals:
         void timerTimeout(int totalTimeElapsed);
 
     public slots:
-        void AddToTotalTime();
+        void startMyTimer();
+        void stopMyTimer();
 
     private:
         QTimer * m_timer;

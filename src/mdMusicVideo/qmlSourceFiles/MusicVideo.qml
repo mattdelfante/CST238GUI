@@ -21,8 +21,6 @@ Rectangle {
 
         onPlaying:{
             seekable: true
-
-
         }
     }
 
@@ -37,9 +35,6 @@ Rectangle {
             champagneIntroScene.enabled = false
             verseOneScene.visible = true
             verseOneScene.enabled = true
-            verseOneScene.timerNightBegins.start()
-            //Testing Functions
-            verseOneScene.testFunc()
         }
     }
 
@@ -55,7 +50,6 @@ Rectangle {
             verseOneScene.enabled = false
             preChorusScene.visible = true
             preChorusScene.enabled = true
-            preChorusScene.timerGottaStayIn.start()
         }
     }
 

@@ -8,6 +8,18 @@ Image
     anchors.fill: parent
     source: "../images/champagneSceneBg.png"
 
+    property int count: 0
+
+    Connections{
+        id: connectionTimer
+        target: MyTimer
+        onTimerTimeout:{
+            //Bottle is opened, transition scenes
+            if (totalTimeElapsed === 10400)
+                endScene()
+        }
+    }
+
     AnimatedImage
     {
         id: champagneBottle
@@ -20,24 +32,6 @@ Image
         //Start gif after bottle has been moved and returns back to center
         playing:(xBehavior.enabled && champagneBottle.x === musicVideoRect.width/2 - champagneBottle.width/2
                  && champagneBottle.y === musicVideoRect.height/2 - champagneBottle.height/2) ? true : false
-
-        onCurrentFrameChanged:
-        {
-            if (champagneBottle.currentFrame === 20)
-                timerBottleOpened.start()
-        }
-
-        Timer
-        {
-            id: timerBottleOpened
-            interval: 2200  //interval just right for scene to change on "Uh!" lyrics (for now)
-            running: false
-
-            onTriggered:
-            {
-                endScene()
-            }
-        }
 
         Behavior on x
         {
@@ -81,6 +75,7 @@ Image
             {
                 myHouseSong.seek(1100)      //since song doesn't have sound until 1.1 seconds into the song
                 myHouseSong.play()
+                MyTimer.startMyTimer()
                 xBehavior.enabled = true
                 yBehavior.enabled = true
                 champagneBottle.x = musicVideoRect.width/2 - champagneBottle.width/2

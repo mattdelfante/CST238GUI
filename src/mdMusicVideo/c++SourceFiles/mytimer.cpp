@@ -1,6 +1,6 @@
 #include "../c++HeaderFiles/mytimer.h"
 
-MyTimer::MyTimer()
+MyTimer::MyTimer() : m_totalTimeElapsed(0)
 {
     m_timer = new QTimer(this);
     m_timer->setTimerType(Qt::PreciseTimer);
@@ -22,3 +22,12 @@ void MyTimer::AddToTotalTime()
     emit timerTimeout(m_totalTimeElapsed);
 }
 
+void MyTimer::startMyTimer()
+{
+    m_timer->start();
+}
+
+void MyTimer::stopMyTimer()
+{
+    m_timer->stop();
+}
