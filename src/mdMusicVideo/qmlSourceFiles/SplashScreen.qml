@@ -179,6 +179,8 @@ Rectangle {
 
     AnimatedImage{
         id: dancingMolli
+        width: .125 * parent.width
+        height: .4 * parent.height
         source: "../images/molliPerson/dancingGifMolli.gif"
         anchors.bottom: parent.bottom
         anchors.bottomMargin: -parent.height/25
@@ -188,6 +190,8 @@ Rectangle {
 
     AnimatedImage{
         id: dancingMatt
+        width: .125 * parent.width
+        height: .4 * parent.height
         source: "../images/mattPerson/dancingGifMatt.gif"
         anchors.bottom: parent.bottom
         anchors.bottomMargin: -parent.height/25

@@ -99,7 +99,7 @@ Rectangle
             acceleration: PointDirection { y: 80 }
             size: 15
             width: parent.width
-            height: 100
+            height: .2 * parent.height
             enabled: true
         }
     }
@@ -181,8 +181,8 @@ Rectangle
             height: parent.height/1.5
             visible: false
             source: "../images/mattPerson/dancingGifMatt.gif"
-            y: Screen.height / 8
-            x: Screen.width / 8
+            y: window.height / 8
+            x: window.width / 4
         }
 
         AnimatedImage
@@ -192,8 +192,8 @@ Rectangle
             height: parent.height/1.5
             visible: false
             source: "../images/molliPerson/dancingGifMolli.gif"
-            y: Screen.height / 8
-            x: Screen.width / 2.25
+            y: window.height / 8
+            x: window.width / 1.35
         }
     }
 
