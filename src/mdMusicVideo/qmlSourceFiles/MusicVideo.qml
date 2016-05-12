@@ -19,7 +19,8 @@ Rectangle {
         source: "../sounds/myHouseFloRida.mp3"
         volume: 1.0
 
-        onPlaying:{
+        onPlaying:
+        {
             seekable: true
         }
     }

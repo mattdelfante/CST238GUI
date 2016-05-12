@@ -10,5 +10,7 @@
         <file>qmlSourceFiles/ChampagneScene.qml</file>
         <file>qmlSourceFiles/VerseOne.qml</file>
         <file>qmlSourceFiles/PreChorus.qml</file>
+        <file>qmlSourceFiles/MattChorus.qml</file>
+        <file>qmlSourceFiles/VerseThree.qml</file>
     </qresource>
 </RCC>

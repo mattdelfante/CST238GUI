@@ -24,5 +24,11 @@
         <file>images/molliPerson/sittingDrinkingGifMolli.gif</file>
         <file>images/mattPerson/sittingCheersGifMatt.gif</file>
         <file>images/mattPerson/sittingDrinkingGifMatt.gif</file>
+        <file>images/mattChorusHouse.png</file>
+        <file>images/mattLivingRoom.jpg</file>
+        <file>images/macklemore.jpg</file>
+        <file>images/chorusBaseballField.jpg</file>
+        <file>images/rideTheDucks.jpg</file>
+        <file>images/noFaceHouse.png</file>
     </qresource>
 </RCC>
