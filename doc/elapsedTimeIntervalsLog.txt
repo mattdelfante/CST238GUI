@@ -1,4 +1,4 @@
-Music Video Ongoing Time Intervals:
+Music Video Ongoing Time Intervals: (song starts at 1100ms)
 
 Start Time	Duration	End Time	Activity
 

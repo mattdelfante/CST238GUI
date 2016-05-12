@@ -39,6 +39,7 @@
 ****************************************************************************/
 
 import QtQuick 2.0
+import QtQuick.Window 2.2
 import QtQuick.Particles 2.0
 
 Rectangle {
@@ -153,14 +154,14 @@ Rectangle {
                 from: 40; to: 400; duration: 10000; loops: Animation.Infinite
             }
             Image {
-                width: 50
-                height: 50
+                width: .0625 * parent.width
+                height: width
                 source: "../images/sun.png"; y: 10; anchors.horizontalCenter: parent.horizontalCenter
                 rotation: -3 * parent.rotation
             }
             Image {
-                width: 50
-                height: 40
+                width: .0625 * parent.width
+                height: .8 * width
                 source: "../images/moon.png"; y: parent.height - 74; anchors.horizontalCenter: parent.horizontalCenter
                 rotation: -parent.rotation
             }
@@ -213,11 +214,11 @@ Rectangle {
         {
             id: mansion
             source: "../images/mansion.png"
-            width: 150
-            height: 150
+            width: height
+            height: .3 * parent.height
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
-            anchors.verticalCenterOffset: -50
+            anchors.verticalCenterOffset: -.1 * parent.height
         }
 
         Text
@@ -229,7 +230,7 @@ Rectangle {
             font.family: "Poor Richard"
             anchors.verticalCenter: mansion.verticalCenter
             anchors.right: mansion.left
-            anchors.rightMargin: 20
+            anchors.rightMargin: .025 * parent.width
             rotation: -25
         }
 
@@ -242,7 +243,7 @@ Rectangle {
             font.family: "Poor Richard"
             anchors.verticalCenter: mansion.verticalCenter
             anchors.left: mansion.right
-            anchors.leftMargin: 10
+            anchors.leftMargin: .0125 * parent.width
             rotation: 25
         }
     }
@@ -261,7 +262,8 @@ Rectangle {
             id: molliWalkingToDoor
             source: "../images/molliPerson/molliWalkingStance.png"
             y: parent.height/2
-            width: 100
+            width: .125 * parent.width
+            height: .4 * window.height
             visible: true
 
             NumberAnimation{
@@ -288,6 +290,8 @@ Rectangle {
         Image {
             id: mattWaitingAtDoor
             source: "../images/mattPerson/mattWaitingStance.png"
+            width: .125 * parent.width
+            height: .4 * window.height
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset: parent.height/20
@@ -313,14 +317,16 @@ Rectangle {
             Image{
                 id: mattStanding
                 source: "../images/mattPerson/mattStanding.png"
+                width: .1 * parent.width
+                height: .464 * parent.height
                 visible: true
 
                 NumberAnimation{
                     id: mattStandingCouchX
                     target: mattStanding
                     properties: "x"
-                    from: 50
-                    to: 525
+                    from: .0625 * parent.width
+                    to: .65625 * parent.width
                     duration: 2500
                     running: false
                 }
@@ -329,8 +335,8 @@ Rectangle {
                     id: mattStandingCouchY
                     target: mattStanding
                     properties: "y"
-                    from: 375
-                    to: 150
+                    from: .75 * parent.height
+                    to: .3 * parent.height
                     duration: 2500
                     running: false
 
@@ -343,6 +349,8 @@ Rectangle {
             Image{
                 id: molliStanding
                 source: "../images/molliPerson/molliStanding.png"
+                width: .1475 * parent.width
+                height: .49 * parent.height
                 visible: true
 
                 NumberAnimation{
@@ -350,7 +358,7 @@ Rectangle {
                     target: molliStanding
                     properties: "x"
                     from: 0
-                    to: 425
+                    to: .53125 * parent.width
                     duration: 2500
                     running: false
                 }
@@ -359,8 +367,8 @@ Rectangle {
                     id: molliStandingCouchY
                     target: molliStanding
                     properties: "y"
-                    from: 375
-                    to: 150
+                    from: .75 * parent.height
+                    to: .3 * parent.height
                     duration: 2500
                     running: false
 
@@ -416,6 +424,8 @@ Rectangle {
             AnimatedImage{
                 id: mattSittingCheers
                 source: "../images/mattPerson/sittingCheersGifMatt.gif"
+                width: .15875 * parent.width
+                height: .492 * parent.height
                 x: parent.width/6 * 4
                 y: parent.height/2 - height/1.5
                 playing: false
@@ -424,6 +434,8 @@ Rectangle {
             AnimatedImage{
                 id: molliSittingCheers
                 source: "../images/molliPerson/sittingCheersGifMolli.gif"
+                width: .17375 * parent.width
+                height: .492 * parent.height
                 x: parent.width/2
                 y: parent.height/2 - height/1.5
                 playing: false
