@@ -30,5 +30,11 @@
         <file>images/chorusBaseballField.jpg</file>
         <file>images/rideTheDucks.jpg</file>
         <file>images/noFaceHouse.png</file>
+        <file>images/openedWindow.jpg</file>
+        <file>images/blindsDrawstring.png</file>
+        <file>images/blinds.png</file>
+        <file>images/molliPerson/molliHoldingBlinds.png</file>
+        <file>images/jerseysOnFloor.png</file>
+        <file>images/changingSpotLights.gif</file>
     </qresource>
 </RCC>
