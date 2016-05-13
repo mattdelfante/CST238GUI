@@ -2,18 +2,43 @@ Music Video Ongoing Time Intervals: (song starts at 1100ms)
 
 Start Time	Duration	End Time	Activity
 
-    0		7000		 7000		Champagne bottle animation
- 7000		1000		 8000		Champagne bottle gif
- 8000		2400		10400		Paused on champagne bottle, before VerseOne
-10300		5200		15500		Day to night
-15500		5000		20500		Come on in
-20500		5000		25500		Where you been
-25500		1500		27000		Sitting still on couch
-27000		1500		28500		Raising arms to cheers
-28500		1500		30000		Drinking on couch, before PreChorus
-30000		2500		32500		Gotta stay in
-32500		2500		35000		Map zoom in and out (no dancing)
-35000		2500		37500		Dancing on map zoom in and out
-37500		1300		38800		Gotta stay in in
-38800		 500		39300		Smaller IN visible
-39300		 700		40000		Bigger IN visible, before Chorus
+    0		7000		  7000		Champagne bottle animation
+ 7000		1000		  8000		Champagne bottle gif
+ 8000		2400		 10400		Paused on champagne bottle, before VerseOne
+10300		5200		 15500		Day to night
+15500		5000		 20500		Come on in
+20500		5000		 25500		Where you been
+25500		1500		 27000		Sitting still on couch
+27000		1500		 28500		Raising arms to cheers
+28500		1500		 30000		Drinking on couch, before PreChorus(1)
+30000		2500		 32500		Gotta stay in
+32500		2500		 35000		Map zoom in and out (no dancing)
+35000		2500		 37500		Dancing on map zoom in and out
+37500		1300		 38800		Gotta stay in in
+38800		 500		 39300		Smaller IN visible
+39300		 700		 40000		Bigger IN visible, before Chorus(1)
+40000		2100		 42100		Matt's chorus baseball field intro
+42100		2400		 44500		Matt grow up stairs
+44500		3500		 48000		Macklemore first text
+48000		3500		 51500		Macklemore second text
+51500		3200		 54700		Matt leave Macklemore
+54700		2500		 57200		Matt shrink down stairs
+57200		1200		 58400		Matt walk down hall before shrinking
+58400		1200		 59600		Matt shrink down hall
+59600		9500		 69100		Matt running bases
+69100		2500		 71600		Matt's chorus text ending, before VerseTwo
+71500		5200		 76700		Night to day
+76700		5100		 81800		Close the blinds
+81800		1500		 83300		Clothes on floor
+83300		3200		 86500		Open champagne on Matt
+86500		4500		 91000		Come on celebrate, before PreChorus(2)
+91000		2500		 93500		Gotta stay in
+93500		2500		 96000		Map zoom in and out (no dancing)
+96000		2500		 98500		Dancing on map zoom in and out
+98500		1300		 99800		Gotta stay in in
+99800		 500		100300		Smaller IN visible
+100300		 700		101000		Bigger IN visible, before Chorus(1)
+
+
+
+

@@ -2,8 +2,50 @@ import QtQuick 2.0
 
 Rectangle
 {
+    signal endScene
     id: mattChorusWrapper
     anchors.fill: parent
+
+    Connections
+    {
+        id: connectionTimer
+        target: MyTimer
+        onTimerTimeout:{
+            //End chorus intro field, Begin Matt grow up stairs & Macklemore first text
+            if (totalTimeElapsed === 42100)
+            {
+                outsideOfHouseWrapper.visible = false
+                livingRoomWrapper.visible = true
+                mattWalkUpStairsY.running = true
+                mattWalkUpStairsX.running = true
+                mattShrinkUpStairs.running = true
+            }
+            //End Matt grow up stairs & Macklemore first text, Begin Macklemore second text
+            else if (totalTimeElapsed === 48000)
+            {
+                firstTextBubble.visible = false
+                secondTextBubble.visible = true
+            }
+            //End Macklemore second text, Begin Matt leave Macklemore, shrink stairs & walk hall
+            else if (totalTimeElapsed === 51500)
+            {
+                secondTextBubble.visible = false
+                speechBubble.visible = false
+                mattWalkAwayFromMack.start()
+            }
+            //End Matt leave Macklemore, shrink stairs & walk hall, Begin Matt shrink hall & running bases
+            else if (totalTimeElapsed === 58400)
+            {
+                mattShrinkDownHallway.running = true    //trigger animation
+            }
+            //End Matt shrink hall & running bases, Transition scenes
+            else if (totalTimeElapsed === 71600)
+            {
+                endOfChorusSceneWrapper.visible = false
+                endScene()
+            }
+        }
+    }
 
     Rectangle
     {
@@ -28,32 +70,6 @@ Rectangle
             font.pixelSize: parent.height /9
             x: outsideOfHouseWrapper.width * .5
             y: outsideOfHouseWrapper.height * .2
-        }
-
-        //timer is used for when I am done showing the outside
-        //of the house and transitioning into walking up the stairs
-        //of the living room
-        Timer
-        {
-            id: outsideOfHouseTimer
-            interval: 2100
-            running: false
-            onTriggered:
-            {
-                //visibility of the outside of the house
-                outsideOfHouseWrapper.visible = false
-
-                //make the living room visible
-                livingRoomWrapper.visible = true
-
-                //walk up the stairs
-                mattWalkUpStairsY.running = true
-                mattWalkUpStairsX.running = true
-                mattShrinkUpStairs.running = true
-
-                //start a timer to trigger the macklemore scene
-                mackTimer.start()
-            }
         }
     }
 
@@ -109,6 +125,14 @@ Rectangle
                     to: livingRoomWrapper.height * .32
                     duration: 2400
                     running: false
+
+                    onRunningChanged:
+                    {
+                         if (running === false)
+                         {
+                             macklemoreScene.visible = true
+                         }
+                    }
                 }
 
                 //walking down the stairs
@@ -141,6 +165,15 @@ Rectangle
                     to: livingRoomWrapper.height * .464
                     duration: 2400
                     running: false
+
+                    onRunningChanged:
+                    {
+                        if (running === false)
+                        {
+                            mattWalkDownHallwayX.running = true
+                            mattWalkDownHallwayY.running = true
+                        }
+                    }
                 }
 
                 //walking down the hallway
@@ -186,103 +219,6 @@ Rectangle
                     }
                 }
             }
-        }
-    }
-
-    //handels showing the macklemore scene
-    Timer
-    {
-        id: mackTimer
-        running: false
-        interval: 2400
-        onTriggered:
-        {
-            macklemoreScene.visible = true
-            firstTextTimer.start()
-        }
-    }
-
-    //handels showing the first speech bubble
-    //in the macklemore scene
-    Timer
-    {
-        id: firstTextTimer
-        running:false
-        interval: 3500
-        onTriggered:
-        {
-            firstTextBubble.visible = false
-            secondTextBubble.visible = true
-            secondTextTimer.start()
-        }
-    }
-
-    //handels showing the second speech bubble
-    //in the macklemore scene
-    Timer
-    {
-        id: secondTextTimer
-        running: false
-        interval: 3500
-        onTriggered:
-        {
-            secondTextBubble.visible = false
-            speechBubble.visible = false
-
-            //handels walking away from macklemore animation
-            mattWalkAwayFromMack.start()
-            endOfMackScene.start()
-        }
-    }
-
-    //makes the macklemore scene not seen and triggers animations
-    //for walking down the stairs
-    Timer
-    {
-        id: endOfMackScene
-        running: false
-        interval: 3200
-        onTriggered:
-        {
-            macklemoreScene.visible = false
-
-            //Start walking down the stairs
-            mattWalkDownStairsX.running = true
-            mattWalkDownStairsY.running = true
-            mattGrowDownStairs.running = true
-
-            endOfWalkingDownStairs.running = true
-        }
-    }
-
-    //makes matt start walking down the hallway
-    Timer
-    {
-        id: endOfWalkingDownStairs
-        running: false
-        interval: 2500
-        onTriggered:
-        {
-            //start walking down the hallway
-            mattWalkDownHallwayX.running = true
-            mattWalkDownHallwayY.running = true
-
-            //shrink timer
-            shrinkingTimer.start()
-        }
-    }
-
-    //allows the shrinking animation look
-    //normal
-    Timer
-    {
-        id: shrinkingTimer
-        running: false
-        interval: 1200
-        onTriggered:
-        {
-            //trigger animation
-            mattShrinkDownHallway.running = true
         }
     }
 
@@ -347,6 +283,17 @@ Rectangle
             to: outsideOfHouseWrapper.width
             duration: 3200
             running: false
+
+            onRunningChanged:
+            {
+                if (running === false)
+                {
+                    macklemoreScene.visible = false
+                    mattWalkDownStairsX.running = true
+                    mattWalkDownStairsY.running = true
+                    mattGrowDownStairs.running = true
+                }
+            }
         }
     }
 
@@ -363,7 +310,7 @@ Rectangle
             source: "../images/chorusBaseballField.jpg"
         }
 
-        //handels running around the bases
+        //handles running around the bases
         SequentialAnimation
         {
             id: baseballRunningAnimation
@@ -468,5 +415,4 @@ Rectangle
             font.family: "Monotype Corsiva"
         }
     }
-
 }

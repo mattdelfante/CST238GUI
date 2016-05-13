@@ -14,7 +14,7 @@ Image
         id: connectionTimer
         target: MyTimer
         onTimerTimeout:{
-            //Bottle is opened, transition scenes
+            //Bottle is opened, Transition scenes
             if (totalTimeElapsed === 10400)
                 endScene()
         }

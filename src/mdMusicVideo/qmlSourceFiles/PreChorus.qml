@@ -13,49 +13,60 @@ Rectangle
         id: connectionTimer
         target: MyTimer
         onTimerTimeout:{
+            //Reset certain values for second usage of PreChorus component
+            if (totalTimeElapsed === 90000)
+            {
+                gottaStayIn.visible = true
+                raining.enabled = true
+                mapAnimationHeight.running = true
+                mapAnimationWidth.running = true
+            }
             //End gotta stay in, Begin map zoom
-            if (totalTimeElapsed === 32500)
+            else if (totalTimeElapsed === 32500 || totalTimeElapsed === 93500)
             {
                 gottaStayIn.visible = false
                 mapZoomAndDancing.visible = true
             }
 
             //Begin dancing on map zoom
-            else if (totalTimeElapsed === 35000)
+            else if (totalTimeElapsed === 35000 || totalTimeElapsed === 96000)
             {
                 dancingMatt.visible = true
                 dancingMolli.visible = true
             }
 
             //End dancing and map zoom, Begin gotta stay in in
-            else if (totalTimeElapsed === 37500)
+            else if (totalTimeElapsed === 37500 || totalTimeElapsed === 98500)
             {
                 mapZoomAndDancing.visible = false
                 mapAnimationHeight.running = false
                 mapAnimationWidth.running = false
+                dancingMatt.visible = false
+                dancingMolli.visible = false
                 gottaStayIn.visible = true
                 gottaStayInIn.visible = true
             }
 
             //Small IN text visible
-            else if (totalTimeElapsed === 38800)
+            else if (totalTimeElapsed === 38800 || totalTimeElapsed === 99800)
             {
                 smallerIN.visible = true
             }
 
             //Smaller IN text invisible, bigger IN text visible
-            else if (totalTimeElapsed === 39300)
+            else if (totalTimeElapsed === 39300 || totalTimeElapsed === 100300)
             {
                 smallerIN.visible = false
                 biggerIN.visible = true
             }
 
-            //End gotta stay in in, bigger IN text invisible, transition scenes
-            else if (totalTimeElapsed === 40000)
+            //End gotta stay in in, bigger IN text invisible, Transition scenes
+            else if (totalTimeElapsed === 40000 || totalTimeElapsed === 101000)
             {
                 gottaStayIn.visible = false
                 raining.enabled = false
                 gottaStayInIn.visible = false
+                biggerIN.visible = false
                 endScene()
             }
         }

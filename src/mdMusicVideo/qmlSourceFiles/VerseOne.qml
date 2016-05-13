@@ -105,7 +105,7 @@ Rectangle {
                 molliSittingCheers.playing = true
             }
 
-            //End drinking on couch, transition scenes
+            //End drinking on couch, Transition scenes
             else if (totalTimeElapsed === 30000)
             {
                 livingRoomCouch.visible = false

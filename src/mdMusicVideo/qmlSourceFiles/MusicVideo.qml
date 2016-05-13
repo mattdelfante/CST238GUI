@@ -6,6 +6,7 @@ Rectangle {
     property alias myHouseSong: myHouseSong
     id: musicVideoRect
     anchors.fill: parent
+    property bool afterVerseTwo: false
 
     Settings
     {
@@ -61,7 +62,63 @@ Rectangle {
         visible: false
 
         onEndScene:{
+            preChorusScene.visible = false
+            preChorusScene.enabled = false
 
+            if (!afterVerseTwo)
+            {
+                chorusOneScene.visible = true
+                chorusOneScene.enabled = true
+            }
+            else
+            {
+                //chorusTwoScene.visible = true
+                //chorusTwoScene.enabled = true
+            }
         }
     }
+
+    MattChorus{
+        id: chorusOneScene
+        enabled: false
+        visible: false
+
+        onEndScene:
+        {
+            chorusOneScene.visible = false
+            chorusOneScene.enabled = false
+            verseTwoScene.visible = true
+            verseTwoScene.enabled = true
+        }
+    }
+
+    VerseTwo{
+        id: verseTwoScene
+        enabled: false
+        visible: false
+
+        onEndScene:
+        {
+            afterVerseTwo = true
+            verseTwoScene.visible = false
+            verseTwoScene.enabled = false
+            preChorusScene.visible = true
+            preChorusScene.enabled = true
+        }
+    }
+
+//    PreChorus
+//    {
+//        id: preChorusSceneTwo
+//        enabled: false
+//        visible: false
+
+//        onEndScene:{
+//            preChorusSceneTwo.visible = false
+//            preChorusSceneTwo.enabled = false
+
+//        }
+//    }
 }
+
+

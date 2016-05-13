@@ -43,9 +43,6 @@ import QtQuick.Particles 2.0
 
 Rectangle {
     signal endScene
-    //REMOVE
-    property alias timer1: timer1
-
     id: window
     width: parent.width
     height: parent.height
@@ -53,80 +50,53 @@ Rectangle {
     Connections{
         id: connectionTimer
         target: MyTimer
-        onTimerTimeout:{
-
-        }
-    }
-
-    //REMOVE
-    Timer{
-        id: timer1
-        interval: 5000
-        running: false
-
-        onRunningChanged:
+        onTimerTimeout:
         {
-            groundAnimation.running = true
-            starsAnimation.running = true
-            sunMoonStarsRotationAnimation.running = true
-            skyGradientAnimation1.running = true
-            skyGradientAnimation2.running = true
-        }
-
-        onTriggered:
-        {
-            nightToDayScene.visible = false
-            closeBlindsScene.visible = true
-            closeBlindsAnimation.running = true
-            releaseBlindsDrawstringAnimation.running = true
-            timer2.start()
-            mattDancingUnderChampagne.playing = true
-        }
-    }
-
-    //REMOVE
-    Timer{
-        id: timer2
-        interval: 4500
-        running: false
-
-        onTriggered:
-        {
-            closeBlindsScene.visible = false
-            clothesOnFloorScene.visible = true
-            timer3.start()
-            timer4.start()
-        }
-    }
-
-    //REMOVE
-    Timer{
-        id: timer4
-        interval: 4700
-        running: false
-
-        onTriggered:
-        {
-            clothesOnFloorScene.visible = false
-            continueTonightScene.visible = true
-            mattWalkingOntoFloorX.running = true
-            mattWalkingOntoFloorY.running = true
-            molliWalkingOntoFloorX.running = true
-            molliWalkingOntoFloorY.running = true
-            timer5.start()
-        }
-    }
-
-    //REMOVE
-    Timer{
-        id: timer5
-        interval: 4700
-        running: false
-
-        onTriggered:
-        {
-            continueTonightScene.visible = false
-            endScene()
+            //Begin night to day
+            if (totalTimeElapsed === 71500)
+            {
+                groundAnimation.running = true
+                starsAnimation.running = true
+                sunMoonStarsRotationAnimation.running = true
+                skyGradientAnimation1.running = true
+                skyGradientAnimation2.running = true
+            }
+            //End night to day, Begin close the blinds
+            else if (totalTimeElapsed === 76700)
+            {
+                nightToDayScene.visible = false
+                closeBlindsScene.visible = true
+                closeBlindsAnimation.running = true
+                releaseBlindsDrawstringAnimation.running = true
+                mattDancingUnderChampagne.playing = true
+            }
+            //End close the blinds, Begin clothes on floor
+            else if (totalTimeElapsed === 81800)
+            {
+                closeBlindsScene.visible = false
+                clothesOnFloorScene.visible = true
+            }
+            //Begin open champagne on Matt
+            else if (totalTimeElapsed === 83300)
+            {
+                champagneBottle.playing = true
+            }
+            //End clothes on floor & open champagne on Matt, Begin come on celebrate
+            else if (totalTimeElapsed === 86500)
+            {
+                clothesOnFloorScene.visible = false
+                continueTonightScene.visible = true
+                mattWalkingOntoFloorX.running = true
+                mattWalkingOntoFloorY.running = true
+                molliWalkingOntoFloorX.running = true
+                molliWalkingOntoFloorY.running = true
+            }
+            //End come on celebrate, Transition scenes
+            else if (totalTimeElapsed === 91000)
+            {
+                continueTonightScene.visible = false
+                endScene()
+            }
         }
     }
 
@@ -319,16 +289,6 @@ Rectangle {
             source: "../images/jerseysOnFloor.png"
             anchors.fill: parent
             opacity: .75
-        }
-
-        Timer{
-            id: timer3
-            interval: 1700
-            running: false
-
-            onTriggered:{
-                champagneBottle.playing = true
-            }
         }
 
         AnimatedImage{
