@@ -2,6 +2,7 @@ import QtQuick 2.0
 
 Rectangle
 {
+    property alias endOfDuckSceneTimer: endOfDuckSceneTimer
     id: verseThreeWrapper
     anchors.fill: parent
     visible: false
