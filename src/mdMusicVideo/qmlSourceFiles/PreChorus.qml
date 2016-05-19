@@ -85,7 +85,7 @@ Rectangle
             Image
             {
                 id: rainyHouse
-                source: "../images/faceHouseClouds.png"
+                source: "file:///" + AppDir + "/images/faceHouseClouds.png"
                 anchors.fill: parent
             }
         }
@@ -96,7 +96,7 @@ Rectangle
         }
         ImageParticle
         {
-            source: "../images/raindrop.png"
+            source: "file:///" + AppDir + "/images/raindrop.png"
             system: particles
         }
 
@@ -124,7 +124,7 @@ Rectangle
         Image
         {
             id: washingtonMap
-            source: "../images/washingtonMap.png"
+            source: "file:///" + AppDir + "/images/washingtonMap.png"
             x: parent.width / 2 - (width / 2)
             y: parent.height / 2 - (height / 2)
             height: parent.height /2
@@ -191,7 +191,7 @@ Rectangle
             width: parent.width/5
             height: parent.height/1.5
             visible: false
-            source: "../images/mattPerson/dancingGifMatt.gif"
+            source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
             y: window.height / 8
             x: window.width / 4
         }
@@ -202,7 +202,7 @@ Rectangle
             width: parent.width/5
             height: parent.height/1.5
             visible: false
-            source: "../images/molliPerson/dancingGifMolli.gif"
+            source: "file:///" + AppDir + "/images/molliPerson/dancingGifMolli.gif"
             y: window.height / 8
             x: window.width / 1.35
         }

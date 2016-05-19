@@ -46,5 +46,13 @@
         <file>images/molliPerson/slamDunk.png</file>
         <file>images/mattPerson/mattSombrero.png</file>
         <file>images/molliPerson/molliSombrero.png</file>
+        <file>images/molliChorusHouse.jpg</file>
+        <file>images/modernBedroom.jpg</file>
+        <file>images/loungeBeachside.jpg</file>
+        <file>images/modernLivingRoom.jpg</file>
+        <file>images/modernLivingRoom2.jpg</file>
+        <file>images/petDaycare.jpg</file>
+        <file>images/molliPerson/molliLaying.png</file>
+        <file>images/westie.png</file>
     </qresource>
 </RCC>

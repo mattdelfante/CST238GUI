@@ -15,7 +15,7 @@ Rectangle {
 
     Image{
         anchors.fill: parent
-        source: "../images/splashScreenBg.png"
+        source: "file:///" + AppDir + "/images/splashScreenBg.png"
     }
 
     Rectangle{
@@ -29,7 +29,7 @@ Rectangle {
 
         Image{
             anchors.fill: parent
-            source: "../images/splashScreenWindow.png"
+            source: "file:///" + AppDir + "/images/splashScreenWindow.png"
         }
 
         MyButton{
@@ -181,7 +181,7 @@ Rectangle {
         id: dancingMolli
         width: .125 * parent.width
         height: .4 * parent.height
-        source: "../images/molliPerson/dancingGifMolli.gif"
+        source: "file:///" + AppDir + "/images/molliPerson/dancingGifMolli.gif"
         anchors.bottom: parent.bottom
         anchors.bottomMargin: -parent.height/25
         anchors.horizontalCenter: parent.horizontalCenter
@@ -192,7 +192,7 @@ Rectangle {
         id: dancingMatt
         width: .125 * parent.width
         height: .4 * parent.height
-        source: "../images/mattPerson/dancingGifMatt.gif"
+        source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
         anchors.bottom: parent.bottom
         anchors.bottomMargin: -parent.height/25
         anchors.horizontalCenter: parent.horizontalCenter

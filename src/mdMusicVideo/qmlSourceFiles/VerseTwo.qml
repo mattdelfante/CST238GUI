@@ -142,13 +142,13 @@ Rectangle {
             Image {
                 width: .0625 * parent.width
                 height: width
-                source: "../images/sun.png"; y: 10; anchors.horizontalCenter: parent.horizontalCenter
+                source: "file:///" + AppDir + "/images/sun.png"; y: 10; anchors.horizontalCenter: parent.horizontalCenter
                 rotation: -3 * parent.rotation
             }
             Image {
                 width: .0625 * parent.width
                 height: .8 * width
-                source: "../images/moon.png"; y: parent.height - 74; anchors.horizontalCenter: parent.horizontalCenter
+                source: "file:///" + AppDir + "/images/moon.png"; y: parent.height - 74; anchors.horizontalCenter: parent.horizontalCenter
                 rotation: -parent.rotation
             }
             ParticleSystem {
@@ -158,7 +158,7 @@ Rectangle {
                 ImageParticle {
                     width: 2
                     height: 2
-                    source: "../images/star.png"
+                    source: "file:///" + AppDir + "/images/star.png"
                     groups: ["star"]
                     color: "#00333333"
                     SequentialAnimation on opacity {
@@ -199,7 +199,7 @@ Rectangle {
         Image
         {
             id: mansion
-            source: "../images/mansion.png"
+            source: "file:///" + AppDir + "/images/mansion.png"
             width: height
             height: .3 * parent.height
             anchors.horizontalCenter: parent.horizontalCenter
@@ -216,12 +216,12 @@ Rectangle {
 
         Image{
             id: openedWindow
-            source: "../images/openedWindow.jpg"
+            source: "file:///" + AppDir + "/images/openedWindow.jpg"
             anchors.fill: parent
 
             AnimatedImage{
                 id: mattDancingInWindow
-                source: "../images/mattPerson/dancingGifMatt.gif"
+                source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
                 width: height/2
                 height: molliHoldingBlinds.height
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -231,7 +231,7 @@ Rectangle {
 
             Image{
                 id: blinds
-                source: "../images/blinds.png"
+                source: "file:///" + AppDir + "/images/blinds.png"
                 width: window.width
                 x: 0
                 y: .13 * parent.height
@@ -250,7 +250,7 @@ Rectangle {
 
             Image{
                 id: blindsDrawstring
-                source: "../images/blindsDrawstring.png"
+                source: "file:///" + AppDir + "/images/blindsDrawstring.png"
                 width: window.width
                 x: 0
                 y: .12 * parent.height
@@ -269,7 +269,7 @@ Rectangle {
 
             Image{
                 id: molliHoldingBlinds
-                source: "../images/molliPerson/molliHoldingBlinds.png"
+                source: "file:///" + AppDir + "/images/molliPerson/molliHoldingBlinds.png"
                 width: .186 * parent.width
                 height: .454 * parent.height
                 anchors.bottom: blindsDrawstring.bottom
@@ -286,14 +286,14 @@ Rectangle {
 
         Image{
             id: jerseysOnFloor
-            source: "../images/jerseysOnFloor.png"
+            source: "file:///" + AppDir + "/images/jerseysOnFloor.png"
             anchors.fill: parent
             opacity: .75
         }
 
         AnimatedImage{
             id: mattDancingUnderChampagne
-            source: "../images/mattPerson/dancingGifMatt.gif"
+            source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
             width: .1875 * parent.width
             height: .6 * parent.height
             anchors.left: champagneBottle.horizontalCenter
@@ -305,7 +305,7 @@ Rectangle {
 
         Image{
             id: mattSpeaking
-            source: "../images/speechBubble.png"
+            source: "file:///" + AppDir + "/images/speechBubble.png"
             width: parent.width/6
             height: parent.height/6
             x: mattDancingUnderChampagne.x + mattDancingUnderChampagne.width
@@ -322,7 +322,7 @@ Rectangle {
 
         AnimatedImage{
             id: champagneBottle
-            source: "../images/champagneGif.gif"
+            source: "file:///" + AppDir + "/images/champagneGif.gif"
             width: parent.width * .8
             height: (parent.height * 1.2) * .8
             x: parent.width/2 - width/2
@@ -344,7 +344,7 @@ Rectangle {
 
         Image{
             id: molliHoldingBottle
-            source: "../images/molliPerson/molliHoldingBlinds.png"
+            source: "file:///" + AppDir + "/images/molliPerson/molliHoldingBlinds.png"
             width: .242 * parent.width
             height: .59 * parent.height
             anchors.right: champagneBottle.horizontalCenter
@@ -362,13 +362,13 @@ Rectangle {
 
         AnimatedImage{
             id: changingSpotLights
-            source: "../images/changingSpotLights.gif"
+            source: "file:///" + AppDir + "/images/changingSpotLights.gif"
             anchors.fill: parent
         }
 
         Image{
             id: mattWalking
-            source: "../images/mattPerson/mattStanding.png"
+            source: "file:///" + AppDir + "/images/mattPerson/mattStanding.png"
             width: 80
             height: 232
 
@@ -395,7 +395,7 @@ Rectangle {
 
         Image{
             id: molliWalking
-            source: "../images/molliPerson/molliStanding.png"
+            source: "file:///" + AppDir + "/images/molliPerson/molliStanding.png"
             width: 118
             height: 245
 
@@ -435,7 +435,7 @@ Rectangle {
 
         AnimatedImage{
             id: mattDancing
-            source: "../images/mattPerson/dancingGifMatt.gif"
+            source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
             width: 100 * 1.3
             height: 200 * 1.3
             x: 310
@@ -446,7 +446,7 @@ Rectangle {
 
         AnimatedImage{
             id: molliDancing
-            source: "../images/molliPerson/dancingGifMolli.gif"
+            source: "file:///" + AppDir + "/images/molliPerson/dancingGifMolli.gif"
             width: 100 * 1.3
             height: 200 * 1.3
             x: 419
@@ -456,5 +456,3 @@ Rectangle {
         }
     }
 }
-
-

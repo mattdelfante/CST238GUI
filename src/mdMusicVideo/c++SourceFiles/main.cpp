@@ -25,6 +25,9 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationName("(MD^2)");
     QCoreApplication::setOrganizationDomain(".com");
 
+    QString directory = app.applicationDirPath();
+    engine.rootContext()->setContextProperty("AppDir", directory);
+
     engine.load(QUrl(QStringLiteral("qrc:/qmlSourceFiles/main.qml")));
 
     return app.exec();

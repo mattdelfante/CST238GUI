@@ -6,7 +6,7 @@ Image
     signal endScene
     id: champagneBottleBg
     anchors.fill: parent
-    source: "../images/champagneSceneBg.png"
+    source: "file:///" + AppDir + "/images/champagneSceneBg.png"
 
     property int count: 0
 
@@ -27,7 +27,7 @@ Image
         height: parent.height + parent.height/5
         x: parent.width/2 - width/2
         y: parent.height/2 - height/2
-        source: "../images/champagneGif.gif"
+        source: "file:///" + AppDir + "/images/champagneGif.gif"
 
         //Start gif after bottle has been moved and returns back to center
         playing:(xBehavior.enabled && champagneBottle.x === musicVideoRect.width/2 - champagneBottle.width/2

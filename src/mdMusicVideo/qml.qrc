@@ -14,5 +14,6 @@
         <file>qmlSourceFiles/VerseThree.qml</file>
         <file>qmlSourceFiles/VerseTwo.qml</file>
         <file>qmlSourceFiles/FloRidaChorus.qml</file>
+        <file>qmlSourceFiles/MolliChorus.qml</file>
     </qresource>
 </RCC>

@@ -99,8 +99,8 @@ Rectangle {
             //End cheers on couch, Begin drinking on couch
             else if (totalTimeElapsed === 28500)
             {
-                mattSittingCheers.source = "../images/mattPerson/sittingDrinkingGifMatt.gif"
-                molliSittingCheers.source = "../images/molliPerson/sittingDrinkingGifMolli.gif"
+                mattSittingCheers.source = "file:///" + AppDir + "/images/mattPerson/sittingDrinkingGifMatt.gif"
+                molliSittingCheers.source = "file:///" + AppDir + "/images/molliPerson/sittingDrinkingGifMolli.gif"
                 mattSittingCheers.playing = true
                 molliSittingCheers.playing = true
             }
@@ -156,13 +156,13 @@ Rectangle {
             Image {
                 width: .0625 * parent.width
                 height: width
-                source: "../images/sun.png"; y: 10; anchors.horizontalCenter: parent.horizontalCenter
+                source: "file:///" + AppDir + "/images/sun.png"; y: 10; anchors.horizontalCenter: parent.horizontalCenter
                 rotation: -3 * parent.rotation
             }
             Image {
                 width: .0625 * parent.width
                 height: .8 * width
-                source: "../images/moon.png"; y: parent.height - 74; anchors.horizontalCenter: parent.horizontalCenter
+                source: "file:///" + AppDir + "/images/moon.png"; y: parent.height - 74; anchors.horizontalCenter: parent.horizontalCenter
                 rotation: -parent.rotation
             }
             ParticleSystem {
@@ -172,7 +172,7 @@ Rectangle {
                 ImageParticle {
                     width: 2
                     height: 2
-                    source: "../images/star.png"
+                    source: "file:///" + AppDir + "/images/star.png"
                     groups: ["star"]
                     color: "#00333333"
                     SequentialAnimation on opacity {
@@ -213,7 +213,7 @@ Rectangle {
         Image
         {
             id: mansion
-            source: "../images/mansion.png"
+            source: "file:///" + AppDir + "/images/mansion.png"
             width: height
             height: .3 * parent.height
             anchors.horizontalCenter: parent.horizontalCenter
@@ -251,7 +251,7 @@ Rectangle {
     //Walking to front door
     Image {
         id: fancyFrontDoorOpen
-        source: "../images/openedFrontDoor.jpg"
+        source: "file:///" + AppDir + "/images/openedFrontDoor.jpg"
         width: parent.width
         height: parent.width
         anchors.horizontalCenter: parent.horizontalCenter
@@ -260,7 +260,7 @@ Rectangle {
 
         Image {
             id: molliWalkingToDoor
-            source: "../images/molliPerson/molliWalkingStance.png"
+            source: "file:///" + AppDir + "/images/molliPerson/molliWalkingStance.png"
             y: parent.height/2
             width: .125 * parent.width
             height: .4 * window.height
@@ -289,7 +289,7 @@ Rectangle {
 
         Image {
             id: mattWaitingAtDoor
-            source: "../images/mattPerson/mattWaitingStance.png"
+            source: "file:///" + AppDir + "/images/mattPerson/mattWaitingStance.png"
             width: .125 * parent.width
             height: .4 * window.height
             anchors.horizontalCenter: parent.horizontalCenter
@@ -302,7 +302,7 @@ Rectangle {
     //In living room
     Image{
         id: livingRoomCouch
-        source: "../images/livingRoomCouch.jpg"
+        source: "file:///" + AppDir + "/images/livingRoomCouch.jpg"
         width: parent.width
         height: parent.height
         visible: false
@@ -316,7 +316,7 @@ Rectangle {
 
             Image{
                 id: mattStanding
-                source: "../images/mattPerson/mattStanding.png"
+                source: "file:///" + AppDir + "/images/mattPerson/mattStanding.png"
                 width: .1 * parent.width
                 height: .464 * parent.height
                 visible: true
@@ -348,7 +348,7 @@ Rectangle {
 
             Image{
                 id: molliStanding
-                source: "../images/molliPerson/molliStanding.png"
+                source: "file:///" + AppDir + "/images/molliPerson/molliStanding.png"
                 width: .1475 * parent.width
                 height: .49 * parent.height
                 visible: true
@@ -380,7 +380,7 @@ Rectangle {
 
             Image{
                 id: mattSpeechBubble
-                source: "../images/speechBubble.png"
+                source: "file:///" + AppDir + "/images/speechBubble.png"
                 visible: false
                 width: parent.width/6
                 height: parent.height/6
@@ -397,7 +397,7 @@ Rectangle {
 
             Image{
                 id: molliSpeechBubble
-                source: "../images/speechBubble.png"
+                source: "file:///" + AppDir + "/images/speechBubble.png"
                 mirror: true
                 visible: false
                 width: parent.width/6
@@ -423,7 +423,7 @@ Rectangle {
 
             AnimatedImage{
                 id: mattSittingCheers
-                source: "../images/mattPerson/sittingCheersGifMatt.gif"
+                source: "file:///" + AppDir + "/images/mattPerson/sittingCheersGifMatt.gif"
                 width: .15875 * parent.width
                 height: .492 * parent.height
                 x: parent.width/6 * 4
@@ -433,7 +433,7 @@ Rectangle {
 
             AnimatedImage{
                 id: molliSittingCheers
-                source: "../images/molliPerson/sittingCheersGifMolli.gif"
+                source: "file:///" + AppDir + "/images/molliPerson/sittingCheersGifMolli.gif"
                 width: .17375 * parent.width
                 height: .492 * parent.height
                 x: parent.width/2

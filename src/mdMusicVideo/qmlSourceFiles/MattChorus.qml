@@ -56,7 +56,7 @@ Rectangle
         Image
         {
             id: mattChorusHouse
-            source: "../images/mattChorusHouse.png"
+            source: "file:///" + AppDir + "/images/mattChorusHouse.png"
             anchors.fill: parent
         }
 
@@ -82,13 +82,13 @@ Rectangle
         Image
         {
             id: mattLivingRoomStairs
-            source: "../images/mattLivingRoom.jpg"
+            source: "file:///" + AppDir + "/images/mattLivingRoom.jpg"
             anchors.fill: parent
 
             Image
             {
                 id: mattWalkStairs
-                source: "../images/mattPerson/mattStanding.png"
+                source: "file:///" + AppDir + "/images/mattPerson/mattStanding.png"
                 width: height * .345
                 height: parent.height * .464
                 x: 0
@@ -230,7 +230,7 @@ Rectangle
         Image
         {
             id: macklemore
-            source: "../images/macklemore.jpg"
+            source: "file:///" + AppDir + "/images/macklemore.jpg"
             anchors.fill: parent
         }
         AnimatedImage
@@ -239,7 +239,7 @@ Rectangle
             width: parent.width/7
             height: parent.height / 1.25
             visible: true
-            source: "../images/mattPerson/dancingGifMatt.gif"
+            source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
             y: outsideOfHouseWrapper.height - height
             x: 0
         }
@@ -247,7 +247,7 @@ Rectangle
         Image
         {
             id: speechBubble
-            source: "../images/speechBubble.png"
+            source: "file:///" + AppDir + "/images/speechBubble.png"
             visible: true
             width: parent.width / 4
             height: parent.height / 4
@@ -307,7 +307,7 @@ Rectangle
             id: baseballField
             anchors.fill: parent
             visible: true
-            source: "../images/chorusBaseballField.jpg"
+            source: "file:///" + AppDir + "/images/chorusBaseballField.jpg"
         }
 
         //handles running around the bases
@@ -397,7 +397,7 @@ Rectangle
             width: parent.width/16
             height: parent.height * .2
             visible: true
-            source: "../images/mattPerson/dancingGifMatt.gif"
+            source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
             y: endOfChorusSceneWrapper.height - height * 1.1
             x: endOfChorusSceneWrapper.width / 2.09
         }
