@@ -13,5 +13,6 @@
         <file>qmlSourceFiles/MattChorus.qml</file>
         <file>qmlSourceFiles/VerseThree.qml</file>
         <file>qmlSourceFiles/VerseTwo.qml</file>
+        <file>qmlSourceFiles/FloRidaChorus.qml</file>
     </qresource>
 </RCC>

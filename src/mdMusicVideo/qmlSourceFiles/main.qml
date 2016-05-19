@@ -26,11 +26,6 @@ Window {
                 splashScreen.visible = false
                 musicVideoScenes.visible = true
                 settingsDisplaySettings.visible = false
-
-                //delete
-                musicVideoScenes.verseThree.endOfDuckSceneTimer.start()
-
-                //seeking thing
             }
 
             onClickedSettings:

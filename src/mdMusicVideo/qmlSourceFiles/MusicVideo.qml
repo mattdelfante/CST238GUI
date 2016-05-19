@@ -4,7 +4,6 @@ import Qt.labs.settings 1.0
 
 Rectangle {
     property alias myHouseSong: myHouseSong
-    property alias verseThree: verseThree
     id: musicVideoRect
     anchors.fill: parent
     property bool afterVerseTwo: false
@@ -27,40 +26,40 @@ Rectangle {
         }
     }
 
-//    ChampagneScene
-//    {
-//        id: champagneIntroScene
-//        visible: true
+    ChampagneScene
+    {
+        id: champagneIntroScene
+        visible: true
 
-//        onEndScene:
-//        {
-//            champagneIntroScene.visible = false
-//            champagneIntroScene.enabled = false
-//            verseOneScene.visible = true
-//            verseOneScene.enabled = true
-//        }
-//    }
+        onEndScene:
+        {
+            champagneIntroScene.visible = false
+            champagneIntroScene.enabled = false
+            verseOneScene.visible = true
+            verseOneScene.enabled = true
+        }
+    }
 
-//    VerseOne
-//    {
-//        id: verseOneScene
-//        enabled: false
-//        visible: false
+    VerseOne
+    {
+        id: verseOneScene
+        enabled: false
+        visible: false
 
-//        onEndScene:
-//        {
-//            verseOneScene.visible = false
-//            verseOneScene.enabled = false
-//            preChorusScene.visible = true
-//            preChorusScene.enabled = true
-//        }
-//    }
+        onEndScene:
+        {
+            verseOneScene.visible = false
+            verseOneScene.enabled = false
+            preChorusScene.visible = true
+            preChorusScene.enabled = true
+        }
+    }
 
-//    PreChorus
-//    {
-//        id: preChorusScene
-//        enabled: false
-//        visible: false
+    PreChorus
+    {
+        id: preChorusScene
+        enabled: false
+        visible: false
 
         onEndScene:{
             preChorusScene.visible = false
@@ -77,10 +76,6 @@ Rectangle {
                 //chorusTwoScene.enabled = true
             }
         }
-    }
-    VerseThree
-    {
-        id: verseThree
     }
 
     MattChorus{

@@ -36,5 +36,15 @@
         <file>images/molliPerson/molliHoldingBlinds.png</file>
         <file>images/jerseysOnFloor.png</file>
         <file>images/changingSpotLights.gif</file>
+        <file>images/sadHouse2.png</file>
+        <file>images/cryingJordan.png</file>
+        <file>images/happyFace.png</file>
+        <file>images/happyHouse.png</file>
+        <file>images/mattPerson/mattMoney.png</file>
+        <file>images/mattPerson/homerun.jpg</file>
+        <file>images/molliPerson/tuchdownPass.png</file>
+        <file>images/molliPerson/slamDunk.png</file>
+        <file>images/mattPerson/mattSombrero.png</file>
+        <file>images/molliPerson/molliSombrero.png</file>
     </qresource>
 </RCC>
