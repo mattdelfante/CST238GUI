@@ -108,15 +108,6 @@ DISTFILES += \
     images/molliPerson/molliSombreroGif.gif \
     images/molliPerson/molliLayingLawnChair.png \
     images/mattPerson/mattLayingLawnChair.png \
-    images/mattPerson/mattMoney.png \
-    images/mattPerson/mattSombrero.png \
-    images/molliPerson/molliSombrero.png \
-    images/molliPerson/slamDunk.png \
-    images/molliPerson/tuchdownPass.png \
-    images/cryingJordan.png \
-    images/happyFace.png \
-    images/happyHouse.png \
-    images/sadHouse2.png \
     images/waterBackLayer.png \
     images/waterFrontLayer.png \
     images/molliPerson/molliDiving.png \

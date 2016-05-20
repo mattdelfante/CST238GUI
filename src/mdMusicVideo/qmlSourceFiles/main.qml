@@ -42,7 +42,7 @@ Window {
 
             onCloseProgram:
             {
-                mainWindow.visible = false
+                mainWindow.close()
             }
         }
 

@@ -131,6 +131,38 @@ Rectangle {
         id: verseThreeScene
         enabled: false
         visible: false
+
+        onEndScene: {
+            verseThreeScene.visible = false
+            verseThreeScene.enabled = false
+            chorusThreeScene.visible = true
+            chorusThreeScene.enabled = true
+            chorusThreeScene.endOfOutSideFloRidaHouseTimer.start()
+        }
+    }
+
+    FloRidaChorus{
+        id: chorusThreeScene
+        enabled: false
+        visible: false
+
+        onEndScene:{
+            chorusThreeScene.visible = false
+            chorusThreeScene.enabled = false
+            creditsScene.visible = true
+            creditsScene.enabled = true
+            creditsScene.transitionText1.start()
+        }
+    }
+
+    Credits{
+        id: creditsScene
+        enabled: false
+        visible: false
+
+        onEndScene: {
+            endOfCredits()
+        }
     }
 }
 

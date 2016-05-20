@@ -4,6 +4,7 @@ import QtQuick.Particles 2.0
 Rectangle
 {
     property alias endOfDuckSceneTimer: endOfDuckSceneTimer
+    signal endScene
     id: verseThreeWrapper
     anchors.fill: parent
     visible: false
@@ -462,6 +463,7 @@ Rectangle
             onTriggered:
             {
                 verseThreeWrapper.visible = false
+                endScene()
             }
         }
 
