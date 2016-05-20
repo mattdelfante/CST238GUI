@@ -73,7 +73,7 @@ Image
             }
             onReleased:
             {
-                myHouseSong.seek(1100)      //since song doesn't have sound until 1.1 seconds into the song
+                myHouseSong.seek(1500)      //since song doesn't have sound until 1.5 seconds into the song
                 myHouseSong.play()
                 MyTimer.startMyTimer()
                 xBehavior.enabled = true

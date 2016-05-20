@@ -1,4 +1,4 @@
-Music Video Ongoing Time Intervals: (song starts at 1100ms)
+Music Video Ongoing Time Intervals: (song starts at 1500ms)
 
 Start Time	Duration	End Time	Activity
 
@@ -37,7 +37,7 @@ Start Time	Duration	End Time	Activity
 96000		2500		 98500		Dancing on map zoom in and out
 98500		1300		 99800		Gotta stay in in
 99800		 500		100300		Smaller IN visible
-100300		 700		101000		Bigger IN visible, before Chorus(1)
+100300		 700		101000		Bigger IN visible, before Chorus(2)
 
 
 

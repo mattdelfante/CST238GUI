@@ -10,8 +10,7 @@ SOURCES += c++SourceFiles/main.cpp \
     c++SourceFiles/musicvideo.cpp \
     c++SourceFiles/mytimer.cpp
 
-RESOURCES += qml.qrc \
-    sounds.qrc
+RESOURCES += qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -108,7 +107,20 @@ DISTFILES += \
     images/mattPerson/mattSombreroGif.gif \
     images/molliPerson/molliSombreroGif.gif \
     images/molliPerson/molliLayingLawnChair.png \
-    images/mattPerson/mattLayingLawnChair.png
+    images/mattPerson/mattLayingLawnChair.png \
+    images/mattPerson/mattMoney.png \
+    images/mattPerson/mattSombrero.png \
+    images/molliPerson/molliSombrero.png \
+    images/molliPerson/slamDunk.png \
+    images/molliPerson/tuchdownPass.png \
+    images/cryingJordan.png \
+    images/happyFace.png \
+    images/happyHouse.png \
+    images/sadHouse2.png \
+    images/waterBackLayer.png \
+    images/waterFrontLayer.png \
+    images/molliPerson/molliDiving.png \
+    sounds/myHouseFloRida.mp3
 
 HEADERS += \
     c++HeaderFiles/matt.h \

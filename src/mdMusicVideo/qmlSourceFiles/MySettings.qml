@@ -4,6 +4,7 @@ import Qt.labs.settings 1.0
 
 Rectangle {
     id: settingsWrapper
+    property double volumeLevel: 0.5
     property bool isVolumeOn: true
     property bool isSubtitlesOn: false
     property bool isLoopPlayOn: false
@@ -17,12 +18,32 @@ Rectangle {
     Settings
     {
         id: settingsDisplaySettings
-        property alias volText: volumeButtonText.text
+        property alias volSlide: volumeSlider.value
+        //property alias volText: volumeButtonText.text
         property alias subText: subTitleButtonText.text
         property alias loopText: loopButtonText.text
         property alias volBool: settingsWrapper.isVolumeOn
         property alias subBool: settingsWrapper.isSubtitlesOn
         property alias loopBool: settingsWrapper.isLoopPlayOn
+    }
+
+    Slider
+    {
+        id: volumeSlider
+        value: 0.5
+        x: settingsWrapper.width * .53125425
+        y: volumeText.y + settingsWrapper.height * .04
+        width: settingsWrapper.width * .125
+        onValueChanged:
+        {
+            volumeLevel = value
+            volumeChange()
+
+            if (value === 0)
+                isVolumeOn = false
+            else
+                isVolumeOn = true
+        }
     }
 
     Text
@@ -79,52 +100,53 @@ Rectangle {
         font.family: "Monotype Corsiva"
     }
 
-    MyButton
-    {
-        id: volumeButton
-        width: parent.width/10
-        height: parent.height/12
-        radius: width/2
-        anchors.left: volumeText.right
-        anchors.leftMargin: parent.width / 8
-        anchors.verticalCenter: volumeText.verticalCenter
-        buttonColor: "light grey"
+//    MyButton
+//    {
+//        id: volumeButton
+//        width: parent.width/10
+//        height: parent.height/12
+//        radius: width/2
+//        anchors.left: volumeText.right
+//        anchors.leftMargin: parent.width / 8
+//        anchors.verticalCenter: volumeText.verticalCenter
+//        buttonColor: "light grey"
+//        visible: false
 
-        Text
-        {
-            id: volumeButtonText
-            anchors.horizontalCenter: volumeButton.horizontalCenter
-            anchors.verticalCenter: volumeButton.verticalCenter
-            text: "On"
-            font.bold: true
-            font.pixelSize: volumeButton.height/3
-            font.family: "Monotype Corsiva"
-       }
+//        Text
+//        {
+//            id: volumeButtonText
+//            anchors.horizontalCenter: volumeButton.horizontalCenter
+//            anchors.verticalCenter: volumeButton.verticalCenter
+//            text: "On"
+//            font.bold: true
+//            font.pixelSize: volumeButton.height/3
+//            font.family: "Monotype Corsiva"
+//       }
 
-        ma_buttonMouseArea.onEntered:
-        {
-            buttonColor = "#00fffb"
-        }
-        ma_buttonMouseArea.onExited:
-        {
-            buttonColor = "light grey"
-        }
-        ma_buttonMouseArea.onClicked:
-        {
-            if (volumeButtonText.text === "On")
-            {
-                volumeButtonText.text = "Off"
-                isVolumeOn = false
-                volumeChange()
-            }
-            else
-            {
-                volumeButtonText.text = "On"
-                isVolumeOn = true
-                volumeChange()
-            }
-        }
-    }
+//        ma_buttonMouseArea.onEntered:
+//        {
+//            buttonColor = "#00fffb"
+//        }
+//        ma_buttonMouseArea.onExited:
+//        {
+//            buttonColor = "light grey"
+//        }
+//        ma_buttonMouseArea.onClicked:
+//        {
+//            if (volumeButtonText.text === "On")
+//            {
+//                volumeButtonText.text = "Off"
+//                isVolumeOn = false
+//                volumeChange()
+//            }
+//            else
+//            {
+//                volumeButtonText.text = "On"
+//                isVolumeOn = true
+//                volumeChange()
+//            }
+//        }
+//    }
 
     MyButton
     {
@@ -132,7 +154,8 @@ Rectangle {
         width: parent.width/10
         height: parent.height/12
         radius: width/2
-        anchors.left: volumeButton.left
+        anchors.left: volumeText.right
+        anchors.leftMargin: parent.width / 8
         anchors.verticalCenter: subtitlesText.verticalCenter
         buttonColor: "light grey"
 
@@ -176,7 +199,8 @@ Rectangle {
         width: parent.width/10
         height: parent.height/12
         radius: width/2
-        anchors.left: volumeButton.left
+        anchors.left: volumeText.right
+        anchors.leftMargin: parent.width / 8
         anchors.verticalCenter: loopText.verticalCenter
         buttonColor: "light grey"
 

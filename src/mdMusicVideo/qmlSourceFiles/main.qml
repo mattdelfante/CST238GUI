@@ -26,6 +26,11 @@ Window {
                 splashScreen.visible = false
                 musicVideoScenes.visible = true
                 settingsDisplaySettings.visible = false
+
+                //REMOVE
+//                musicVideoScenes.chorusTwo.timer1.start()
+//                musicVideoScenes.myHouseSong.seek(102500)
+//                musicVideoScenes.myHouseSong.play()
             }
 
             onClickedSettings:
@@ -71,7 +76,7 @@ Window {
                 if (isVolumeOn === false)
                     musicVideoScenes.myHouseSong.volume = 0.0
                 else
-                    musicVideoScenes.myHouseSong.volume = 1.0
+                    musicVideoScenes.myHouseSong.volume = volumeLevel
             }
         }
     }

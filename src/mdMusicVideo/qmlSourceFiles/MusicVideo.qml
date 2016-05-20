@@ -3,6 +3,9 @@ import QtMultimedia 5.6
 import Qt.labs.settings 1.0
 
 Rectangle {
+    //REMOVE
+    property alias chorusTwo:chorusTwoScene
+
     property alias myHouseSong: myHouseSong
     signal endOfCredits
 
@@ -19,8 +22,8 @@ Rectangle {
     Audio
     {
         id: myHouseSong
-        source: "../sounds/myHouseFloRida.mp3"
-        volume: 1.0
+        source: "file:///" + AppDir + "/sounds/myHouseFloRida.mp3"
+        volume: 0.5
     }
 
     ChampagneScene
@@ -69,8 +72,11 @@ Rectangle {
             }
             else
             {
-                //chorusTwoScene.visible = true
-                //chorusTwoScene.enabled = true
+                //DELETE
+                chorusTwoScene.timer1.start()
+
+                chorusTwoScene.visible = true
+                chorusTwoScene.enabled = true
             }
         }
     }
@@ -102,6 +108,29 @@ Rectangle {
             preChorusScene.visible = true
             preChorusScene.enabled = true
         }
+    }
+
+    MolliChorus{
+        id: chorusTwoScene
+        enabled: false
+        visible: false
+
+        onEndScene:
+        {
+            chorusTwoScene.visible = false
+            chorusTwoScene.enabled = false
+            verseThreeScene.visible = true
+            verseThreeScene.enabled = true
+
+            //REMOVE
+            verseThreeScene.endOfDuckSceneTimer.start()
+        }
+    }
+
+    VerseThree{
+        id: verseThreeScene
+        enabled: false
+        visible: false
     }
 }
 
