@@ -45,6 +45,11 @@ Window {
         {
             id: musicVideoScenes
             visible: false
+            onEndOfCredits:
+            {
+                musicVideoScenes.visible = false
+                splashScreen.visible = true
+            }
         }
 
         MySettings

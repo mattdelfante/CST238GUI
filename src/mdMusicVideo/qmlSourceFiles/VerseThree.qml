@@ -29,7 +29,7 @@ Rectangle
         Image
         {
             id: rideTheDucksImage
-            source: "../images/rideTheDucks.jpg"
+            source: "file:///" + AppDir + "/images/rideTheDucks.jpg"
             anchors.fill: parent
         }
 
@@ -39,7 +39,7 @@ Rectangle
             width: parent.width/12
             height: parent.height / 3
             visible: true
-            source: "../images/mattPerson/dancingGifMatt.gif"
+            source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
             y: parent.height * .19
             x: parent.width / 6
         }
@@ -49,7 +49,7 @@ Rectangle
             width: parent.width/12
             height: parent.height/3
             visible: true
-            source: "../images/molliPerson/dancingGifMolli.gif"
+            source: "file:///" + AppDir + "/images/molliPerson/dancingGifMolli.gif"
             y: parent.height * .32
             x: parent.width / 2
         }
@@ -91,7 +91,7 @@ Rectangle
         Image
         {
             id: mattHouse
-            source: "../images/mansion.png"
+            source: "file:///" + AppDir + "/images/mansion.png"
             anchors.right: parent.right
             width: parent.width * .25
             height: parent.height * .6
@@ -101,7 +101,7 @@ Rectangle
         Image
         {
             id: molliHouse
-            source: "../images/noFaceHouse.png"
+            source: "file:///" + AppDir + "/images/noFaceHouse.png"
             anchors.left: parent.left
             anchors.leftMargin: -30
             anchors.bottom: parent.bottom
@@ -112,7 +112,7 @@ Rectangle
         Image
         {
             id: sun
-            source: "../images/sun.png"
+            source: "file:///" + AppDir + "/images/sun.png"
             x:0
             y:0
             width: verseThreeWrapper.width * .1875
@@ -122,7 +122,7 @@ Rectangle
         Image
         {
             id: mattNextToHouse
-            source: "../images/mattPerson/mattWaitingStance.png"
+            source: "file:///" + AppDir + "/images/mattPerson/mattWaitingStance.png"
             anchors.right: mattHouse.left
             anchors.bottom: parent.bottom
             anchors.bottomMargin: -.03 * parent.height
@@ -133,7 +133,7 @@ Rectangle
         Image
         {
             id: molliNextToHouse
-            source: "../images/molliPerson/molliStanding.png"
+            source: "file:///" + AppDir + "/images/molliPerson/molliStanding.png"
             anchors.left: molliHouse.right
             anchors.bottom: parent.bottom
             anchors.bottomMargin: -.03 * parent.height
@@ -144,7 +144,7 @@ Rectangle
         Image
         {
             id: mattSpeechBubble
-            source: "../images/speechBubble.png"
+            source: "file:///" + AppDir + "/images/speechBubble.png"
             visible: true
             width: parent.width / 8
             height: parent.height / 8
@@ -164,7 +164,7 @@ Rectangle
         Image
         {
             id: molliSpeechBubble
-            source: "../images/speechBubble.png"
+            source: "file:///" + AppDir + "/images/speechBubble.png"
             visible: true
             width: parent.width / 8
             height: parent.height / 8
@@ -191,7 +191,7 @@ Rectangle
         {
             rainingSmiles.enabled = true
             sadHouseWrapper.color = "yellow"
-            cryingJordanHouse.source = "../images/happyHouse.png"
+            cryingJordanHouse.source = "file:///" + AppDir + "/images/happyHouse.png"
         }
     }
 
@@ -219,7 +219,7 @@ Rectangle
         {
             id: cryingJordanHouse
             anchors.fill: parent
-            source: "../images/sadHouse2.png"
+            source: "file:///" + AppDir + "/images/sadHouse2.png"
         }
         ParticleSystem
         {
@@ -227,7 +227,7 @@ Rectangle
         }
         ImageParticle
         {
-            source: "../images/happyFace.png"
+            source: "file:///" + AppDir + "/images/happyFace.png"
             system: particles
         }
 
@@ -248,7 +248,7 @@ Rectangle
         Image
         {
             id: mattWalkWithCash
-            source: "../images/mattPerson/mattMoney.png"
+            source: "file:///" + AppDir + "/images/mattPerson/mattMoney.png"
             width: height * .345
             height: parent.height * .464
             x: verseThreeWrapper.width - mattWalkWithCash.width
@@ -314,6 +314,7 @@ Rectangle
         {
             touchDownPass.visible = false
             miCasaIsTuCasaWrapper.visible = true
+            startTakingShot.start()
         }
     }
 
@@ -325,7 +326,7 @@ Rectangle
         Image
         {
             id: homerun
-            source: "../images/mattPerson/homerun.jpg"
+            source: "file:///" + AppDir + "/images/mattPerson/homerun.jpg"
             visible: false
             anchors.fill: parent
             Text
@@ -343,7 +344,7 @@ Rectangle
         Image
         {
             id: slamDunk
-            source: "../images/molliPerson/slamDunk.png"
+            source: "file:///" + AppDir + "/images/molliPerson/slamDunk.png"
             anchors.fill: parent
             visible: false
         }
@@ -351,7 +352,7 @@ Rectangle
         Image
         {
             id: touchDownPass
-            source: "../images/molliPerson/tuchdownPass.png"
+            source: "file:///" + AppDir + "/images/molliPerson/tuchdownPass.png"
             anchors.fill: parent
             visible: false
         }
@@ -379,7 +380,7 @@ Rectangle
         Image
         {
             id: mattCasa
-            source: "../images/mansion.png"
+            source: "file:///" + AppDir + "/images/mansion.png"
             anchors.right: parent.right
             width: parent.width * .25
             height: parent.height * .6
@@ -388,7 +389,7 @@ Rectangle
         Image
         {
             id: sunSpanish
-            source: "../images/sun.png"
+            source: "file:///" + AppDir + "/images/sun.png"
             x:0
             y:0
             width: verseThreeWrapper.width * .1875
@@ -398,7 +399,7 @@ Rectangle
         Image
         {
             id: molliCasa
-            source: "../images/noFaceHouse.png"
+            source: "file:///" + AppDir + "/images/noFaceHouse.png"
             anchors.left: parent.left
             anchors.leftMargin: -30
             anchors.bottom: parent.bottom
@@ -406,32 +407,92 @@ Rectangle
             height: parent.height * .6
         }
 
-        Image
+        AnimatedImage
         {
-            id: mattNextToCasa
-            source: "../images/mattPerson/mattSombrero.png"
+            id: mattDrink
             anchors.right: mattCasa.left
             anchors.bottom: parent.bottom
             anchors.bottomMargin: -.03 * parent.height
             width: .125 * parent.width
             height: .4 * parent.height
+            source: "file:///" + AppDir + "/images/mattPerson/mattSombreroGif.gif"
+            visible: true
+            playing: false
         }
 
-        Image
+        AnimatedImage
         {
-            id: molliNextToCasa
-            source: "../images/molliPerson/molliSombrero.png"
+            id: molliDrink
             anchors.left: molliCasa.right
             anchors.bottom: parent.bottom
             anchors.bottomMargin: -.03 * parent.height
             width: mattNextToHouse.width
             height: mattNextToHouse.height
+            source: "file:///" + AppDir + "/images/molliPerson/molliSombreroGif.gif"
+            visible: true
+            playing: false
+            onPlayingChanged:
+            {
+                if (playing === false)
+                {
+                    triggerLawnChairsTimer.start()
+                }
+            }
+        }
+
+        Timer
+        {
+            id: triggerLawnChairsTimer
+            interval: 500
+            running: false
+            onTriggered:
+            {
+                molliDrink.visible = false
+                mattDrink.visible = false
+                lawnChairMatt.visible = true
+                lawnChairMolli.visible = true
+                endSceneTimer.start()
+            }
+        }
+
+        Timer
+        {
+            id: endSceneTimer
+            interval: 2200
+            onTriggered:
+            {
+                verseThreeWrapper.visible = false
+            }
+        }
+
+        Image
+        {
+            id: lawnChairMatt
+            source: "file:///" + AppDir + "/images/mattPerson/mattLayingLawnChair.png"
+            anchors.right: mattCasa.left
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: -.03 * parent.height
+            width: .2 * parent.width
+            height: .4 * parent.height
+            visible: false
+        }
+
+        Image
+        {
+            id: lawnChairMolli
+            source: "file:///" + AppDir + "/images/molliPerson/molliLayingLawnChair.png"
+            anchors.left: molliCasa.right
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: -.03 * parent.height
+            width: lawnChairMatt.width
+            height: mattNextToHouse.height
+            visible: false
         }
 
         Image
         {
             id: mattSpanishBubble
-            source: "../images/speechBubble.png"
+            source: "file:///" + AppDir + "/images/speechBubble.png"
             visible: true
             width: parent.width / 8
             height: parent.height / 8
@@ -451,7 +512,7 @@ Rectangle
         Image
         {
             id: molliSpanishBubble
-            source: "../images/speechBubble.png"
+            source: "file:///" + AppDir + "/images/speechBubble.png"
             visible: true
             width: parent.width / 8
             height: parent.height / 8
@@ -466,6 +527,22 @@ Rectangle
                 text: "Mi casa\nes tu casa!"
                 font.pixelSize: parent.height/6
             }
+        }
+    }
+
+    Timer
+    {
+        id: startTakingShot
+        running: false
+        interval: 2700
+        onTriggered:
+        {
+            mattSpanishBubble.visible = false
+            molliSpanishBubble.visible = false
+            mattDrink.visible = true
+            mattDrink.playing = true
+            molliDrink.visible = true
+            molliDrink.playing = true
         }
     }
 

@@ -4,6 +4,8 @@ import Qt.labs.settings 1.0
 
 Rectangle {
     property alias myHouseSong: myHouseSong
+    signal endOfCredits
+
     id: musicVideoRect
     anchors.fill: parent
     property bool afterVerseTwo: false
@@ -19,11 +21,6 @@ Rectangle {
         id: myHouseSong
         source: "../sounds/myHouseFloRida.mp3"
         volume: 1.0
-
-        onPlaying:
-        {
-            seekable: true
-        }
     }
 
     ChampagneScene
@@ -106,7 +103,6 @@ Rectangle {
             preChorusScene.enabled = true
         }
     }
-
 }
 
 

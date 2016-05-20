@@ -88,7 +88,27 @@ DISTFILES += \
     images/molliPerson/molliSittingCheers6.png \
     images/molliPerson/molliSittingCheers7.png \
     images/molliPerson/molliStanding.png \
-    images/molliPerson/molliWalkingStance.png
+    images/molliPerson/molliWalkingStance.png \
+    images/mattPerson/homerun.jpg \
+    images/mattPerson/mattSombrero.png \
+    images/mattPerson/mattMoney.png \
+    images/molliPerson/molliSombrero.png \
+    images/molliPerson/tuchdownPass.png \
+    images/molliPerson/slamDunk.png \
+    images/happyHouse.png \
+    images/happyFace.png \
+    images/sadHouse2.png \
+    images/cryingJordan.png \
+    images/floRidaStage.jpg \
+    images/floRidaGarage.jpg \
+    images/floRidaPerson/floRidaSinging.png \
+    images/floRidaPerson/floRidaStanding.png \
+    images/floRidaHouse.jpg \
+    images/floRidaPerson/floRidaDancingGif2.gif \
+    images/mattPerson/mattSombreroGif.gif \
+    images/molliPerson/molliSombreroGif.gif \
+    images/molliPerson/molliLayingLawnChair.png \
+    images/mattPerson/mattLayingLawnChair.png
 
 HEADERS += \
     c++HeaderFiles/matt.h \
