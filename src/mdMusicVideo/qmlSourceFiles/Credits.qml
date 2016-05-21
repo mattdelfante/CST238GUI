@@ -3,6 +3,7 @@ import QtQuick 2.0
 Rectangle
 {
     property alias transitionText1: transitionText1
+    property alias theEndText: theEndText
     signal endScene
     id: creditsWrapper
     anchors.fill: parent
@@ -86,8 +87,8 @@ Rectangle
             choreographyByText.visible = false
             songsUsed.visible = true
             myHouse.visible = true
-            song2.visible = true
-            song3.visible = true
+            handsToMyself.visible = true
+            tenThousandHours.visible = true
             transitionText3.start()
         }
     }
@@ -119,26 +120,26 @@ Rectangle
 
     Text
     {
-        id: song2
+        id: handsToMyself
         color: "white"
         visible: false
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: producedByText.bottom
         anchors.topMargin: creditsWrapper.height * .05
-        text: "Song 2 By Artist2"
+        text: "Hands To Myself By Selena Gomez"
         font.pixelSize: parent.height /15
         font.family: "Monotype Corsiva"
     }
 
     Text
     {
-        id: song3
+        id: tenThousandHours
         color: "white"
         visible: false
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: createdByText.bottom
         anchors.topMargin: creditsWrapper.height * .05
-        text: "Song 3 By Artist3"
+        text: "Ten Thousand Hours By Macklemore"
         font.pixelSize: parent.height /15
         font.family: "Monotype Corsiva"
     }
@@ -152,10 +153,10 @@ Rectangle
         {
             songsUsed.visible = false
             myHouse.visible = false
-            song2.visible = false
-            song3.visible = false
+            handsToMyself.visible = false
+            tenThousandHours.visible = false
+            creditsWrapper.visible = false
             endScene()
-            MyTimer.stopMyTimer()
         }
     }
 

@@ -1,14 +1,17 @@
 import QtQuick 2.0
 import QtMultimedia 5.6
 import Qt.labs.settings 1.0
+import QtQuick.Controls 1.5
 
 Rectangle {
     //REMOVE
     property alias chorusTwo:chorusTwoScene
+    property alias verseOne: verseOneScene
 
+    property alias creditsScene: creditsScene
     property alias myHouseSong: myHouseSong
     signal endOfCredits
-
+    signal volumeChanged
     id: musicVideoRect
     anchors.fill: parent
     property bool afterVerseTwo: false
@@ -160,8 +163,45 @@ Rectangle {
         enabled: false
         visible: false
 
+        //makes it so the credits button can be pressed more than
+        //once and work correctly
+        onVisibleChanged:
+        {
+            creditsScene.transitionText1.start()
+            creditsScene.theEndText.visible = true
+        }
+
         onEndScene: {
             endOfCredits()
+        }
+    }
+
+    Slider
+    {
+        id: volumeSlider
+        x: musicVideoRect.width - width
+        y: musicVideoRect.height - height
+        width: musicVideoRect.width * .125
+        opacity: 0.25
+        value: myHouseSong.volume
+        onValueChanged:
+        {
+            settingsDisplaySettings.settingsVolumeSlide = value
+        }
+        onHoveredChanged:
+        {
+            if (opacity === 0.25)
+                opacity = 1.0
+            else
+                opacity = 0.25
+        }
+        Text
+        {
+            id: volmeText
+            text: "Volume"
+            anchors.horizontalCenter: volumeSlider.horizontalCenter
+            anchors.bottom: volumeSlider.top
+            font.pixelSize: musicVideoRect.height/30
         }
     }
 }

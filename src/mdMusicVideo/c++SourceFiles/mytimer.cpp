@@ -30,4 +30,5 @@ void MyTimer::startMyTimer()
 void MyTimer::stopMyTimer()
 {
     m_timer->stop();
+    m_totalTimeElapsed = 0;
 }

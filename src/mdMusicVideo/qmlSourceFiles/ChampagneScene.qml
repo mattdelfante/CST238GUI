@@ -16,7 +16,7 @@ Image
         onTimerTimeout:{
             //Bottle is opened, Transition scenes
             if (totalTimeElapsed === 10400)
-                endScene()
+                endScene()            
         }
     }
 

@@ -11,6 +11,7 @@ Rectangle {
 
     signal clickedPlay
     signal clickedSettings
+    signal clickedCredits
     signal closeProgram
 
     Image{
@@ -141,7 +142,7 @@ Rectangle {
         }
 
         MyButton{
-            id: smileButton
+            id: creditsButton
             width: parent.width/2.37
             height: parent.height/2.33
             anchors.right: parent.right
@@ -162,14 +163,14 @@ Rectangle {
 
             ma_buttonMouseArea.onClicked:
             {
-                //implement later
+                clickedCredits()
             }
 
             Text{
-                id: smileButtonText
-                anchors.horizontalCenter: smileButton.horizontalCenter
-                anchors.verticalCenter: smileButton.verticalCenter
-                text: ":)"
+                id: creditsButtonText
+                anchors.horizontalCenter: creditsButton.horizontalCenter
+                anchors.verticalCenter: creditsButton.verticalCenter
+                text: "CREDITS"
                 font.bold: true
                 font.pixelSize: playButton.height/5
                 font.family: "Monotype Corsiva"
