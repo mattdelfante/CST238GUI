@@ -369,15 +369,15 @@ Rectangle {
         Image{
             id: mattWalking
             source: "file:///" + AppDir + "/images/mattPerson/mattStanding.png"
-            width: 80
-            height: 232
+            width: .1 * window.width//80
+            height: .464 * window.height//232
 
             NumberAnimation{
                 id: mattWalkingOntoFloorX
                 target: mattWalking
                 properties: "x"
                 from: 0
-                to: 325
+                to: .40625 * window.width//325
                 duration: 2000
                 running: false
             }

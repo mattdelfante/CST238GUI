@@ -2,10 +2,78 @@ import QtQuick 2.0
 
 Rectangle
 {
-    property alias endOfOutSideFloRidaHouseTimer: endOfOutSideFloRidaHouseTimer
     signal endScene
     id: floRidaChorusWrapper
     anchors.fill: parent
+
+    Connections{
+        id: connectionTimer
+        target: MyTimer
+        onTimerTimeout:{
+            if (totalTimeElapsed === 154700)
+            {
+                outsideFloRidaHouseWrapper.visible = false
+                garageSceneWrapper.visible = true
+                floRidaWalkHalfwayX.running = true
+            }
+
+            else if (totalTimeElapsed === 167300)
+            {
+                firstSetOfLyrics.visible = false
+                secondSetOfLyrics.visible = true
+            }
+
+            else if (totalTimeElapsed === 169900)
+            {
+                secondSetOfLyrics.visible = false
+                thirdSetOfLyrics.visible = true
+            }
+
+            else if (totalTimeElapsed === 172900)
+            {
+                thirdSetOfLyrics.visible = false
+                floRidaSinging.visible = false
+                floRidaOnStage.source = "file:///" + AppDir + "/images/floRidaPerson/floRidaStanding.png"
+                floRidaOnStage.height = floRidaChorusWrapper.height * .35
+                floRidaOnStage.width = floRidaChorusWrapper.width * .075
+                floRidaOnStage.x = floRidaChorusWrapper.width / 2 - floRidaOnStage.width / 2
+                floRidaOnStage.y = floRidaChorusWrapper.height / 2 - floRidaOnStage.height + floRidaChorusWrapper.height * .12
+                floRidaWalkAllTheWayOffStage.start()
+            }
+
+            else if (totalTimeElapsed === 177700)
+            {
+                mattSpeechBubble.visible = false
+                floRidaSpeechBubble.visible = true
+            }
+
+            else if (totalTimeElapsed === 179700)
+            {
+                floRidaLine1.visible = false
+                floRidaLine2.visible = true
+            }
+
+            else if (totalTimeElapsed === 181700)
+            {
+                floRidaSpeechBubble.visible = false
+                floRidaLine2.visible = false
+                floRidaWalkToDanceFloor.running = true
+            }
+
+            else if (totalTimeElapsed === 188200)
+            {
+                floRidaSpeechBubble.visible = true
+                floRidaSpeechBubble.mirror = true
+                floRidaSpeechBubble.x = floRidaDancing.x - floRidaDancing.width - floRidaDancing.width
+                floRidaLine3.visible = true
+            }
+
+            else if (totalTimeElapsed === 191200)
+            {
+                endScene()
+            }
+        }
+    }
 
     Rectangle
     {
@@ -15,19 +83,6 @@ Rectangle
         {
             source: "file:///" + AppDir + "/images/floRidaHouse.jpg"
             anchors.fill: parent
-        }
-    }
-
-    Timer
-    {
-        id: endOfOutSideFloRidaHouseTimer
-        interval: 2000
-        running: false
-        onTriggered:
-        {
-            outsideFloRidaHouseWrapper.visible = false
-            garageSceneWrapper.visible = true
-            floRidaWalkHalfwayX.running = true
         }
     }
 
@@ -70,6 +125,7 @@ Rectangle
                     }
                 }
             }
+
             NumberAnimation
             {
                 id: floRidaWalkAllTheWayX
@@ -96,7 +152,7 @@ Rectangle
         {
             id:talkingPause
             running: false
-            interval: 2900
+            interval: 2800
             onTriggered:
             {
                 floRidaWalkAllTheWayX.running = true
@@ -155,7 +211,7 @@ Rectangle
                 properties: "x"
                 from: 0
                 to: floRidaChorusWrapper.width / 2 - floRidaOnStage.width / 2
-                duration: 2800
+                duration: 2600
                 running: false
                 onRunningChanged:
                 {
@@ -168,7 +224,6 @@ Rectangle
                         floRidaOnStage.height = floRidaChorusWrapper.height * .38
                         floRidaSinging.visible = true
                         firstSetOfLyrics.visible = true
-                        tooLoudTimerEnd.start()
                     }
                 }
             }
@@ -187,7 +242,6 @@ Rectangle
                     {
                         floRidaOnStageWrapper.visible = false
                         dancingSceneWrapper.visible = true
-                        endOfMattText.start()
                     }
                 }
             }
@@ -234,49 +288,6 @@ Rectangle
                 text: "We don't have to\ngooooo ouuuuttt!"
                 font.pixelSize: parent.height/8
             }
-        }
-    }
-    Timer
-    {
-        id: tooLoudTimerEnd
-        interval: 2200
-        running: false
-        onTriggered:
-        {
-            firstSetOfLyrics.visible = false
-            secondSetOfLyrics.visible = true
-            doNowTimerEnd.start()
-        }
-    }
-
-    Timer
-    {
-        id: doNowTimerEnd
-        interval: 2600
-        running: false
-        onTriggered:
-        {
-            secondSetOfLyrics.visible = false
-            thirdSetOfLyrics.visible = true
-            goOutTimerEnd.start()
-        }
-    }
-
-    Timer
-    {
-        id: goOutTimerEnd
-        interval: 3000
-        running: false
-        onTriggered:
-        {
-            thirdSetOfLyrics.visible = false
-            floRidaSinging.visible = false
-            floRidaOnStage.source = "file:///" + AppDir + "/images/floRidaPerson/floRidaStanding.png"
-            floRidaOnStage.height = floRidaChorusWrapper.height * .35
-            floRidaOnStage.width = floRidaChorusWrapper.width * .075
-            floRidaOnStage.x = floRidaChorusWrapper.width / 2 - floRidaOnStage.width / 2
-            floRidaOnStage.y = floRidaChorusWrapper.height / 2 - floRidaOnStage.height + floRidaChorusWrapper.height * .12
-            floRidaWalkAllTheWayOffStage.start()
         }
     }
 
@@ -448,71 +459,4 @@ Rectangle
             visible: false
         }
     }
-
-    Timer
-    {
-        id: endOfMattText
-        interval: 2000
-        running: false
-        onTriggered:
-        {
-            mattSpeechBubble.visible = false
-            floRidaSpeechBubble.visible = true
-            endOfFloRidaLine1.start()
-        }
-    }
-
-    Timer
-    {
-        id: endOfFloRidaLine1
-        interval: 2000
-        running: false
-        onTriggered:
-        {
-            floRidaLine1.visible = false
-            floRidaLine2.visible = true
-            endOfFloRidaLine2.start()
-        }
-    }
-
-    Timer
-    {
-        id: endOfFloRidaLine2
-        interval: 2000
-        running: false
-        onTriggered:
-        {
-            floRidaSpeechBubble.visible = false
-            floRidaLine2.visible = false
-            floRidaWalkToDanceFloor.running = true
-            itsMyHouse.start()
-        }
-    }
-
-    Timer
-    {
-        id: itsMyHouse
-        interval:6500
-        running: false
-        onTriggered:
-        {
-            floRidaSpeechBubble.visible = true
-            floRidaSpeechBubble.mirror = true
-            floRidaSpeechBubble.x = floRidaDancing.x - floRidaDancing.width - floRidaDancing.width
-            floRidaLine3.visible = true
-            triggerCredits.start()
-        }
-    }
-
-    Timer
-    {
-        id: triggerCredits
-        interval: 2000
-        running: false
-        onTriggered:
-        {
-            endScene()
-        }
-    }
-
 }

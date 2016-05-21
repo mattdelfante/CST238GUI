@@ -5,7 +5,7 @@ import QtQuick.Controls 1.5
 
 Rectangle {
     //REMOVE
-    property alias verseThree:verseThreeScene
+    property alias verseOneScene:verseOneScene
 
     property alias creditsScene: creditsScene
     property alias myHouseSong: myHouseSong
@@ -142,7 +142,6 @@ Rectangle {
             verseThreeScene.enabled = false
             chorusThreeScene.visible = true
             chorusThreeScene.enabled = true
-            chorusThreeScene.endOfOutSideFloRidaHouseTimer.start()
         }
     }
 
@@ -156,7 +155,6 @@ Rectangle {
             chorusThreeScene.enabled = false
             creditsScene.visible = true
             creditsScene.enabled = true
-            creditsScene.transitionText1.start()
         }
     }
 
@@ -165,12 +163,8 @@ Rectangle {
         enabled: false
         visible: false
 
-        //makes it so the credits button can be pressed more than
-        //once and work correctly
         onVisibleChanged:
         {
-            creditsScene.transitionText1.start()
-            creditsScene.theEndText.visible = true
             tenThousandHoursSong.play()
         }
 

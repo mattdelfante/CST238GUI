@@ -18,10 +18,12 @@ class MyTimer : public QObject
 
     public slots:
         void startMyTimer();
+        void startMyTimer(int timeDisplacement);
         void stopMyTimer();
 
         //REMOVE
         void startFakeTimer();
+        int getTotalTime();
 
     private:
         QTimer * m_timer;

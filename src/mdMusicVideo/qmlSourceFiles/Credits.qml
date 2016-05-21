@@ -2,26 +2,49 @@ import QtQuick 2.0
 
 Rectangle
 {
-    property alias transitionText1: transitionText1
-    property alias theEndText: theEndText
     signal endScene
     id: creditsWrapper
     anchors.fill: parent
     color: "black"
     visible: false
 
-    Timer
-    {
-        id: transitionText1
-        interval: 3500
-        running: false
-        onTriggered:
-        {
-            theEndText.visible = false
-            producedByText.visible = true
-            createdByText.visible = true
-            choreographyByText.visible = true
-            transitionText2.start()
+    Connections{
+        id: connectionTimer
+        target: MyTimer
+        onTimerTimeout: {
+            if (totalTimeElapsed === 191200)
+            {
+                theEndText.visible = true
+            }
+
+            else if (totalTimeElapsed === 194400)
+            {
+                theEndText.visible = false
+                producedByText.visible = true
+                createdByText.visible = true
+                choreographyByText.visible = true
+            }
+
+            else if (totalTimeElapsed === 199400)
+            {
+                producedByText.visible = false
+                createdByText.visible = false
+                choreographyByText.visible = false
+                songsUsed.visible = true
+                myHouse.visible = true
+                handsToMyself.visible = true
+                tenThousandHours.visible = true
+            }
+
+            else if (totalTimeElapsed === 204400)
+            {
+                songsUsed.visible = false
+                myHouse.visible = false
+                handsToMyself.visible = false
+                tenThousandHours.visible = false
+                creditsWrapper.visible = false
+                endScene()
+            }
         }
     }
 
@@ -29,6 +52,7 @@ Rectangle
     {
         id: theEndText
         color: "white"
+        visible: false
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         text: "The End"
@@ -73,24 +97,6 @@ Rectangle
         text: "Choreography By: Matthew Del Fante and Molli Drivdahl"
         font.pixelSize: parent.height /15
         font.family: "Monotype Corsiva"
-    }
-
-    Timer
-    {
-        id: transitionText2
-        interval: 5000
-        running: false
-        onTriggered:
-        {
-            producedByText.visible = false
-            createdByText.visible = false
-            choreographyByText.visible = false
-            songsUsed.visible = true
-            myHouse.visible = true
-            handsToMyself.visible = true
-            tenThousandHours.visible = true
-            transitionText3.start()
-        }
     }
 
     Text
@@ -143,21 +149,4 @@ Rectangle
         font.pixelSize: parent.height /15
         font.family: "Monotype Corsiva"
     }
-
-    Timer
-    {
-        id: transitionText3
-        interval: 5000
-        running: false
-        onTriggered:
-        {
-            songsUsed.visible = false
-            myHouse.visible = false
-            handsToMyself.visible = false
-            tenThousandHours.visible = false
-            creditsWrapper.visible = false
-            endScene()
-        }
-    }
-
 }

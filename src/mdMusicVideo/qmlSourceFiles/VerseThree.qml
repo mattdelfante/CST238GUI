@@ -12,13 +12,13 @@ Rectangle
         id: connectionTimer
         target: MyTimer
         onTimerTimeout:{
-            if (totalTimeElapsed === 134900)
+            if (totalTimeElapsed === 135100)
             {
                 rideTheDucksWrapper.visible = false
                 myHouseIsYourHouseWrapper.visible = true
             }
 
-            else if (totalTimeElapsed === 137600)
+            else if (totalTimeElapsed === 137800)
             {
                 myHouseIsYourHouseWrapper.visible = false
                 sadHouseWrapper.visible = true
@@ -32,12 +32,38 @@ Rectangle
                 startSadHouseRain.start()
             }
 
-            //End of home run
             else if (totalTimeElapsed === 143900)
             {
                 homerun.visible = false
                 slamDunk.visible = true
-                endOfBasketabll.start()
+            }
+
+            else if (totalTimeElapsed === 144600)
+            {
+                slamDunk.visible = false
+                touchDownPass.visible = true
+            }
+
+            else if (totalTimeElapsed === 145700)
+            {
+                touchDownPass.visible = false
+                miCasaIsTuCasaWrapper.visible = true
+            }
+
+            else if (totalTimeElapsed === 148400)
+            {
+                mattSpanishBubble.visible = false
+                molliSpanishBubble.visible = false
+                mattDrink.visible = true
+                mattDrink.playing = true
+                molliDrink.visible = true
+                molliDrink.playing = true
+            }
+
+            else if (totalTimeElapsed === 152500)
+            {
+                verseThreeWrapper.visible = false
+                endScene()
             }
         }
     }
@@ -195,7 +221,7 @@ Rectangle
         running: false
 
         onRunningChanged:{
-            if (running == true)
+            if (running === false)
             {
                 mattWalkWithCash.visible = true
                 mattWalkAcrossHouse.running = true
@@ -258,7 +284,7 @@ Rectangle
                 properties: "x"
                 from: verseThreeWrapper.width - mattWalkWithCash.width
                 to: 0
-                duration: 2700
+                duration: 2800
                 running: false
                 onRunningChanged:
                 {
@@ -270,32 +296,6 @@ Rectangle
                     }
                 }
             }
-        }
-    }
-
-    Timer
-    {
-        id: endOfBasketabll
-        interval: 700
-        running: false
-        onTriggered:
-        {
-            slamDunk.visible = false
-            endOfTouchdown.start()
-            touchDownPass.visible = true
-        }
-    }
-
-    Timer
-    {
-        id: endOfTouchdown
-        interval: 1100
-        running: false
-        onTriggered:
-        {
-            touchDownPass.visible = false
-            miCasaIsTuCasaWrapper.visible = true
-            startTakingShot.start()
         }
     }
 
@@ -416,34 +416,25 @@ Rectangle
             {
                 if (playing === false)
                 {
-                    triggerLawnChairsTimer.start()
+                    triggerLawnChairsPause.start()
                 }
             }
         }
 
-        Timer
-        {
-            id: triggerLawnChairsTimer
-            interval: 500
+        PauseAnimation{
+            id: triggerLawnChairsPause
+            duration: 500
             running: false
-            onTriggered:
-            {
-                molliDrink.visible = false
-                mattDrink.visible = false
-                lawnChairMatt.visible = true
-                lawnChairMolli.visible = true
-                endSceneTimer.start()
-            }
-        }
 
-        Timer
-        {
-            id: endSceneTimer
-            interval: 2200
-            onTriggered:
+            onRunningChanged:
             {
-                verseThreeWrapper.visible = false
-                endScene()
+                if (running === false)
+                {
+                    molliDrink.visible = false
+                    mattDrink.visible = false
+                    lawnChairMatt.visible = true
+                    lawnChairMolli.visible = true
+                }
             }
         }
 
@@ -511,21 +502,4 @@ Rectangle
             }
         }
     }
-
-    Timer
-    {
-        id: startTakingShot
-        running: false
-        interval: 2700
-        onTriggered:
-        {
-            mattSpanishBubble.visible = false
-            molliSpanishBubble.visible = false
-            mattDrink.visible = true
-            mattDrink.playing = true
-            molliDrink.visible = true
-            molliDrink.playing = true
-        }
-    }
-
 }

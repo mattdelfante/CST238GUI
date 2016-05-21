@@ -26,10 +26,10 @@ Window {
         musicVideoScenes.visible = false;
         destroyMusicVideoScenes();
 
-
         if (settingsDisplaySettings.exitAfterCredits === false)
         {
             splashScreen.visible = true;
+            handsToMyselfSong.play();
         }
         else
         {
@@ -67,8 +67,6 @@ Window {
             id: handsToMyselfSong
             source: "file:///" + AppDir + "/sounds/handsToMyselfSelenaGomez.mp3"
             autoPlay: true
-
-            //MAKE ADJUSTABLE from settings
             volume: 0.5
             loops: Audio.Infinite
         }
@@ -89,12 +87,6 @@ Window {
                 musicVideoScenes.visible = true
                 settingsDisplaySettings.visible = false
                 handsToMyselfSong.stop()
-
-                //REMOVE
-//                musicVideoScenes.verseThree.visible = true
-//                MyTimer.startFakeTimer();
-//                musicVideoScenes.myHouseSong.seek(133700)
-//                musicVideoScenes.myHouseSong.play()
             }
 
             onClickedSettings:
@@ -109,12 +101,12 @@ Window {
                 splashScreen.visible = false
                 musicVideoScenes.visible = true
                 musicVideoScenes.creditsScene.visible = true
+                MyTimer.startMyTimer(191100)
                 handsToMyselfSong.stop()
             }
 
             onCloseProgram:
             {
-                //call destroy function
                 destroyMusicVideoScenes()
                 mainWindow.close()
             }
@@ -138,8 +130,6 @@ Window {
                     handsToMyselfSong.volume = volumeLevel
                     musicVideoScenes.tenThousandHoursSong.volume = volumeLevel
                 }
-                //selena
-                //thousand hours
             }
         }
     }

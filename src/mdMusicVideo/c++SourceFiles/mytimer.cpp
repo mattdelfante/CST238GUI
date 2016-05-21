@@ -27,6 +27,12 @@ void MyTimer::startMyTimer()
     m_timer->start();
 }
 
+void MyTimer::startMyTimer(int timeDisplacement)
+{
+    m_totalTimeElapsed = timeDisplacement;
+    m_timer->start();
+}
+
 void MyTimer::stopMyTimer()
 {
     m_timer->stop();
@@ -37,5 +43,12 @@ void MyTimer::stopMyTimer()
 void MyTimer::startFakeTimer()
 {
     m_timer->start();
-    m_totalTimeElapsed = 132200;
+    m_totalTimeElapsed = 15400;
+}
+
+//REMOVE
+
+int MyTimer::getTotalTime()
+{
+    return m_totalTimeElapsed;
 }
