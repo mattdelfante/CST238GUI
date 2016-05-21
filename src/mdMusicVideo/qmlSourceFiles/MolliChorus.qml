@@ -1,76 +1,54 @@
 import QtQuick 2.0
 
 Rectangle {
-    //REMOVE
-    property alias timer1:timer1
-
     signal endScene
     property int jumpCount: 0
     id: window
     anchors.fill: parent
 
-    Timer{
-        id: timer1
-        interval: 2700
-        running: false
+    Connections{
+        id: connectionTimer
+        target: MyTimer
+        onTimerTimeout:{
+            if (totalTimeElapsed === 103400)
+            {
+                outsideBeachHouse.visible = false
+                modernBedroom.visible = true
+                molliWalking.visible = true
+                molliWalking.y = window.height/2.85
+                walkingOutBedroomX.start()
+            }
 
-        onTriggered: {
-            outsideBeachHouse.visible = false
-            modernBedroom.visible = true
-            molliWalking.visible = true
-            molliWalking.y = window.height/2.85
-            walkingOutBedroomX.start()
-        }
-    }
+            else if (totalTimeElapsed === 111100)
+            {
+                loungeBeachside.visible = false
+                modernLivingRoom.visible = true
+                molliDancing.x = 525
+                molliDancing.visible = true
+                walkingInLivingRoom1Y.start()
+                growingInLivingRoom.start()
+            }
 
-    Timer{
-        id: timer3
-        interval: 2700
-        running: false
+            else if (totalTimeElapsed === 120100)
+            {
+                followingMolliY.start()
+                followingMolliX.start()
+                shrinkingBehindMolli.start()
+            }
 
-        onTriggered: {
-            loungeBeachside.visible = false
-            modernLivingRoom.visible = true
-            molliDancing.x = 525
-            molliDancing.visible = true
-            walkingInLivingRoom1Y.start()
-            growingInLivingRoom.start()
-        }
-    }
+            else if (totalTimeElapsed === 124600)
+            {
+                petDaycare.visible = false
+                waterAndDock.visible = true
+                molliWalking.mirror = true
+                molliWalking.y = 160
+                walkingOnDock.start()
+            }
 
-    Timer{
-        id: timer5
-        interval: 1500
-        running: false
-
-        onTriggered:{
-            followingMolliY.start()
-            followingMolliX.start()
-            shrinkingBehindMolli.start()
-        }
-    }
-
-    Timer{
-        id: timer6
-        interval: 3000
-        running: false
-
-        onTriggered: {
-            petDaycare.visible = false
-            waterAndDock.visible = true
-            molliWalking.mirror = true
-            molliWalking.y = 160
-            walkingOnDock.start()
-        }
-    }
-
-    Timer{
-        id: timer7
-        interval: 2200
-        running: false
-
-        onTriggered: {
-            endScene()
+            else if (totalTimeElapsed === 132200)
+            {
+                endScene()
+            }
         }
     }
 
@@ -176,7 +154,6 @@ Rectangle {
                 if (running === false)
                 {
                     bouncingUp.start()
-                    timer6.start()
                 }
             }
         }
@@ -223,7 +200,6 @@ Rectangle {
             onRunningChanged: {
                 if (running === false)
                 {
-                    //jump dog off dock
                     dogJumpsIntoWaterX.start()
                     dogJumpsIntoWaterY.start()
                 }
@@ -256,7 +232,6 @@ Rectangle {
                     molliDiving.mirror = true
                     molliDiving.rotation = 0
                     molliInWater.start()
-                    timer7.start()
                 }
             }
         }
@@ -370,7 +345,7 @@ Rectangle {
             properties: "x"
             from: window.width/3
             to: window.width/25
-            duration: 2500
+            duration: 2400
             running: false
 
             onRunningChanged:{
@@ -389,7 +364,7 @@ Rectangle {
             properties: "y"
             from: window.height/2 + window.height/4
             to: window.height/2
-            duration: 1700
+            duration: 1800
             running: false
 
             onRunningChanged:{
@@ -408,7 +383,6 @@ Rectangle {
                 {
                     molliLayingHammock.visible = true
                     molliWalking.visible = false
-                    timer3.start()
                 }
             }
         }
@@ -542,7 +516,6 @@ Rectangle {
                     walkingInPetRoomY.start()
                     walkingInPetRoomX.start()
                     shrinkingInPetRoom.start()
-                    timer5.start()
                 }
             }
         }

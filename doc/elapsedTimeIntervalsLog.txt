@@ -17,7 +17,7 @@ Start Time	Duration	End Time	Activity
 37500		1300		 38800		Gotta stay in in
 38800		 500		 39300		Smaller IN visible
 39300		 700		 40000		Bigger IN visible, before Chorus(1)
-40000		2100		 42100		Matt's chorus baseball field intro
+40000		2100		 42100		Matt's chorus overview of house intro
 42100		2400		 44500		Matt grow up stairs
 44500		3500		 48000		Macklemore first text
 48000		3500		 51500		Macklemore second text
@@ -35,9 +35,31 @@ Start Time	Duration	End Time	Activity
 91000		2500		 93500		Gotta stay in
 93500		2500		 96000		Map zoom in and out (no dancing)
 96000		2500		 98500		Dancing on map zoom in and out
-98500		1300		 99800		Gotta stay in in
-99800		 500		100300		Smaller IN visible
-100300		 700		101000		Bigger IN visible, before Chorus(2)
+98500		1500		100000		Gotta stay in in
+99800		 500		100500		Smaller IN visible
+100300		 700		101200		Bigger IN visible, before Chorus(2)
+101200		2200		103400		Molli's chorus overview of house intro
+103400		2400		105800		Molli walking out bedroom
+105800		1800		107600		Molli walking onto porch
+107600		 800		108400		Molli paused on porch
+108400		2700		111100		Molli in hammock
+111100		2500		113600		Molli walking forward living room 1
+113600		2500		116100		Molli walking out living room 1
+116100		2500		118600		Molli walking through living room 2
+118600		1500		120100		Molli walking in pet room before dog
+120100		1500		121600		Westie following Molli into room
+121600		3000		124600		Westie bouncing up and down
+124600		2000		126600		Molli walking along dock
+126600		2500		129100		Molli diving into water & westie running on dock
+129100		 700		129800		Westie jumps into water (part 1)
+129800		1300		131100		Westie jumps into water (part 2)
+129800		2400		132200		Molli holds dog in water, before VerseThree
+
+132200		2700		134900		Ride the ducks
+134900		2700		137600		My house is your house
+137600		2500		140100		Sad house
+140100		2900		143000		Happy house
+143000		 900		143900		Home run
 
 
 

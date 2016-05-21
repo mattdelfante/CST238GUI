@@ -3,22 +3,42 @@ import QtQuick.Particles 2.0
 
 Rectangle
 {
-    property alias endOfDuckSceneTimer: endOfDuckSceneTimer
     signal endScene
     id: verseThreeWrapper
     anchors.fill: parent
     visible: false
 
-    Timer
-    {
-        id: endOfDuckSceneTimer
-        running: false
-        interval: 2700
-        onTriggered:
-        {
-            rideTheDucksWrapper.visible = false
-            endOfMyHouseIsYourHouseTimer.start()
-            myHouseIsYourHouseWrapper.visible = true
+    Connections{
+        id: connectionTimer
+        target: MyTimer
+        onTimerTimeout:{
+            if (totalTimeElapsed === 134900)
+            {
+                rideTheDucksWrapper.visible = false
+                myHouseIsYourHouseWrapper.visible = true
+            }
+
+            else if (totalTimeElapsed === 137600)
+            {
+                myHouseIsYourHouseWrapper.visible = false
+                sadHouseWrapper.visible = true
+            }
+
+            else if (totalTimeElapsed === 140100)
+            {
+                rainingSmiles.enabled = true
+                sadHouseWrapper.color = "yellow"
+                cryingJordanHouse.source = "file:///" + AppDir + "/images/happyHouse.png"
+                startSadHouseRain.start()
+            }
+
+            //End of home run
+            else if (totalTimeElapsed === 143900)
+            {
+                homerun.visible = false
+                slamDunk.visible = true
+                endOfBasketabll.start()
+            }
         }
     }
 
@@ -53,20 +73,6 @@ Rectangle
             source: "file:///" + AppDir + "/images/molliPerson/dancingGifMolli.gif"
             y: parent.height * .32
             x: parent.width / 2
-        }
-    }
-
-    Timer
-    {
-        id: endOfMyHouseIsYourHouseTimer
-        running: false
-        interval: 2700
-        onTriggered:
-        {
-            myHouseIsYourHouseWrapper.visible = false
-            sadHouseWrapper.visible = true
-            startSadHouseRain.start()
-            startRainingFaces.start()
         }
     }
 
@@ -183,29 +189,17 @@ Rectangle
         }
     }
 
-    Timer
-    {
-        id: startRainingFaces
-        running: false
-        interval: 2000
-        onTriggered:
-        {
-            rainingSmiles.enabled = true
-            sadHouseWrapper.color = "yellow"
-            cryingJordanHouse.source = "file:///" + AppDir + "/images/happyHouse.png"
-        }
-    }
-
-    Timer
-    {
+    PauseAnimation {
         id: startSadHouseRain
+        duration: 200
         running: false
-        interval: 2700
-        onTriggered:
-        {
 
-            mattWalkWithCash.visible = true
-            mattWalkAcrossHouse.running = true
+        onRunningChanged:{
+            if (running == true)
+            {
+                mattWalkWithCash.visible = true
+                mattWalkAcrossHouse.running = true
+            }
         }
     }
 
@@ -273,23 +267,9 @@ Rectangle
                         sadHouseWrapper.visible = false
                         sportsSceneWrapper.visible = true
                         homerun.visible = true
-                        endOfHomerun.start()
                     }
                 }
             }
-        }
-    }
-
-    Timer
-    {
-        id: endOfHomerun
-        interval: 900
-        running: false
-        onTriggered:
-        {
-            homerun.visible = false
-            slamDunk.visible = true
-            endOfBasketabll.start()
         }
     }
 

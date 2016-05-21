@@ -32,3 +32,10 @@ void MyTimer::stopMyTimer()
     m_timer->stop();
     m_totalTimeElapsed = 0;
 }
+
+//REMOVE
+void MyTimer::startFakeTimer()
+{
+    m_timer->start();
+    m_totalTimeElapsed = 132200;
+}

@@ -20,6 +20,9 @@ class MyTimer : public QObject
         void startMyTimer();
         void stopMyTimer();
 
+        //REMOVE
+        void startFakeTimer();
+
     private:
         QTimer * m_timer;
         int m_totalTimeElapsed;

@@ -73,15 +73,19 @@ Image
             }
             onReleased:
             {
-                myHouseSong.seek(1500)      //since song doesn't have sound until 1.5 seconds into the song
-                myHouseSong.play()
-                MyTimer.startMyTimer()
-                xBehavior.enabled = true
-                yBehavior.enabled = true
-                champagneBottle.x = musicVideoRect.width/2 - champagneBottle.width/2
-                champagneBottle.y = musicVideoRect.height/2 - champagneBottle.height/2
-                champagneBottleMouse.enabled = false    //prevents clicking & dragging more than once
-                textDragAndDrogMe.visible = false
+                if (champagneBottle.x != champagneBottleBg.width/2 - champagneBottle.width/2 &&
+                    champagneBottle.y != champagneBottleBg.height/2 - champagneBottle.height/2)
+                {
+                    myHouseSong.seek(1500)      //since song doesn't have sound until 1.5 seconds into the song
+                    myHouseSong.play()
+                    MyTimer.startMyTimer()
+                    xBehavior.enabled = true
+                    yBehavior.enabled = true
+                    champagneBottle.x = musicVideoRect.width/2 - champagneBottle.width/2
+                    champagneBottle.y = musicVideoRect.height/2 - champagneBottle.height/2
+                    champagneBottleMouse.enabled = false    //prevents clicking & dragging more than once
+                    textDragAndDrogMe.visible = false
+                }
             }
         }
     }

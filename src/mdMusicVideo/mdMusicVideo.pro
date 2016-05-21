@@ -107,7 +107,8 @@ DISTFILES += \
     images/waterBackLayer.png \
     images/waterFrontLayer.png \
     images/molliPerson/molliDiving.png \
-    sounds/myHouseFloRida.mp3
+    sounds/myHouseFloRida.mp3 \
+    sounds/handsToMyselfSelenaGomez.mp3
 
 HEADERS += \
     c++HeaderFiles/mytimer.h

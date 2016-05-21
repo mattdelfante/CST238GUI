@@ -1,10 +1,6 @@
-/*
-  Name: Matthew Del Fante & Molli Drivdahl
-  Lab: Lab2 Splash Screen
-  Project Name: mdMusicVideo
-*/
 import QtQuick 2.6
 import QtQuick.Window 2.2
+import QtMultimedia 5.6
 
 Window {
     id: mainWindow
@@ -59,6 +55,20 @@ Window {
         id: mainWindowContainer
         anchors.fill: parent
 
+        Audio
+        {
+            id: handsToMyselfSong
+            source: "file:///" + AppDir + "/sounds/handsToMyselfSelenaGomez.mp3"
+            autoPlay: true
+
+            //MAKE ADJUSTABLE from settings
+            volume: 0.5
+
+            onPlaybackStateChanged: {
+                seek(164000)
+            }
+        }
+
         SplashScreen
         {
             id: splashScreen
@@ -74,6 +84,13 @@ Window {
                 splashScreen.visible = false
                 musicVideoScenes.visible = true
                 settingsDisplaySettings.visible = false
+                handsToMyselfSong.stop()
+
+                //REMOVE
+//                musicVideoScenes.verseThree.visible = true
+//                MyTimer.startFakeTimer();
+//                musicVideoScenes.myHouseSong.seek(133700)
+//                musicVideoScenes.myHouseSong.play()
             }
 
             onClickedSettings:
@@ -106,7 +123,8 @@ Window {
                 settingsDisplaySettings.visible = false
                 splashScreen.visible = true
             }
-            onVolumeChange:
+            
+	    onVolumeChange:
             {
                 if (musicVideoScenes != null)
                     musicVideoScenes.myHouseSong.volume = volumeLevel

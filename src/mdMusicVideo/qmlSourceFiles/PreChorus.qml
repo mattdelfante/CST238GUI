@@ -48,20 +48,20 @@ Rectangle
             }
 
             //Small IN text visible
-            else if (totalTimeElapsed === 38800 || totalTimeElapsed === 99800)
+            else if (totalTimeElapsed === 38800 || totalTimeElapsed === 100000)
             {
                 smallerIN.visible = true
             }
 
             //Smaller IN text invisible, bigger IN text visible
-            else if (totalTimeElapsed === 39300 || totalTimeElapsed === 100300)
+            else if (totalTimeElapsed === 39300 || totalTimeElapsed === 100500)
             {
                 smallerIN.visible = false
                 biggerIN.visible = true
             }
 
             //End gotta stay in in, bigger IN text invisible, Transition scenes
-            else if (totalTimeElapsed === 40000 || totalTimeElapsed === 101000)
+            else if (totalTimeElapsed === 40000 || totalTimeElapsed === 101200)
             {
                 gottaStayIn.visible = false
                 raining.enabled = false

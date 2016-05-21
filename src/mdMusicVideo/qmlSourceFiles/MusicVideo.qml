@@ -5,8 +5,7 @@ import QtQuick.Controls 1.5
 
 Rectangle {
     //REMOVE
-    property alias chorusTwo:chorusTwoScene
-    property alias verseOne: verseOneScene
+    property alias verseThree:verseThreeScene
 
     property alias creditsScene: creditsScene
     property alias myHouseSong: myHouseSong
@@ -75,9 +74,6 @@ Rectangle {
             }
             else
             {
-                //DELETE
-                chorusTwoScene.timer1.start()
-
                 chorusTwoScene.visible = true
                 chorusTwoScene.enabled = true
             }
@@ -124,9 +120,6 @@ Rectangle {
             chorusTwoScene.enabled = false
             verseThreeScene.visible = true
             verseThreeScene.enabled = true
-
-            //REMOVE
-            verseThreeScene.endOfDuckSceneTimer.start()
         }
     }
 
