@@ -108,7 +108,8 @@ DISTFILES += \
     images/waterFrontLayer.png \
     images/molliPerson/molliDiving.png \
     sounds/myHouseFloRida.mp3 \
-    sounds/handsToMyselfSelenaGomez.mp3
+    sounds/handsToMyselfSelenaGomez.mp3 \
+    sounds/tenThousandHoursMacklemore.mp3
 
 HEADERS += \
     c++HeaderFiles/mytimer.h

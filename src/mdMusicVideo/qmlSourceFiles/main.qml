@@ -1,6 +1,7 @@
 import QtQuick 2.6
 import QtQuick.Window 2.2
 import QtMultimedia 5.6
+import Qt.labs.settings 1.0
 
 Window {
     id: mainWindow
@@ -50,6 +51,12 @@ Window {
         musicVideoScenes = null;
     }
 
+    Settings
+    {
+        id: mainMenuSettings
+        property alias volLevelHandsToMyself: handsToMyselfSong.volume
+    }
+
     Rectangle
     {
         id: mainWindowContainer
@@ -63,10 +70,7 @@ Window {
 
             //MAKE ADJUSTABLE from settings
             volume: 0.5
-
-            onPlaybackStateChanged: {
-                seek(164000)
-            }
+            loops: Audio.Infinite
         }
 
         SplashScreen
@@ -105,11 +109,13 @@ Window {
                 splashScreen.visible = false
                 musicVideoScenes.visible = true
                 musicVideoScenes.creditsScene.visible = true
+                handsToMyselfSong.stop()
             }
 
             onCloseProgram:
             {
                 //call destroy function
+                destroyMusicVideoScenes()
                 mainWindow.close()
             }
         }
@@ -127,7 +133,13 @@ Window {
 	    onVolumeChange:
             {
                 if (musicVideoScenes != null)
+                {
                     musicVideoScenes.myHouseSong.volume = volumeLevel
+                    handsToMyselfSong.volume = volumeLevel
+                    musicVideoScenes.tenThousandHoursSong.volume = volumeLevel
+                }
+                //selena
+                //thousand hours
             }
         }
     }

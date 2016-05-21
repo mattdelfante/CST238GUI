@@ -9,6 +9,7 @@ Rectangle {
 
     property alias creditsScene: creditsScene
     property alias myHouseSong: myHouseSong
+    property alias tenThousandHoursSong: tenThousandHoursSong
     signal endOfCredits
     signal volumeChanged
     id: musicVideoRect
@@ -18,13 +19,21 @@ Rectangle {
     Settings
     {
         id: musicVideoSettings
-        property alias volLevel: myHouseSong.volume
+        property alias volLevelMyHouse: myHouseSong.volume
+        property alias volLevelTenThousand: tenThousandHoursSong.volume
     }
 
     Audio
     {
         id: myHouseSong
         source: "file:///" + AppDir + "/sounds/myHouseFloRida.mp3"
+        volume: 0.5
+    }
+
+    Audio
+    {
+        id: tenThousandHoursSong
+        source: "file:///" + AppDir + "/sounds/tenThousandHoursMacklemore.mp3"
         volume: 0.5
     }
 
@@ -162,6 +171,7 @@ Rectangle {
         {
             creditsScene.transitionText1.start()
             creditsScene.theEndText.visible = true
+            tenThousandHoursSong.play()
         }
 
         onEndScene: {
@@ -179,7 +189,8 @@ Rectangle {
         value: myHouseSong.volume
         onValueChanged:
         {
-            settingsDisplaySettings.settingsVolumeSlide = value
+            if (settingsDisplaySettings.settingsVolumeSlide !== value)
+                settingsDisplaySettings.settingsVolumeSlide = value
         }
         onHoveredChanged:
         {
