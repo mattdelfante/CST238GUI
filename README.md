@@ -1,7 +1,7 @@
 <img src="/img/readMeImages/Logo.png" width="350" height="275">
 
 <b>Description:</b><br />
-Matthew Del Fante and Molli Drivdahl (Team (MD)^2) will be collaborating together to make an animated music video by the end of the term. The music video will be made from scratch to go along with the song "My House" by Flo Rida. As of right now, the idea is that the music video will be of Matt and Molli giving house tours of their dream houses to the music video.
+Matthew Del Fante and Molli Drivdahl (Team (MD)^2) will be collaborating together to make an animated music video by the end of the term. The music video will be made from scratch to go along with the song "My House" by Flo Rida. The idea of the music video is that Matt, Molli and Flo Rida are giving house tours of their dream houses throughout the music video.
 
 <b>Technologies:</b><br />
 C++, Qt, QML, Javascript <br />
@@ -37,20 +37,15 @@ We preface all aliases with 2 letter identifiers that distinguish its type follo
 We preface c++ data members with an "m_" followed by the data member name.
 We will develop a more extensive naming convention in the near future.
 
-<b>Bugs and ToDo List:</b><br />
+<b>Bugs, ToDo List and Revision History:</b><br />
 <i>Bugs:</i></b><br />
-1. Clicking the champagne bottle immediately makes it "pop" which is unintended behavior.<br />
-2. After building the project once, the song loads for too long, causing the song to be out of sync with the video. <br />Once built a second time, this problem goes away. <br />
-3. Changing the size of the window as any animations are happening causes undefined behavior. <br />
-<i>To do:</i></b><br />
-1. Add a settings button and or a volume slider to the music video. <br />
-2. Add play and pause buttons to the music video (if feasible). <br />
-3. Implement subtitle and loop play setting functionality (if feasible). <br />
-4. Synch some parts of the music video more accurately to the song. <br />
-5. Add audio to the splash screen and credits. <br />
-6. Update the read me screen shots. <br />
+1. Changing the size of the window as any animations are happening causes undefined behavior. <br />
+2. Opening the music video project (after clicking the green arrow) takes longer then most people would expect. <br />
 
-<b>Revision History:</b><br />
+<i>ToDo List:</i></b><br />
+1. Update the read me screen shots. <br />
+
+<i>Revision History:</i></b><br />
 1. Completed the first chorus of the song. <br />
 2. Fixed timer bug where timers worked differently on different machines. <br />
 3. Implemented more anchors to ensure the music video would look good for any sized screen. <br /> 
@@ -61,6 +56,16 @@ We will develop a more extensive naming convention in the near future.
 8. Added credits to the end of the music video. <br />
 9. Added a volume slider to the settings menu. <br />
 10. Reduced build times exponentially. <br />
+11. Added audio to the splash screen and credits. <br />
+12. Added a volume slider to the music video. <br />
+13. Added "Exit After Credits" setting and functionality (works like loop play when disabled). <br />
+14. Synched all music video animations correctly to the music. <br />
+15. Fixed champagne scene's "immediate popping" bug. <br />
+16. Fixed bug so that the music video is always in synch with the song even when only building once. <br />
+
+<i>Things That Could Not Be Done Due To Time Constraints:</i></b><br />
+1. Adding play/pause and setting buttons to the music video. <br />
+2. Adding a functioning subtitles button that would display the song's lyrics with the music video. <br />
 
 <b>Contributors:</b><br />
 [MatthewDelFante](https://github.com/mattdelfante)<br />
