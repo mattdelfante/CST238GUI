@@ -7,7 +7,7 @@ Rectangle {
     property double volumeLevel: 0.5
 
     property bool exitAfterCredits: false
-    property alias settingsVolumeSlide: volumeSlider.value
+    property alias sl_settingsVolumeSlide: volumeSlider.value
 
     signal clickMainMenu
     signal volumeChange
@@ -18,9 +18,9 @@ Rectangle {
     Settings
     {
         id: settingsDisplaySettings
-        property alias volSlide: volumeSlider.value
-        property alias exitAfterCreditsText: exitAfterCreditsButtonText.text
-        property alias exitAfterCreditsBool: settingsWrapper.exitAfterCredits
+        property alias sl_volSlide: volumeSlider.value
+        property alias tx_exitAfterCreditsText: exitAfterCreditsButtonText.text
+        property alias bl_exitAfterCreditsBool: settingsWrapper.exitAfterCredits
     }
 
     Slider

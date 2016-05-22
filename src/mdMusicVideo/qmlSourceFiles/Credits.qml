@@ -42,6 +42,12 @@ Rectangle
                 myHouse.visible = false
                 handsToMyself.visible = false
                 tenThousandHours.visible = false
+                specialThanks.visible = true
+            }
+
+            else if (totalTimeElapsed === 208400)
+            {
+                specialThanks.visible = false
                 creditsWrapper.visible = false
                 endScene()
             }
@@ -145,7 +151,19 @@ Rectangle
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: createdByText.bottom
         anchors.topMargin: creditsWrapper.height * .05
-        text: "Ten Thousand Hours By Macklemore"
+        text: "Ten Thousand Hours By Macklemore and Ryan Lewis"
+        font.pixelSize: parent.height /15
+        font.family: "Monotype Corsiva"
+    }
+
+    Text
+    {
+        id: specialThanks
+        color: "white"
+        visible: false
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        text: "Special thanks to Chris Dean, Jacob Neal\nand Stu Taylor for all the help this term."
         font.pixelSize: parent.height /15
         font.family: "Monotype Corsiva"
     }

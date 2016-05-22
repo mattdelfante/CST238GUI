@@ -5,13 +5,15 @@ import QtQuick.Controls 1.5
 
 Rectangle {
     //REMOVE
-    property alias verseOneScene:verseOneScene
+    property alias vo_verseOneScene:verseOneScene
 
-    property alias creditsScene: creditsScene
-    property alias myHouseSong: myHouseSong
-    property alias tenThousandHoursSong: tenThousandHoursSong
+    property alias cr_creditsScene: creditsScene
+    property alias ad_myHouseSong: myHouseSong
+    property alias ad_tenThousandHoursSong: tenThousandHoursSong
+
     signal endOfCredits
     signal volumeChanged
+
     id: musicVideoRect
     anchors.fill: parent
     property bool afterVerseTwo: false
@@ -19,8 +21,8 @@ Rectangle {
     Settings
     {
         id: musicVideoSettings
-        property alias volLevelMyHouse: myHouseSong.volume
-        property alias volLevelTenThousand: tenThousandHoursSong.volume
+        property alias ad_volLevelMyHouse: myHouseSong.volume
+        property alias ad_volLevelTenThousand: tenThousandHoursSong.volume
     }
 
     Audio
@@ -183,8 +185,8 @@ Rectangle {
         value: myHouseSong.volume
         onValueChanged:
         {
-            if (settingsDisplaySettings.settingsVolumeSlide !== value)
-                settingsDisplaySettings.settingsVolumeSlide = value
+            if (settingsDisplaySettings.sl_settingsVolumeSlide !== value)
+                settingsDisplaySettings.sl_settingsVolumeSlide = value
         }
         onHoveredChanged:
         {

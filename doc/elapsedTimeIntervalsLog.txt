@@ -89,3 +89,4 @@ Start Time	Duration	End Time	Activity
 191200		3200		194400		The end text
 194400		5000		199400		Produced, created, choreography text
 199400		5000		204400		Songs used text
+204400		4000		208400		Special thanks text

@@ -380,7 +380,7 @@ Rectangle
                visible: false
                anchors.horizontalCenter: parent.horizontalCenter
                anchors.verticalCenter: parent.verticalCenter
-               text: "Come on! Lets dance!"
+               text: "Come on! Let's dance!"
                font.pixelSize: parent.height/8
            }
 

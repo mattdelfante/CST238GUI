@@ -39,7 +39,7 @@ Window {
 
     function musicVideoVolumeChanged()
     {
-        settingsDisplaySettings.volumeLevel = myHouseSong.volume;
+        settingsDisplaySettings.volumeLevel = ad_myHouseSong.volume;
     }
 
     function destroyMusicVideoScenes()
@@ -54,7 +54,7 @@ Window {
     Settings
     {
         id: mainMenuSettings
-        property alias volLevelHandsToMyself: handsToMyselfSong.volume
+        property alias ad_volLevelHandsToMyself: handsToMyselfSong.volume
     }
 
     Rectangle
@@ -100,7 +100,7 @@ Window {
             {
                 splashScreen.visible = false
                 musicVideoScenes.visible = true
-                musicVideoScenes.creditsScene.visible = true
+                musicVideoScenes.cr_creditsScene.visible = true
                 MyTimer.startMyTimer(191100)
                 handsToMyselfSong.stop()
             }
@@ -126,9 +126,9 @@ Window {
             {
                 if (musicVideoScenes != null)
                 {
-                    musicVideoScenes.myHouseSong.volume = volumeLevel
+                    musicVideoScenes.ad_myHouseSong.volume = volumeLevel
                     handsToMyselfSong.volume = volumeLevel
-                    musicVideoScenes.tenThousandHoursSong.volume = volumeLevel
+                    musicVideoScenes.ad_tenThousandHoursSong.volume = volumeLevel
                 }
             }
         }

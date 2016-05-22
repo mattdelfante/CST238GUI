@@ -192,8 +192,8 @@ Rectangle
             height: parent.height/1.5
             visible: false
             source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
-            y: window.height / 8
-            x: window.width / 4
+            anchors.left: parent.left
+            anchors.verticalCenter: parent.verticalCenter
         }
 
         AnimatedImage
@@ -203,8 +203,8 @@ Rectangle
             height: parent.height/1.5
             visible: false
             source: "file:///" + AppDir + "/images/molliPerson/dancingGifMolli.gif"
-            y: window.height / 8
-            x: window.width / 1.35
+            anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
         }
     }
 
