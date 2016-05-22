@@ -23,7 +23,7 @@ Rectangle {
             {
                 loungeBeachside.visible = false
                 modernLivingRoom.visible = true
-                molliDancing.x = 525
+                molliDancing.x = .65625 * window.width
                 molliDancing.visible = true
                 walkingInLivingRoom1Y.start()
                 growingInLivingRoom.start()
@@ -41,7 +41,7 @@ Rectangle {
                 petDaycare.visible = false
                 waterAndDock.visible = true
                 molliWalking.mirror = true
-                molliWalking.y = 160
+                molliWalking.y = .32 * window.height
                 walkingOnDock.start()
             }
 
@@ -84,8 +84,8 @@ Rectangle {
         Image{
             id: molliLayingHammock
             source: "file:///" + AppDir + "/images/molliPerson/molliLaying.png"
-            width: 173
-            height: 93
+            width: .21625 * window.width
+            height: .186 * window.height
             x: window.width/10
             y: window.height/2.1
             visible: false
@@ -116,17 +116,17 @@ Rectangle {
     Image{
         id: westieFollowingMolli
         source: "file:///" + AppDir + "/images/westie.png"
-        width: 150
+        width: .1875 * window.width
         height: width
-        x: -100
-        y: 500
+        x: -.125 * window.width
+        y: window.height
 
         NumberAnimation{
             id: followingMolliY
             target: westieFollowingMolli
             properties: "y"
-            from: 500
-            to: 275
+            from: window.height
+            to: .55 * window.height
             duration: 1500
             running: false
         }
@@ -135,8 +135,8 @@ Rectangle {
             id: followingMolliX
             target: westieFollowingMolli
             properties: "x"
-            from: -100
-            to: 245
+            from: -.125 * window.width
+            to: .30625 * window.width
             duration: 1500
             running: false
         }
@@ -145,8 +145,8 @@ Rectangle {
             id: shrinkingBehindMolli
             target: westieFollowingMolli
             properties: "width"
-            from: 150
-            to: 100
+            from: .1875 * window.width
+            to: .125 * window.width
             duration: 1500
             running: false
 
@@ -162,16 +162,16 @@ Rectangle {
             id: bouncingUp
             target: westieFollowingMolli
             properties: "y"
-            from: 275
-            to: 240
+            from: .55 * window.height
+            to: .48 * window.height
             duration: 500
             running: false
 
             onRunningChanged: {
-                if (westieFollowingMolli.y === 240)
+                if (westieFollowingMolli.y === .48 * window.height)
                 {
-                    bouncingUp.from = 240
-                    bouncingUp.to = 275
+                    bouncingUp.from = .48 * window.height
+                    bouncingUp.to = .55 * window.height
                     if (jumpCount != 3 && running != true)
                     {
                         jumpCount++
@@ -180,8 +180,8 @@ Rectangle {
                 }
                 else
                 {
-                    bouncingUp.from = 275
-                    bouncingUp.to = 240
+                    bouncingUp.from = .55 * window.height
+                    bouncingUp.to = .48 * window.height
                     if (jumpCount != 3)
                         bouncingUp.start()
                 }
@@ -192,8 +192,8 @@ Rectangle {
             id: runningOnDock
             target: westieFollowingMolli
             properties: "x"
-            from: 750
-            to: 385
+            from: .9375 * window.width
+            to: .48125 * window.width
             duration: 2500
             running: false
 
@@ -210,8 +210,8 @@ Rectangle {
             id: dogJumpsIntoWaterX
             target: westieFollowingMolli
             properties: "x"
-            from: 385
-            to: 100
+            from: .48125 * window.width
+            to: .125 * window.width
             duration: 2000
             running: false
         }
@@ -220,8 +220,8 @@ Rectangle {
             id: dogJumpsIntoWaterY
             target: westieFollowingMolli
             properties: "y"
-            from: 250
-            to: 225
+            from: .5 * window.height
+            to: .45 * window.height
             duration: 700
             running: false
 
@@ -240,8 +240,8 @@ Rectangle {
             id: dogLandsInWaterY
             target: westieFollowingMolli
             properties: "y"
-            from: 225
-            to: 300
+            from: .45 * window.height
+            to: .6 * window.height
             duration: 1300
             running: false
         }
@@ -262,17 +262,17 @@ Rectangle {
             id: molliDiving
             source: "file:///" + AppDir + "/images/molliPerson/molliDiving.png"
             width: height/2
-            height: 200
-            x: 385
-            y: 160
+            height: .4 * window.height
+            x: .48125 * window.width
+            y: .32 * window.height
             visible: false
 
             NumberAnimation{
                 id: jumpOffDockX
                 target: molliDiving
                 properties: "x"
-                from: 385
-                to: 50
+                from: .48125 * window.width
+                to: .0625 * window.width
                 duration: 2500
                 running: false
             }
@@ -281,8 +281,8 @@ Rectangle {
                 id: jumpOffDockY
                 target: molliDiving
                 properties: "y"
-                from: 160
-                to: 125
+                from: .32 * window.height
+                to: .25 * window.height
                 duration: 1000
                 running: false
 
@@ -298,8 +298,8 @@ Rectangle {
                 id: diveIntoWaterY
                 target: molliDiving
                 properties: "y"
-                from: 125
-                to: 390
+                from: .25 * window.height
+                to: .78 * window.height
                 duration: 1500
                 running: false
             }
@@ -318,8 +318,8 @@ Rectangle {
                 id: molliInWater
                 target: molliDiving
                 properties: "y"
-                from: 390
-                to: 300
+                from: .78 * window.height
+                to: .6 * window.height
                 duration: 400
                 running: false
             }
@@ -336,7 +336,7 @@ Rectangle {
         id: molliWalking
         source: "file:///" + AppDir + "/images/molliPerson/molliStanding.png"
         width: height/2
-        height: 200
+        height: .4 * window.height
         visible: false
 
         NumberAnimation{
@@ -391,8 +391,8 @@ Rectangle {
             id: walkingInPetRoomY
             target: molliWalking
             properties: "y"
-            from: 250
-            to: 150
+            from: .5 * window.height
+            to: .3 * window.height
             duration: 2500
             running: false
         }
@@ -401,8 +401,8 @@ Rectangle {
             id: walkingInPetRoomX
             target: molliWalking
             properties: "x"
-            from: -50
-            to: 350
+            from: -.0625 * window.width
+            to: .4375 * window.width
             duration: 2500
             running: false
         }
@@ -411,8 +411,8 @@ Rectangle {
             id: shrinkingInPetRoom
             target: molliWalking
             properties: "height"
-            from: 250
-            to: 200
+            from: .5 * window.height
+            to: .4 * window.height
             duration: 2500
             running: false
         }
@@ -421,8 +421,8 @@ Rectangle {
             id: walkingOnDock
             target: molliWalking
             properties: "x"
-            from: 700
-            to: 385
+            from: .875 * window.width
+            to: .48125 * window.width
             duration: 2000
             running: false
 
@@ -434,7 +434,7 @@ Rectangle {
                     jumpOffDockX.start()
                     jumpOffDockY.start()
                     rotationDiving.start()
-                    westieFollowingMolli.y = 250
+                    westieFollowingMolli.y = .5 * window.height
                     westieFollowingMolli.z = 5
                     westieFollowingMolli.mirror = true
                     runningOnDock.start()
@@ -447,15 +447,15 @@ Rectangle {
         id: molliDancing
         source: "file:///" + AppDir + "/images/molliPerson/dancingGifMolli.gif"
         width: height/2
-        height: 200
+        height: .4 * window.height
         visible: false
 
         NumberAnimation{
             id: walkingInLivingRoom1Y
             target: molliDancing
             properties: "y"
-            from: 150
-            to: 255
+            from: .3 * window.height
+            to: .51 * window.height
             duration: 2500
             running: false
         }
@@ -464,8 +464,8 @@ Rectangle {
             id: growingInLivingRoom
             target: molliDancing
             properties: "height"
-            from: 200
-            to: 250
+            from: .4 * window.height
+            to: .5 * window.height
             duration: 2500
             running: false
 
@@ -481,7 +481,7 @@ Rectangle {
             id: walkingInLivingRoom1X
             target: molliDancing
             properties: "x"
-            from: 525
+            from: .65625 * window.width
             to: 0
             duration: 2500
             running: false
@@ -501,7 +501,7 @@ Rectangle {
             id: walkingInLivingRoom2X
             target: molliDancing
             properties: "x"
-            from: 600
+            from: .75 * window.width
             to: 0
             duration: 2500
             running: false

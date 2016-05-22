@@ -4,13 +4,9 @@ import Qt.labs.settings 1.0
 import QtQuick.Controls 1.5
 
 Rectangle {
-    //REMOVE
-    property alias vo_verseOneScene:verseOneScene
-
     property alias cr_creditsScene: creditsScene
     property alias ad_myHouseSong: myHouseSong
     property alias ad_tenThousandHoursSong: tenThousandHoursSong
-
     signal endOfCredits
     signal volumeChanged
 

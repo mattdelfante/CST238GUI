@@ -329,15 +329,15 @@ Rectangle {
         Image{
             id: mattWalking
             source: "file:///" + AppDir + "/images/mattPerson/mattStanding.png"
-            width: .1 * window.width//80
-            height: .464 * window.height//232
+            width: .1 * window.width
+            height: .464 * window.height
 
             NumberAnimation{
                 id: mattWalkingOntoFloorX
                 target: mattWalking
                 properties: "x"
                 from: 0
-                to: .40625 * window.width//325
+                to: .40625 * window.width
                 duration: 2000
                 running: false
             }
@@ -346,8 +346,8 @@ Rectangle {
                 id: mattWalkingOntoFloorY
                 target: mattWalking
                 properties: "y"
-                from: 250
-                to: 150
+                from: .5 * window.height
+                to: .3 * window.height
                 duration: 2000
                 running: false
             }
@@ -356,15 +356,15 @@ Rectangle {
         Image{
             id: molliWalking
             source: "file:///" + AppDir + "/images/molliPerson/molliStanding.png"
-            width: 118
-            height: 245
+            width: .1475 * window.width
+            height: .49 * window.height
 
             NumberAnimation{
                 id: molliWalkingOntoFloorX
                 target: molliWalking
                 properties: "x"
                 from: 0
-                to: 425
+                to: .53125 * window.width
                 duration: 2000
                 running: false
             }
@@ -373,8 +373,8 @@ Rectangle {
                 id: molliWalkingOntoFloorY
                 target: molliWalking
                 properties: "y"
-                from: 250
-                to: 150
+                from: .5 * window.height
+                to: .3 * window.height
                 duration: 2000
                 running: false
 
@@ -396,10 +396,10 @@ Rectangle {
         AnimatedImage{
             id: mattDancing
             source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
-            width: 100 * 1.3
-            height: 200 * 1.3
-            x: 310
-            y: 142
+            width: .1625 * window.width
+            height: .52 * window.height
+            x: .3875 * window.width
+            y: .284 * window.height
             playing: false
             visible: false
         }
@@ -407,10 +407,10 @@ Rectangle {
         AnimatedImage{
             id: molliDancing
             source: "file:///" + AppDir + "/images/molliPerson/dancingGifMolli.gif"
-            width: 100 * 1.3
-            height: 200 * 1.3
-            x: 419
-            y: 142
+            width: .1625 * window.width
+            height: .52 * window.height
+            x: .52375 * window.width
+            y: .284 * window.height
             playing: false
             visible: false
         }

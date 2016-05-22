@@ -21,10 +21,6 @@ class MyTimer : public QObject
         void startMyTimer(int timeDisplacement);
         void stopMyTimer();
 
-        //REMOVE
-        void startFakeTimer();
-        int getTotalTime();
-
     private:
         QTimer * m_timer;
         int m_totalTimeElapsed;
