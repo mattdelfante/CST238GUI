@@ -8,10 +8,12 @@ Rectangle
     color: "black"
     visible: false
 
-    Connections{
+    Connections
+    {
         id: connectionTimer
         target: MyTimer
-        onTimerTimeout: {
+        onTimerTimeout:
+        {
             if (totalTimeElapsed === 191200)
             {
                 theEndText.visible = true

@@ -6,10 +6,12 @@ Rectangle
     id: floRidaChorusWrapper
     anchors.fill: parent
 
-    Connections{
+    Connections
+    {
         id: connectionTimer
         target: MyTimer
-        onTimerTimeout:{
+        onTimerTimeout:
+        {
             if (totalTimeElapsed === 154700)
             {
                 outsideFloRidaHouseWrapper.visible = false
@@ -90,13 +92,14 @@ Rectangle
     {
         id: garageSceneWrapper
         anchors.fill: parent
-        visible: false
+        visible: false  
         Image
         {
             id: garage
             source: "file:///" + AppDir + "/images/floRidaGarage.jpg"
             anchors.fill: parent
         }
+
         Image
         {
             id: floRidaInGarage

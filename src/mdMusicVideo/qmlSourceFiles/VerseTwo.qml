@@ -1,13 +1,15 @@
 import QtQuick 2.0
 import QtQuick.Particles 2.0
 
-Rectangle {
+Rectangle
+{
     signal endScene
     id: window
     width: parent.width
     height: parent.height
 
-    Connections{
+    Connections
+    {
         id: connectionTimer
         target: MyTimer
         onTimerTimeout:
@@ -60,12 +62,14 @@ Rectangle {
         }
     }
 
-    Rectangle{
+    Rectangle
+    {
         id: nightToDayScene
         anchors.fill: parent
 
         //Sky gradient
-        Rectangle {
+        Rectangle
+        {
             anchors { left: parent.left; top: parent.top; right: parent.right; bottom: parent.verticalCenter }
             gradient: Gradient {
                 GradientStop {
@@ -92,36 +96,43 @@ Rectangle {
         }
 
         //Sun, moon, stars
-        Item {
+        Item
+        {
             width: parent.width; height: 2 * parent.height
-            NumberAnimation on rotation {
+            NumberAnimation on rotation
+            {
                 id: sunMoonStarsRotationAnimation
                 running: false
                 from: -140; to: 220; duration: 10000; loops: Animation.Infinite
             }
-            Image {
+            Image
+            {
                 width: .0625 * parent.width
                 height: width
                 source: "file:///" + AppDir + "/images/sun.png"; y: 10; anchors.horizontalCenter: parent.horizontalCenter
                 rotation: -3 * parent.rotation
             }
-            Image {
+            Image
+            {
                 width: .0625 * parent.width
                 height: .8 * width
                 source: "file:///" + AppDir + "/images/moon.png"; y: parent.height - 74; anchors.horizontalCenter: parent.horizontalCenter
                 rotation: -parent.rotation
             }
-            ParticleSystem {
+            ParticleSystem
+            {
                 id: particlesystem
                 x: 0; y: parent.height/2
                 width: parent.width; height: parent.height/2
-                ImageParticle {
+                ImageParticle
+                {
                     width: 2
                     height: 2
                     source: "file:///" + AppDir + "/images/star.png"
                     groups: ["star"]
                     color: "#00333333"
-                    SequentialAnimation on opacity {
+                    SequentialAnimation on opacity
+                    {
                         id: starsAnimation
                         running: false
                         loops: Animation.Infinite
@@ -129,7 +140,8 @@ Rectangle {
                         NumberAnimation { from: 1; to: 0; duration: 5000 }
                     }
                 }
-                Emitter {
+                Emitter
+                {
                     group: "star"
                     anchors.fill: parent
                     emitRate: parent.width / 50
@@ -139,7 +151,8 @@ Rectangle {
         }
 
         //Ground gradient
-        Rectangle {
+        Rectangle
+        {
             anchors { left: parent.left; top: parent.verticalCenter; right: parent.right; bottom: parent.bottom }
             gradient: Gradient {
                 GradientStop {
@@ -168,18 +181,21 @@ Rectangle {
         }
     }
 
-    Rectangle{
+    Rectangle
+    {
         id: closeBlindsScene
         width: parent.width
         height: parent.height
         visible: false
 
-        Image{
+        Image
+        {
             id: openedWindow
             source: "file:///" + AppDir + "/images/openedWindow.jpg"
             anchors.fill: parent
 
-            AnimatedImage{
+            AnimatedImage
+            {
                 id: mattDancingInWindow
                 source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
                 width: height/2
@@ -189,7 +205,8 @@ Rectangle {
                 anchors.verticalCenterOffset: parent.height/17
             }
 
-            Image{
+            Image
+            {
                 id: blinds
                 source: "file:///" + AppDir + "/images/blinds.png"
                 width: window.width
@@ -208,7 +225,8 @@ Rectangle {
                 }
             }
 
-            Image{
+            Image
+            {
                 id: blindsDrawstring
                 source: "file:///" + AppDir + "/images/blindsDrawstring.png"
                 width: window.width
@@ -227,7 +245,8 @@ Rectangle {
                 }
             }
 
-            Image{
+            Image
+            {
                 id: molliHoldingBlinds
                 source: "file:///" + AppDir + "/images/molliPerson/molliHoldingBlinds.png"
                 width: .186 * parent.width
@@ -238,20 +257,23 @@ Rectangle {
         }
     }
 
-    Rectangle{
+    Rectangle
+    {
         id: clothesOnFloorScene
         width: parent.width
         height: parent.height
         visible: false
 
-        Image{
+        Image
+        {
             id: jerseysOnFloor
             source: "file:///" + AppDir + "/images/jerseysOnFloor.png"
             anchors.fill: parent
             opacity: .75
         }
 
-        AnimatedImage{
+        AnimatedImage
+        {
             id: mattDancingUnderChampagne
             source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
             width: .1875 * parent.width
@@ -263,7 +285,8 @@ Rectangle {
             playing: false
         }
 
-        Image{
+        Image
+        {
             id: mattSpeaking
             source: "file:///" + AppDir + "/images/speechBubble.png"
             width: parent.width/6
@@ -272,7 +295,8 @@ Rectangle {
             y: mattDancingUnderChampagne.y
             visible: false
 
-            Text{
+            Text
+            {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
                 text: "...Thanks."
@@ -280,7 +304,8 @@ Rectangle {
             }
         }
 
-        AnimatedImage{
+        AnimatedImage
+        {
             id: champagneBottle
             source: "file:///" + AppDir + "/images/champagneGif.gif"
             width: parent.width * .8
@@ -289,7 +314,8 @@ Rectangle {
             y: parent.height/2 - height/2
             playing: false
 
-            onFrameChanged: {
+            onFrameChanged:
+            {
                 if (currentFrame === 12)
                 {
                     mattDancingUnderChampagne.playing = false
@@ -302,7 +328,8 @@ Rectangle {
             }
         }
 
-        Image{
+        Image
+        {
             id: molliHoldingBottle
             source: "file:///" + AppDir + "/images/molliPerson/molliHoldingBlinds.png"
             width: .242 * parent.width
@@ -314,25 +341,29 @@ Rectangle {
         }
     }
 
-    Rectangle{
+    Rectangle
+    {
         id: continueTonightScene
         width: parent.width
         height: parent.height
         visible: false
 
-        AnimatedImage{
+        AnimatedImage
+        {
             id: changingSpotLights
             source: "file:///" + AppDir + "/images/changingSpotLights.gif"
             anchors.fill: parent
         }
 
-        Image{
+        Image
+        {
             id: mattWalking
             source: "file:///" + AppDir + "/images/mattPerson/mattStanding.png"
             width: .1 * window.width
             height: .464 * window.height
 
-            NumberAnimation{
+            NumberAnimation
+            {
                 id: mattWalkingOntoFloorX
                 target: mattWalking
                 properties: "x"
@@ -353,13 +384,15 @@ Rectangle {
             }
         }
 
-        Image{
+        Image
+        {
             id: molliWalking
             source: "file:///" + AppDir + "/images/molliPerson/molliStanding.png"
             width: .1475 * window.width
             height: .49 * window.height
 
-            NumberAnimation{
+            NumberAnimation
+            {
                 id: molliWalkingOntoFloorX
                 target: molliWalking
                 properties: "x"
@@ -369,7 +402,8 @@ Rectangle {
                 running: false
             }
 
-            NumberAnimation{
+            NumberAnimation
+            {
                 id: molliWalkingOntoFloorY
                 target: molliWalking
                 properties: "y"
@@ -393,7 +427,8 @@ Rectangle {
             }
         }
 
-        AnimatedImage{
+        AnimatedImage
+        {
             id: mattDancing
             source: "file:///" + AppDir + "/images/mattPerson/dancingGifMatt.gif"
             width: .1625 * window.width
@@ -404,7 +439,8 @@ Rectangle {
             visible: false
         }
 
-        AnimatedImage{
+        AnimatedImage
+        {
             id: molliDancing
             source: "file:///" + AppDir + "/images/molliPerson/dancingGifMolli.gif"
             width: .1625 * window.width

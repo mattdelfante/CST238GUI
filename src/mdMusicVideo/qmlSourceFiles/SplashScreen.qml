@@ -1,11 +1,7 @@
-/*
-  Name: Matthew Del Fante & Molli Drivdahl
-  Lab: Lab2 Splash Screen
-  Project Name: mdMusicVideo
-*/
 import QtQuick 2.0
 
-Rectangle {
+Rectangle
+{
     id: splashScreenRect
     anchors.fill: parent
 
@@ -14,12 +10,14 @@ Rectangle {
     signal clickedCredits
     signal closeProgram
 
-    Image{
+    Image
+    {
         anchors.fill: parent
         source: "file:///" + AppDir + "/images/splashScreenBg.png"
     }
 
-    Rectangle{
+    Rectangle
+    {
         id: windowPaneRect
         width: parent.width/2
         height: parent.height/2
@@ -28,12 +26,14 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         anchors.verticalCenterOffset: parent.height/5.25
 
-        Image{
+        Image
+        {
             anchors.fill: parent
             source: "file:///" + AppDir + "/images/splashScreenWindow.png"
         }
 
-        MyButton{
+        MyButton
+        {
             id: playButton
             width: parent.width/2.62
             height: parent.height/2.33
@@ -58,7 +58,8 @@ Rectangle {
                 clickedPlay()
             }
 
-            Text{
+            Text
+            {
                 id: playButtonText
                 anchors.horizontalCenter: playButton.horizontalCenter
                 anchors.verticalCenter: playButton.verticalCenter
@@ -69,7 +70,8 @@ Rectangle {
             }
         }
 
-        MyButton{
+        MyButton
+        {
             id: exitButton
             width: parent.width/2.37
             height: parent.height/2.33
@@ -94,7 +96,8 @@ Rectangle {
                 closeProgram()
             }
 
-            Text{
+            Text
+            {
                 id: exitButtonText
                 anchors.horizontalCenter: exitButton.horizontalCenter
                 anchors.verticalCenter: exitButton.verticalCenter
@@ -105,7 +108,8 @@ Rectangle {
             }
         }
 
-        MyButton{
+        MyButton
+        {
             id: settingsButton
             width: parent.width/2.62
             height: parent.height/2.33
@@ -130,7 +134,8 @@ Rectangle {
                 clickedSettings()
             }
 
-            Text{
+            Text
+            {
                 id: settingsButtonText
                 anchors.horizontalCenter: settingsButton.horizontalCenter
                 anchors.verticalCenter: settingsButton.verticalCenter
@@ -141,7 +146,8 @@ Rectangle {
             }
         }
 
-        MyButton{
+        MyButton
+        {
             id: creditsButton
             width: parent.width/2.37
             height: parent.height/2.33
@@ -166,7 +172,8 @@ Rectangle {
                 clickedCredits()
             }
 
-            Text{
+            Text
+            {
                 id: creditsButtonText
                 anchors.horizontalCenter: creditsButton.horizontalCenter
                 anchors.verticalCenter: creditsButton.verticalCenter
@@ -178,7 +185,8 @@ Rectangle {
         }
     }
 
-    AnimatedImage{
+    AnimatedImage
+    {
         id: dancingMolli
         width: .125 * parent.width
         height: .4 * parent.height
@@ -189,7 +197,8 @@ Rectangle {
         anchors.horizontalCenterOffset: -parent.width/6
     }
 
-    AnimatedImage{
+    AnimatedImage
+    {
         id: dancingMatt
         width: .125 * parent.width
         height: .4 * parent.height

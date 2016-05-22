@@ -1,11 +1,7 @@
-/*
-  Name: Matthew Del Fante & Molli Drivdahl
-  Lab: Lab2 Splash Screen
-  Project Name: mdMusicVideo
-*/
 import QtQuick 2.0
 
-Rectangle {
+Rectangle
+{
     property alias tr_textRect:textRect
     property alias tx_textRectBox:textRect.tx_textBox
     property alias mb_button:myButton
@@ -18,25 +14,29 @@ Rectangle {
     radius: height/25
     border.width: 2
 
-    TextRect{
+    TextRect
+    {
         id: textRect
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    MouseArea{
+    MouseArea
+    {
         id: dialogMouseArea
         anchors.fill: parent
         drag.target: parent
     }
 
-    MyButton{
+    MyButton
+    {
         id: myButton
         anchors.bottom: parent.bottom
         anchors.bottomMargin: parent.height/6
         anchors.horizontalCenter: parent.horizontalCenter
 
-        Text{
+        Text
+        {
             id: buttonText
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter

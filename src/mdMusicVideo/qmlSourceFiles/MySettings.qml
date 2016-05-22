@@ -2,7 +2,8 @@ import QtQuick 2.6
 import QtQuick.Controls 1.5
 import Qt.labs.settings 1.0
 
-Rectangle {
+Rectangle
+{
     id: settingsWrapper
     property double volumeLevel: 0.5
 

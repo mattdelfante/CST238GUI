@@ -2,16 +2,19 @@ import QtQuick 2.0
 import QtQuick.Window 2.2
 import QtQuick.Particles 2.0
 
-Rectangle {
+Rectangle
+{
     signal endScene
     id: window
     width: parent.width
     height: parent.height
 
-    Connections{
+    Connections
+    {
         id: connectionTimer
         target: MyTimer
-        onTimerTimeout:{
+        onTimerTimeout:
+        {
             //Begin day to night
             if (totalTimeElapsed === 10300)
             {
@@ -74,12 +77,14 @@ Rectangle {
         }
     }
 
-    Rectangle{
+    Rectangle
+    {
         id: dayToNightScene
         anchors.fill: parent
 
         //Sky gradient
-        Rectangle {
+        Rectangle
+        {
             anchors { left: parent.left; top: parent.top; right: parent.right; bottom: parent.verticalCenter }
             gradient: Gradient {
                 GradientStop {
@@ -105,15 +110,17 @@ Rectangle {
             }
         }
 
-        //Sun, moon, stars
-        Item {
+        Item
+        {
             width: parent.width; height: 2 * parent.height
-            NumberAnimation on rotation {
+            NumberAnimation on rotation
+            {
                 id: sunMoonStarsRotationAnimation
                 running: false
                 from: 40; to: 400; duration: 10000; loops: Animation.Infinite
             }
-            Image {
+            Image
+            {
                 width: .0625 * parent.width
                 height: width
                 source: "file:///" + AppDir + "/images/sun.png"; y: 10; anchors.horizontalCenter: parent.horizontalCenter
@@ -125,17 +132,20 @@ Rectangle {
                 source: "file:///" + AppDir + "/images/moon.png"; y: parent.height - 74; anchors.horizontalCenter: parent.horizontalCenter
                 rotation: -parent.rotation
             }
-            ParticleSystem {
+            ParticleSystem
+            {
                 id: particlesystem
                 x: 0; y: parent.height/2
                 width: parent.width; height: parent.height/2
-                ImageParticle {
+                ImageParticle
+                {
                     width: 2
                     height: 2
                     source: "file:///" + AppDir + "/images/star.png"
                     groups: ["star"]
                     color: "#00333333"
-                    SequentialAnimation on opacity {
+                    SequentialAnimation on opacity
+                    {
                         id: starsAnimation
                         running: false
                         loops: Animation.Infinite
@@ -143,7 +153,8 @@ Rectangle {
                         NumberAnimation { from: 1; to: 0; duration: 5000 }
                     }
                 }
-                Emitter {
+                Emitter
+                {
                     group: "star"
                     anchors.fill: parent
                     emitRate: parent.width / 50
@@ -153,7 +164,8 @@ Rectangle {
         }
 
         //Ground gradient
-        Rectangle {
+        Rectangle
+        {
             anchors { left: parent.left; top: parent.verticalCenter; right: parent.right; bottom: parent.bottom }
             gradient: Gradient {
                 GradientStop {
@@ -209,7 +221,8 @@ Rectangle {
     }
 
     //Walking to front door
-    Image {
+    Image
+    {
         id: fancyFrontDoorOpen
         source: "file:///" + AppDir + "/images/openedFrontDoor.jpg"
         width: parent.width
@@ -218,7 +231,8 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         visible: false
 
-        Image {
+        Image
+        {
             id: molliWalkingToDoor
             source: "file:///" + AppDir + "/images/molliPerson/molliWalkingStance.png"
             y: parent.height/2
@@ -226,7 +240,8 @@ Rectangle {
             height: .4 * window.height
             visible: true
 
-            NumberAnimation{
+            NumberAnimation
+            {
                 id: molliWalkingToDoorX
                 target: molliWalkingToDoor
                 properties: "x"
@@ -236,7 +251,8 @@ Rectangle {
                 running: false
             }
 
-            NumberAnimation{
+            NumberAnimation
+            {
                 id: molliWalkingToDoorY
                 target: molliWalkingToDoor
                 properties: "y"
@@ -247,7 +263,8 @@ Rectangle {
             }
         }
 
-        Image {
+        Image
+        {
             id: mattWaitingAtDoor
             source: "file:///" + AppDir + "/images/mattPerson/mattWaitingStance.png"
             width: .125 * parent.width
@@ -260,7 +277,8 @@ Rectangle {
     }
 
     //In living room
-    Image{
+    Image
+    {
         id: livingRoomCouch
         source: "file:///" + AppDir + "/images/livingRoomCouch.jpg"
         width: parent.width
@@ -274,14 +292,16 @@ Rectangle {
             anchors.fill: parent
             color: "transparent"
 
-            Image{
+            Image
+            {
                 id: mattStanding
                 source: "file:///" + AppDir + "/images/mattPerson/mattStanding.png"
                 width: .1 * parent.width
                 height: .464 * parent.height
                 visible: true
 
-                NumberAnimation{
+                NumberAnimation
+                {
                     id: mattStandingCouchX
                     target: mattStanding
                     properties: "x"
@@ -291,7 +311,8 @@ Rectangle {
                     running: false
                 }
 
-                NumberAnimation{
+                NumberAnimation
+                {
                     id: mattStandingCouchY
                     target: mattStanding
                     properties: "y"
@@ -300,20 +321,23 @@ Rectangle {
                     duration: 2500
                     running: false
 
-                    onStopped:{
+                    onStopped:
+                    {
                         mattSpeechBubble.visible = true
                     }
                 }
             }
 
-            Image{
+            Image
+            {
                 id: molliStanding
                 source: "file:///" + AppDir + "/images/molliPerson/molliStanding.png"
                 width: .1475 * parent.width
                 height: .49 * parent.height
                 visible: true
 
-                NumberAnimation{
+                NumberAnimation
+                {
                     id: molliStandingCouchX
                     target: molliStanding
                     properties: "x"
@@ -323,7 +347,8 @@ Rectangle {
                     running: false
                 }
 
-                NumberAnimation{
+                NumberAnimation
+                {
                     id: molliStandingCouchY
                     target: molliStanding
                     properties: "y"
@@ -332,13 +357,15 @@ Rectangle {
                     duration: 2500
                     running: false
 
-                    onStopped:{
+                    onStopped:
+                    {
                         molliSpeechBubble.visible = true
                     }
                 }
             }
 
-            Image{
+            Image
+            {
                 id: mattSpeechBubble
                 source: "file:///" + AppDir + "/images/speechBubble.png"
                 visible: false
@@ -347,7 +374,8 @@ Rectangle {
                 x: mattStanding.x + mattStanding.width
                 y: mattStanding.y
 
-                Text{
+                Text
+                {
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     text: "Where you been?"
@@ -355,7 +383,8 @@ Rectangle {
                 }
             }
 
-            Image{
+            Image
+            {
                 id: molliSpeechBubble
                 source: "file:///" + AppDir + "/images/speechBubble.png"
                 mirror: true
@@ -365,7 +394,8 @@ Rectangle {
                 x: molliStanding.x - molliSpeechBubble.width
                 y: molliStanding.y
 
-                Text{
+                Text
+                {
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     text: "Purvine."
@@ -375,13 +405,15 @@ Rectangle {
         }
 
         //Sitting
-        Rectangle{
+        Rectangle
+        {
             id: sittingOnCouchScene
             anchors.fill: parent
             color: "transparent"
             visible: false
 
-            AnimatedImage{
+            AnimatedImage
+            {
                 id: mattSittingCheers
                 source: "file:///" + AppDir + "/images/mattPerson/sittingCheersGifMatt.gif"
                 width: .15875 * parent.width
@@ -391,7 +423,8 @@ Rectangle {
                 playing: false
             }
 
-            AnimatedImage{
+            AnimatedImage
+            {
                 id: molliSittingCheers
                 source: "file:///" + AppDir + "/images/molliPerson/sittingCheersGifMolli.gif"
                 width: .17375 * parent.width

@@ -10,10 +10,12 @@ Image
 
     property int count: 0
 
-    Connections{
+    Connections
+    {
         id: connectionTimer
         target: MyTimer
-        onTimerTimeout:{
+        onTimerTimeout:
+        {
             //Bottle is opened, Transition scenes
             if (totalTimeElapsed === 10400)
                 endScene()            
@@ -38,7 +40,8 @@ Image
             id:xBehavior
             enabled: false
 
-            XAnimator{
+            XAnimator
+            {
                 id: xBouncingAnimation
                 easing.type: Easing.InOutBounce
                 easing.amplitude: 2
@@ -51,7 +54,8 @@ Image
             id: yBehavior
             enabled: false
 
-            YAnimator{
+            YAnimator
+            {
                 id: yBouncingAnimation
                 easing.type: Easing.InOutBounce
                 duration: 7000

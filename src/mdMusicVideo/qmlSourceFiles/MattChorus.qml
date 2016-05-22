@@ -10,7 +10,8 @@ Rectangle
     {
         id: connectionTimer
         target: MyTimer
-        onTimerTimeout:{
+        onTimerTimeout:
+        {
             //End chorus intro field, Begin Matt grow up stairs & Macklemore first text
             if (totalTimeElapsed === 42100)
             {
@@ -125,7 +126,6 @@ Rectangle
                     to: livingRoomWrapper.height * .32
                     duration: 2400
                     running: false
-
                     onRunningChanged:
                     {
                          if (running === false)

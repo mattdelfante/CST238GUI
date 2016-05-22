@@ -3,7 +3,8 @@ import QtMultimedia 5.6
 import Qt.labs.settings 1.0
 import QtQuick.Controls 1.5
 
-Rectangle {
+Rectangle
+{
     property alias cr_creditsScene: creditsScene
     property alias ad_myHouseSong: myHouseSong
     property alias ad_tenThousandHoursSong: tenThousandHoursSong
@@ -70,7 +71,8 @@ Rectangle {
         enabled: false
         visible: false
 
-        onEndScene:{
+        onEndScene:
+        {
             preChorusScene.visible = false
             preChorusScene.enabled = false
 
@@ -87,7 +89,8 @@ Rectangle {
         }
     }
 
-    MattChorus{
+    MattChorus
+    {
         id: chorusOneScene
         enabled: false
         visible: false
@@ -101,7 +104,8 @@ Rectangle {
         }
     }
 
-    VerseTwo{
+    VerseTwo
+    {
         id: verseTwoScene
         enabled: false
         visible: false
@@ -116,7 +120,8 @@ Rectangle {
         }
     }
 
-    MolliChorus{
+    MolliChorus
+    {
         id: chorusTwoScene
         enabled: false
         visible: false
@@ -130,12 +135,14 @@ Rectangle {
         }
     }
 
-    VerseThree{
+    VerseThree
+    {
         id: verseThreeScene
         enabled: false
         visible: false
 
-        onEndScene: {
+        onEndScene:
+        {
             verseThreeScene.visible = false
             verseThreeScene.enabled = false
             chorusThreeScene.visible = true
@@ -143,7 +150,8 @@ Rectangle {
         }
     }
 
-    FloRidaChorus{
+    FloRidaChorus
+    {
         id: chorusThreeScene
         enabled: false
         visible: false
@@ -156,7 +164,8 @@ Rectangle {
         }
     }
 
-    Credits{
+    Credits
+    {
         id: creditsScene
         enabled: false
         visible: false

@@ -3,7 +3,8 @@ import QtQuick.Window 2.2
 import QtMultimedia 5.6
 import Qt.labs.settings 1.0
 
-Window {
+Window
+{
     id: mainWindow
     width: 800
     height: 500
@@ -122,7 +123,7 @@ Window {
                 splashScreen.visible = true
             }
             
-	    onVolumeChange:
+            onVolumeChange:
             {
                 if (musicVideoScenes != null)
                 {

@@ -5,7 +5,8 @@
 */
 import QtQuick 2.0
 
-Rectangle {
+Rectangle
+{
     property alias tx_textBox:text
     property string words: words
     id: rect
@@ -14,7 +15,8 @@ Rectangle {
     border.width: 2
     radius: height/10
 
-    Text{
+    Text
+    {
         id: text
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter

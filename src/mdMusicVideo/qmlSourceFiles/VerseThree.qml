@@ -8,10 +8,12 @@ Rectangle
     anchors.fill: parent
     visible: false
 
-    Connections{
+    Connections
+    {
         id: connectionTimer
         target: MyTimer
-        onTimerTimeout:{
+        onTimerTimeout:
+        {
             if (totalTimeElapsed === 135100)
             {
                 rideTheDucksWrapper.visible = false

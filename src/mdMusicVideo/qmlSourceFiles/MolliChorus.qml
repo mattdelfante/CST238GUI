@@ -6,10 +6,12 @@ Rectangle {
     id: window
     anchors.fill: parent
 
-    Connections{
+    Connections
+    {
         id: connectionTimer
         target: MyTimer
-        onTimerTimeout:{
+        onTimerTimeout:
+        {
             if (totalTimeElapsed === 103400)
             {
                 outsideBeachHouse.visible = false
@@ -52,12 +54,14 @@ Rectangle {
         }
     }
 
-    Image{
+    Image
+    {
         id: outsideBeachHouse
         source: "file:///" + AppDir + "/images/molliChorusHouse.jpg"
         anchors.fill: parent
 
-        Text{
+        Text
+        {
             id: molliHouse
             text: "Molli's House"
             color: "red"
@@ -68,20 +72,23 @@ Rectangle {
         }
     }
 
-    Image{
+    Image
+    {
         id: modernBedroom
         source: "file:///" + AppDir + "/images/modernBedroom.jpg"
         anchors.fill: parent
         visible: false
     }
 
-    Image{
+    Image
+    {
         id: loungeBeachside
         source: "file:///" + AppDir + "/images/loungeBeachside.jpg"
         anchors.fill: parent
         visible: false
 
-        Image{
+        Image
+        {
             id: molliLayingHammock
             source: "file:///" + AppDir + "/images/molliPerson/molliLaying.png"
             width: .21625 * window.width
@@ -92,28 +99,32 @@ Rectangle {
         }
     }
 
-    Image{
+    Image
+    {
         id: modernLivingRoom
         source: "file:///" + AppDir + "/images/modernLivingRoom.jpg"
         anchors.fill: parent
         visible: false
     }
 
-    Image{
+    Image
+    {
         id: modernLivingRoom2
         source: "file:///" + AppDir + "/images/modernLivingRoom2.jpg"
         anchors.fill: parent
         visible: false
     }
 
-    Image{
+    Image
+    {
         id: petDaycare
         source: "file:///" + AppDir + "/images/petDaycare.jpg"
         anchors.fill: parent
         visible: false
     }
 
-    Image{
+    Image
+    {
         id: westieFollowingMolli
         source: "file:///" + AppDir + "/images/westie.png"
         width: .1875 * window.width
@@ -121,7 +132,8 @@ Rectangle {
         x: -.125 * window.width
         y: window.height
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: followingMolliY
             target: westieFollowingMolli
             properties: "y"
@@ -131,7 +143,8 @@ Rectangle {
             running: false
         }
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: followingMolliX
             target: westieFollowingMolli
             properties: "x"
@@ -141,7 +154,8 @@ Rectangle {
             running: false
         }
 
-        PropertyAnimation{
+        PropertyAnimation
+        {
             id: shrinkingBehindMolli
             target: westieFollowingMolli
             properties: "width"
@@ -150,7 +164,8 @@ Rectangle {
             duration: 1500
             running: false
 
-            onRunningChanged:{
+            onRunningChanged:
+            {
                 if (running === false)
                 {
                     bouncingUp.start()
@@ -158,7 +173,8 @@ Rectangle {
             }
         }
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: bouncingUp
             target: westieFollowingMolli
             properties: "y"
@@ -167,7 +183,8 @@ Rectangle {
             duration: 500
             running: false
 
-            onRunningChanged: {
+            onRunningChanged:
+            {
                 if (westieFollowingMolli.y === .48 * window.height)
                 {
                     bouncingUp.from = .48 * window.height
@@ -188,7 +205,8 @@ Rectangle {
             }
         }
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: runningOnDock
             target: westieFollowingMolli
             properties: "x"
@@ -197,7 +215,8 @@ Rectangle {
             duration: 2500
             running: false
 
-            onRunningChanged: {
+            onRunningChanged:
+            {
                 if (running === false)
                 {
                     dogJumpsIntoWaterX.start()
@@ -206,7 +225,8 @@ Rectangle {
             }
         }
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: dogJumpsIntoWaterX
             target: westieFollowingMolli
             properties: "x"
@@ -216,7 +236,8 @@ Rectangle {
             running: false
         }
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: dogJumpsIntoWaterY
             target: westieFollowingMolli
             properties: "y"
@@ -225,7 +246,8 @@ Rectangle {
             duration: 700
             running: false
 
-            onRunningChanged: {
+            onRunningChanged:
+            {
                 if(running === false)
                 {
                     dogLandsInWaterY.start()
@@ -236,7 +258,8 @@ Rectangle {
             }
         }
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: dogLandsInWaterY
             target: westieFollowingMolli
             properties: "y"
@@ -247,18 +270,21 @@ Rectangle {
         }
     }
 
-    Rectangle{
+    Rectangle
+    {
         id: waterAndDock
         anchors.fill: parent
         visible: false
 
-        Image{
+        Image
+        {
             id: waterBackLayer
             source: "file:///" + AppDir + "/images/waterBackLayer.png"
             anchors.fill: parent
         }
 
-        Image{
+        Image
+        {
             id: molliDiving
             source: "file:///" + AppDir + "/images/molliPerson/molliDiving.png"
             width: height/2
@@ -267,7 +293,8 @@ Rectangle {
             y: .32 * window.height
             visible: false
 
-            NumberAnimation{
+            NumberAnimation
+            {
                 id: jumpOffDockX
                 target: molliDiving
                 properties: "x"
@@ -277,7 +304,8 @@ Rectangle {
                 running: false
             }
 
-            NumberAnimation{
+            NumberAnimation
+            {
                 id: jumpOffDockY
                 target: molliDiving
                 properties: "y"
@@ -286,7 +314,8 @@ Rectangle {
                 duration: 1000
                 running: false
 
-                onRunningChanged: {
+                onRunningChanged:
+                {
                     if (running === false)
                     {
                         diveIntoWaterY.start()
@@ -294,7 +323,8 @@ Rectangle {
                 }
             }
 
-            NumberAnimation{
+            NumberAnimation
+            {
                 id: diveIntoWaterY
                 target: molliDiving
                 properties: "y"
@@ -304,7 +334,8 @@ Rectangle {
                 running: false
             }
 
-            PropertyAnimation{
+            PropertyAnimation
+            {
                 id: rotationDiving
                 target: molliDiving
                 properties: "rotation"
@@ -314,7 +345,8 @@ Rectangle {
                 running: false
             }
 
-            NumberAnimation{
+            NumberAnimation
+            {
                 id: molliInWater
                 target: molliDiving
                 properties: "y"
@@ -325,21 +357,24 @@ Rectangle {
             }
         }
 
-        Image{
+        Image
+        {
             id: waterFrontLayer
             source: "file:///" + AppDir + "/images/waterFrontLayer.png"
             anchors.fill: parent
         }
     }
 
-    Image{
+    Image
+    {
         id: molliWalking
         source: "file:///" + AppDir + "/images/molliPerson/molliStanding.png"
         width: height/2
         height: .4 * window.height
         visible: false
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: walkingOutBedroomX
             target: molliWalking
             properties: "x"
@@ -348,7 +383,8 @@ Rectangle {
             duration: 2400
             running: false
 
-            onRunningChanged:{
+            onRunningChanged:
+            {
                 if (running === false)
                 {
                     modernBedroom.visible = false
@@ -358,7 +394,8 @@ Rectangle {
             }
         }
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: walkingOntoPorchY
             target: molliWalking
             properties: "y"
@@ -367,18 +404,21 @@ Rectangle {
             duration: 1800
             running: false
 
-            onRunningChanged:{
+            onRunningChanged:
+            {
                 if (running === false)
                     pausedOnPorch.start()
             }
         }
 
-        PauseAnimation {
+        PauseAnimation
+        {
             id: pausedOnPorch
             duration: 800
             running: false
 
-            onRunningChanged: {
+            onRunningChanged:
+            {
                 if (running === false)
                 {
                     molliLayingHammock.visible = true
@@ -387,7 +427,8 @@ Rectangle {
             }
         }
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: walkingInPetRoomY
             target: molliWalking
             properties: "y"
@@ -397,7 +438,8 @@ Rectangle {
             running: false
         }
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: walkingInPetRoomX
             target: molliWalking
             properties: "x"
@@ -407,7 +449,8 @@ Rectangle {
             running: false
         }
 
-        PropertyAnimation{
+        PropertyAnimation
+        {
             id: shrinkingInPetRoom
             target: molliWalking
             properties: "height"
@@ -417,7 +460,8 @@ Rectangle {
             running: false
         }
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: walkingOnDock
             target: molliWalking
             properties: "x"
@@ -426,7 +470,8 @@ Rectangle {
             duration: 2000
             running: false
 
-            onRunningChanged: {
+            onRunningChanged:
+            {
                 if (running === false)
                 {
                     molliWalking.visible = false
@@ -443,14 +488,16 @@ Rectangle {
         }
     }
 
-    AnimatedImage{
+    AnimatedImage
+    {
         id: molliDancing
         source: "file:///" + AppDir + "/images/molliPerson/dancingGifMolli.gif"
         width: height/2
         height: .4 * window.height
         visible: false
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: walkingInLivingRoom1Y
             target: molliDancing
             properties: "y"
@@ -460,7 +507,8 @@ Rectangle {
             running: false
         }
 
-        PropertyAnimation{
+        PropertyAnimation
+        {
             id: growingInLivingRoom
             target: molliDancing
             properties: "height"
@@ -469,7 +517,8 @@ Rectangle {
             duration: 2500
             running: false
 
-            onRunningChanged: {
+            onRunningChanged:
+            {
                 if (running === false)
                 {
                     walkingInLivingRoom1X.start()
@@ -477,7 +526,8 @@ Rectangle {
             }
         }
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: walkingInLivingRoom1X
             target: molliDancing
             properties: "x"
@@ -486,7 +536,8 @@ Rectangle {
             duration: 2500
             running: false
 
-            onRunningChanged:{
+            onRunningChanged:
+            {
                 if (running === false)
                 {
                     modernLivingRoom.visible = false
@@ -497,7 +548,8 @@ Rectangle {
         }
 
 
-        NumberAnimation{
+        NumberAnimation
+        {
             id: walkingInLivingRoom2X
             target: molliDancing
             properties: "x"
@@ -506,7 +558,8 @@ Rectangle {
             duration: 2500
             running: false
 
-            onRunningChanged: {
+            onRunningChanged:
+            {
                 if (running === false)
                 {
                     modernLivingRoom2.visible = false

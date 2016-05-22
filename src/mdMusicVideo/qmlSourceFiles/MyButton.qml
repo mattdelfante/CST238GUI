@@ -5,7 +5,8 @@
 */
 import QtQuick 2.0
 
-Rectangle {
+Rectangle
+{
     property alias ma_buttonMouseArea: mouseArea
     property bool switchColor: false
     property string buttonColor: buttonColor
@@ -23,7 +24,7 @@ Rectangle {
 
         onClicked:
         {
-            //behavior defined in SplashScreen.qml
+            //behavior defined later
         }
 
         hoverEnabled: true
