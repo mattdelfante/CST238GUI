@@ -29,30 +29,34 @@ Molli giving a tour of her dream house.
 Flo Rida performing during the tour of his house.
 
 <b>Installation Instructions:</b><br />
-1.  Install Qt 5.6 <br \>
-2.  Open project <br \>
-3.  Clean all, run qmake, build all, run. <br \>
+1.  Install Qt 5.6. <br \>
+2.  Open project. <br \>
+3.  Clean all, run qmake and build all. <br \>
+4.  <b>Copy the images and sounds folders located in MyHouseMusicVideo\src\mdMusicVideo.</b> <br \>
+5.  <b>Paste the images and sounds folders in:<br \>
+   MyHouseMusicVideo\src\build-mdMusicVideo-Desktop_Qt_5_6_0_MSVC2015_64bit-Debug\debug.</b> <br \>
+6.  Clean all, run qmake, build all, run and enjoy. <br \>
 
 <b>Contribution Guidelines:</b><br />
-Throughout the term, Molli Drivdahl and Matt Del Fante will work on the music video equally until the end of the term. For any future contributors to the project after the end of the term, development changes can be made by branching code (we think, we are still novices to git), editing code for different parts of the project, and merging the code back to git after reviewing the changes made (again, we think).
+Throughout the term, Molli Drivdahl and Matt Del Fante worked on the music video equally until the end of the term. For any future contributors to the project after the end of the term, development changes can be made by creating a pull request and doing what they please with the project.
 
 <i>Note on naming convention:</i><br />
-We preface all aliases with 2 letter identifiers that distinguish its type followed by an underscore.
-We preface c++ data members with an "m_" followed by the data member name.
-We will develop a more extensive naming convention in the near future.
+We preface all aliases with 2 letter identifiers that distinguish their types, followed by an underscore.
+We preface c++ data members with an "m_" followed by the data members' names.
 
 <b>Bugs, ToDo List and Revision History:</b><br />
 <i>Bugs:</i></b><br />
 1. Changing the size of the window as any animations are happening causes undefined behavior. <br />
-2. Opening the music video project (after clicking the green arrow) takes longer then most people would expect. <br />
+2. Running the music video project (after clicking the green arrow) takes longer then most people would expect. <br />
+3. Expanding the window full screen has unexpected effects on the location of components in the music video. It's best to view the music video with the window at an 8:5 aspect ratio. <br />
 
 <i>ToDo List:</i></b><br />
-1. Update the read me screen shots. <br />
+1. Create an installer. <br />
 
 <i>Revision History:</i></b><br />
 1. Completed the first chorus of the song. <br />
 2. Fixed timer bug where timers worked differently on different machines. <br />
-3. Implemented more anchors to ensure the music video would look good for any sized screen. <br /> 
+3. Implemented more anchors to ensure the music video would look good (for the most part) with any sized window. <br /> 
 4. Finished the second verse of the song. <br />
 5. Finished the second chorus of the song. <br />
 6. Finished the third verse of the song. <br />
@@ -66,6 +70,7 @@ We will develop a more extensive naming convention in the near future.
 14. Synched all music video animations correctly to the music. <br />
 15. Fixed champagne scene's "immediate popping" bug. <br />
 16. Fixed bug so that the music video is always in synch with the song even when only building once. <br />
+17. Updated the read me screen shots. <br />
 
 <i>Things That Could Not Be Done Due To Time Constraints:</i></b><br />
 1. Adding play/pause and setting buttons to the music video. <br />
@@ -76,7 +81,7 @@ We will develop a more extensive naming convention in the near future.
 [MolliDrivdahl](https://github.com/mollidrivdahl)<br />
 
 <b>Inspiration:</b><br />
-For Matt, the idea to make an animated music video came from the animated start menu of the example project "Bishop's Fianchetto" shown on the first day of the GUI course. For Molli, the idea came from a previous Adobe Flash project from high school involving creating animations to go along with a song. We picked My House by Flo Rida since it is catchy and we thought we could express our selves easily and in a fun manner via house tours.<br />
+For Matt, the idea to make an animated music video came from the animated start menu of the example project "Bishop's Fianchetto" shown on the first day of the GUI course. For Molli, the idea came from a previous Adobe Flash project from high school involving creating animations to go along with a song. We picked My House by Flo Rida since it is catchy and we thought we could express ourselves easily and in a fun manner via house tours.<br />
 
 <b>License:</b><br />
 The MIT License (MIT)<br />
