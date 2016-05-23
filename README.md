@@ -10,19 +10,23 @@ C++, Qt, QML, Javascript <br />
 
 <img src= "/img/readMeImages/splashScreen.jpg" width="500" height="300">
 <br />
-This is the opening splash screen/menu for the music video.
+Opening splash screen/menu for the music video.
 
-<img src= "/img/readMeImages/settingsScreen.jpg" width="500" height="300">
+<img src= "/img/readMeImages/mattOnStairs.jpg" width="500" height="300">
 <br />
-This is the settings screen/menu for the music video.
+Matt giving a tour of his dream house.
 
-<img src= "/img/readMeImages/champagnePopping.jpg" width="500" height="300">
+<img src= "/img/readMeImages/mattMolliDanceFloor.jpg" width="500" height="300">
 <br />
-An animation of a champagne bottle popping will happen when the song sings "Open up the champagne...Pop!" at the start of the song to kick off the beginning of the music video.
+Matt and Molli dancing on a dancefloor.
 
-<img src= "/img/readMeImages/frontDoorScene.jpg" width="500" height="300">
+<img src= "/img/readMeImages/molliHammock.jpg" width="500" height="300">
 <br />
-This is how the beginning of the house tour aspect of the music video begins.
+Molli giving a tour of her dream house.
+
+<img src= "/img/readMeImages/floRidaPerforming.jpg" width="500" height="300">
+<br />
+Flo Rida performing during the tour of his house.
 
 <b>Installation Instructions:</b><br />
 1.  Install Qt 5.6 <br \>
