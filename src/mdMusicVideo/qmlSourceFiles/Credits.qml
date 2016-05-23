@@ -14,11 +14,12 @@ Rectangle
         target: MyTimer
         onTimerTimeout:
         {
+            //End Flo Rida "It's my house!", before Credits. Begin the end text.
             if (totalTimeElapsed === 191200)
             {
                 theEndText.visible = true
             }
-
+            //End the end text. Begin produced, created, choreography text.
             else if (totalTimeElapsed === 194400)
             {
                 theEndText.visible = false
@@ -26,7 +27,7 @@ Rectangle
                 createdByText.visible = true
                 choreographyByText.visible = true
             }
-
+            //End produced, created, choreography text. Begin songs used text.
             else if (totalTimeElapsed === 199400)
             {
                 producedByText.visible = false
@@ -37,7 +38,7 @@ Rectangle
                 handsToMyself.visible = true
                 tenThousandHours.visible = true
             }
-
+            //End songs used text. Begin special thanks text.
             else if (totalTimeElapsed === 204400)
             {
                 songsUsed.visible = false
@@ -46,7 +47,7 @@ Rectangle
                 tenThousandHours.visible = false
                 specialThanks.visible = true
             }
-
+            //End special thanks text. Transition scene.
             else if (totalTimeElapsed === 208400)
             {
                 specialThanks.visible = false

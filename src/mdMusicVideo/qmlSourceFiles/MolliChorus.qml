@@ -12,6 +12,7 @@ Rectangle {
         target: MyTimer
         onTimerTimeout:
         {
+            //End Molli's chorus overview of house intro. Begin Molli walking out bedroom.
             if (totalTimeElapsed === 103400)
             {
                 outsideBeachHouse.visible = false
@@ -20,7 +21,7 @@ Rectangle {
                 molliWalking.y = window.height/2.85
                 walkingOutBedroomX.start()
             }
-
+            //End Molli in hammock. Begin Molli walking forward living room 1.
             else if (totalTimeElapsed === 111100)
             {
                 loungeBeachside.visible = false
@@ -30,14 +31,14 @@ Rectangle {
                 walkingInLivingRoom1Y.start()
                 growingInLivingRoom.start()
             }
-
+            //End Molli walking in pet room before dog. Begin Westie following Molli into room.
             else if (totalTimeElapsed === 120100)
             {
                 followingMolliY.start()
                 followingMolliX.start()
                 shrinkingBehindMolli.start()
             }
-
+            //End Westie bouncing up and down. Begin Molli walking along dock.
             else if (totalTimeElapsed === 124600)
             {
                 petDaycare.visible = false
@@ -46,7 +47,7 @@ Rectangle {
                 molliWalking.y = .32 * window.height
                 walkingOnDock.start()
             }
-
+            //End Molli holds dog in water, before VerseThree. Transition Scenes.
             else if (totalTimeElapsed === 132200)
             {
                 endScene()

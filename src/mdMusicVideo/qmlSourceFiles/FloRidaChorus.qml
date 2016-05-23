@@ -12,25 +12,26 @@ Rectangle
         target: MyTimer
         onTimerTimeout:
         {
+            //End Flo Rida's chorus overview of house intro. Begin Flo Rida walk halfway in garage.
             if (totalTimeElapsed === 154700)
             {
                 outsideFloRidaHouseWrapper.visible = false
                 garageSceneWrapper.visible = true
                 floRidaWalkHalfwayX.running = true
             }
-
+            //End Flo Rida singing lyrics (part 1). Begin Flo Rida singing lyrics (part 2).
             else if (totalTimeElapsed === 167300)
             {
                 firstSetOfLyrics.visible = false
                 secondSetOfLyrics.visible = true
             }
-
+            //End Flo Rida singing lyrics (part 2). Begin Flo Rida singing lyrics (part 3).
             else if (totalTimeElapsed === 169900)
             {
                 secondSetOfLyrics.visible = false
                 thirdSetOfLyrics.visible = true
             }
-
+            //End Flo Rida singing lyrics (part 3). Begin Flo Rida walk off stage.
             else if (totalTimeElapsed === 172900)
             {
                 thirdSetOfLyrics.visible = false
@@ -42,26 +43,26 @@ Rectangle
                 floRidaOnStage.y = floRidaChorusWrapper.height / 2 - floRidaOnStage.height + floRidaChorusWrapper.height * .12
                 floRidaWalkAllTheWayOffStage.start()
             }
-
+            //End Matt talk on dance floor. Begin Flo Rida talk on dance floor (part 1).
             else if (totalTimeElapsed === 177700)
             {
                 mattSpeechBubble.visible = false
                 floRidaSpeechBubble.visible = true
             }
-
+            //End Flo Rida talk on dance floor (part 1). Begin Flo Rida talk on dance floor (part 2).
             else if (totalTimeElapsed === 179700)
             {
                 floRidaLine1.visible = false
                 floRidaLine2.visible = true
             }
-
+            //End Flo Rida talk on dance floor (part 2). Begin Flo Rida walk to center & all dancing.
             else if (totalTimeElapsed === 181700)
             {
                 floRidaSpeechBubble.visible = false
                 floRidaLine2.visible = false
                 floRidaWalkToDanceFloor.running = true
             }
-
+            //End Flo Rida walk to center & all dancing. Begin Flo Rida "It's my house!", before Credits.
             else if (totalTimeElapsed === 188200)
             {
                 floRidaSpeechBubble.visible = true
@@ -69,7 +70,7 @@ Rectangle
                 floRidaSpeechBubble.x = floRidaDancing.x - floRidaDancing.width - floRidaDancing.width
                 floRidaLine3.visible = true
             }
-
+            //End Flo Rida "It's my house!", before Credits. Transition scene.
             else if (totalTimeElapsed === 191200)
             {
                 endScene()

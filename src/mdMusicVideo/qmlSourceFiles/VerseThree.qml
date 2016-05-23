@@ -14,18 +14,19 @@ Rectangle
         target: MyTimer
         onTimerTimeout:
         {
+            //End Ride the ducks. Begin My house is your house.
             if (totalTimeElapsed === 135100)
             {
                 rideTheDucksWrapper.visible = false
                 myHouseIsYourHouseWrapper.visible = true
             }
-
+            //End My house is your house. Begin Sad house.
             else if (totalTimeElapsed === 137800)
             {
                 myHouseIsYourHouseWrapper.visible = false
                 sadHouseWrapper.visible = true
             }
-
+            //End Sad house. Begin Happy house.
             else if (totalTimeElapsed === 140100)
             {
                 rainingSmiles.enabled = true
@@ -33,25 +34,25 @@ Rectangle
                 cryingJordanHouse.source = "file:///" + AppDir + "/images/happyHouse.png"
                 startSadHouseRain.start()
             }
-
+            //End Home run. Begin Slam dunk.
             else if (totalTimeElapsed === 143900)
             {
                 homerun.visible = false
                 slamDunk.visible = true
             }
-
+            //End Slam dunk. Begin Touch down pass.
             else if (totalTimeElapsed === 144600)
             {
                 slamDunk.visible = false
                 touchDownPass.visible = true
             }
-
+            //End Touch down pass. Begin Mi casa es tu casa.
             else if (totalTimeElapsed === 145700)
             {
                 touchDownPass.visible = false
                 miCasaIsTuCasaWrapper.visible = true
             }
-
+            //End. Mi casa es tu casa. Being Tacking shot & lawn chairs, before ChorusThree.
             else if (totalTimeElapsed === 148400)
             {
                 mattSpanishBubble.visible = false
@@ -61,7 +62,7 @@ Rectangle
                 molliDrink.visible = true
                 molliDrink.playing = true
             }
-
+            //End Tacking shot & lawn chairs, before ChorusThree. Transition Scene
             else if (totalTimeElapsed === 152500)
             {
                 verseThreeWrapper.visible = false

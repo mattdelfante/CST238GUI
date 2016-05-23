@@ -1,3 +1,6 @@
+//Authors: Matthew Del Fante and Molli Drivdahl
+//Note from the authors: For the best viewing experience, keep the window at an 8:5 aspect ratio.
+
 import QtQuick 2.6
 import QtQuick.Window 2.2
 import QtMultimedia 5.6
@@ -45,7 +48,7 @@ Window
 
     function destroyMusicVideoScenes()
     {
-        //destroy the dynamically created component
+        //destroy the dynamically created component and disconnect the signals
         musicVideoScenes.destroy();
         musicVideoScenes.endOfCredits.disconnect(musicVideoSceneFinished);
         musicVideoScenes.volumeChanged.disconnect(musicVideoVolumeChanged);

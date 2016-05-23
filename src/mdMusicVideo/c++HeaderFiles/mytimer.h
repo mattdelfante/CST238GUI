@@ -26,5 +26,4 @@ class MyTimer : public QObject
         int m_totalTimeElapsed;
 };
 
-
 #endif // MYTIMER_H
