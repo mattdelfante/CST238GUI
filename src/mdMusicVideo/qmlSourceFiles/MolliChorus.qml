@@ -354,6 +354,14 @@ Rectangle {
                 to: .6 * window.height
                 duration: 400
                 running: false
+
+                onRunningChanged:
+                {
+                    if (running === false)
+                    {
+                        finalText.visible = true
+                    }
+                }
             }
         }
 
@@ -362,6 +370,19 @@ Rectangle {
             id: waterFrontLayer
             source: "file:///" + AppDir + "/images/waterFrontLayer.png"
             anchors.fill: parent
+        }
+
+        Text
+        {
+            id: finalText
+            visible: false
+            anchors.horizontalCenter: waterAndDock.horizontalCenter
+            anchors.verticalCenter: waterAndDock.verticalCenter
+            anchors.verticalCenterOffset: -waterAndDock.height / 3
+            color: "red"
+            text: "Welcome To My House"
+            font.pixelSize: waterAndDock.height / 8
+            font.family: "Monotype Corsiva"
         }
     }
 

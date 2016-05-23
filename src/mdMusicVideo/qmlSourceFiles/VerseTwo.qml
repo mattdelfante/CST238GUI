@@ -291,7 +291,7 @@ Rectangle
             source: "file:///" + AppDir + "/images/speechBubble.png"
             width: parent.width/6
             height: parent.height/6
-            x: mattDancingUnderChampagne.x + mattDancingUnderChampagne.width
+            x: mattDancingUnderChampagne.x + mattDancingUnderChampagne.width/1.25
             y: mattDancingUnderChampagne.y
             visible: false
 

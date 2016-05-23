@@ -359,7 +359,20 @@ Rectangle
 
                     onStopped:
                     {
-                        molliSpeechBubble.visible = true
+                       molliSpeechPause.start()
+                    }
+                }
+
+                PauseAnimation
+                {
+                    id: molliSpeechPause
+                    duration: 700
+                    running: false
+
+                    onRunningChanged:
+                    {
+                        if (running === false)
+                            molliSpeechBubble.visible = true
                     }
                 }
             }
