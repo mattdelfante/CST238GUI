@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+	<Name>My House Music Video</Name>
+	<Version>1.0.0</Version>
+	<Title>My House Music Video Installer</Title>
+	<Publisher>MD</Publisher>
+	<StartMenuDir>My House Music Video</StartMenuDir>
+	<TargetDir>@rootDir@/Program Files (x86)/MyHouseMusicVideo</TargetDir>
+</Installer>

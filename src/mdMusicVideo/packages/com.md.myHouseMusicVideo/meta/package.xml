@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+	<DisplayName>MyHouseMusicVideo</DisplayName>
+	<Description>Welcome to the My House Music Video installer.</Description>
+	<Version>0.1.0</Version>
+	<ReleaseDate>2016-05-26</ReleaseDate>
+	<Licenses>
+		<License name="The MIT License" file="license.txt" />
+	</Licenses>
+	<Default>true</Default>
+</Package>
