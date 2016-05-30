@@ -29,6 +29,8 @@ Molli giving a tour of her dream house.
 Flo Rida performing during the tour of his house.
 
 <b>Installation Instructions:</b><br />
+Use the installer located in MyHouseMusicVideo\bin <br \>
+OR <br \>
 1.  Install Qt 5.6. <br \>
 2.  Open project. <br \>
 3.  Clean all, run qmake and build all. <br \>
@@ -51,7 +53,7 @@ We preface c++ data members with an "m_" followed by the data members' names.
 3. Expanding the window full screen has unexpected effects on the location of components in the music video. It's best to view the music video with the window at an 8:5 aspect ratio. <br />
 
 <i>ToDo List:</i></b><br />
-1. Create an installer. <br />
+1. To implement the things we couldn't complete due to time constraints this term in the future (if we want to). <br />
 
 <i>Revision History:</i></b><br />
 1. Completed the first chorus of the song. <br />
@@ -71,6 +73,7 @@ We preface c++ data members with an "m_" followed by the data members' names.
 15. Fixed champagne scene's "immediate popping" bug. <br />
 16. Fixed bug so that the music video is always in synch with the song even when only building once. <br />
 17. Updated the read me screen shots. <br />
+18. Created an installer. <br />
 
 <i>Things That Could Not Be Done Due To Time Constraints:</i></b><br />
 1. Adding play/pause and setting buttons to the music video. <br />
