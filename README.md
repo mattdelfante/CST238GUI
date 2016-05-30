@@ -54,6 +54,7 @@ We preface c++ data members with an "m_" followed by the data members' names.
 
 <i>ToDo List:</i></b><br />
 1. To implement the things we couldn't complete due to time constraints this term in the future (if we want to). <br />
+2. To fix the bugs in the future. <br />
 
 <i>Revision History:</i></b><br />
 1. Completed the first chorus of the song. <br />
